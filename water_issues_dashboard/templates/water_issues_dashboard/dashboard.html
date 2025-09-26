@@ -1,0 +1,285 @@
+{% extends 'water_issues_dashboard/base.html' %}
+{% load static %}
+
+{% block title %}Manitoba Water Issues Dashboard{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="sidebar">
+        <h2>🗺️ Manitoba Dashboard</h2>
+        
+        <div class="sidebar-section">
+            <h3>📊 Incident Data Status</h3>
+            <div class="alert alert-info">
+                <span id="dataStatus">Loading data from Django API...</span>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-top: 10px;">
+                <span>Total Incidents:</span>
+                <strong id="totalIncidents">{{ incidents.count }}</strong>
+            </div>
+            <button class="btn btn-secondary" style="width: 100%; margin-top: 10px;" onclick="resetToDefault()">
+                🔄 Reload Data
+            </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <form method="GET" id="filterForm">
+            <div class="sidebar-section">
+                <h3>🎯 Municipality Filters</h3>
+                <div class="form-group">
+                    <label>Status</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="statusCity" name="statusCity" {% if filters.status.city %}checked{% endif %}>
+                        <label for="statusCity">City</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="statusTown" name="statusTown" {% if filters.status.town %}checked{% endif %}>
+                        <label for="statusTown">Town</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="statusRM" name="statusRM" {% if filters.status.rm %}checked{% endif %}>
+                        <label for="statusRM">Rural Municipality</label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <hr>
+                    <label>Population Range (2021)</label>
+                    <br>
+                    <div class="slider-container">
+                        <label>Minimum Population</label>
+                        <input type="range" class="slider" id="popMin" name="popMin" min="0" max="1000000" value="{{ filters.pop_min }}">
+                        <label>Maximum Population</label>
+                        <input type="range" class="slider" id="popMax" name="popMax" min="0" max="1000000" value="{{ filters.pop_max }}">
+                        <div class="slider-value">
+                            <span id="popMinValue">{{ filters.pop_min|floatformat:0 }}</span>
+                            <span id="popMaxValue">{{ filters.pop_max|floatformat:0 }}</span>
+                        </div>
+                        <br>
+                        <hr>
+                    </div>
+                </div>
+                <div style="margin-top: 10px;">
+                    <strong>Selected places: <span id="selectedPlaces">{{ municipality_count }}</span></strong>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="sidebar-section">
+                <h3>🔥💧 Incident Filters</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showWildfires" name="showWildfires" {% if filters.incidents.wildfires %}checked{% endif %}>
+                    <label for="showWildfires">Show Wildfires</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showFloods" name="showFloods" {% if filters.incidents.floods %}checked{% endif %}>
+                    <label for="showFloods">Show Floods</label>
+                </div>
+                <div class="form-group">
+                    <label>Incident Status</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="statusConfirmed" name="statusConfirmed" {% if filters.incidents.confirmed %}checked{% endif %}>
+                        <label for="statusConfirmed">Confirmed</label>
+                    </div>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="statusSuspected" name="statusSuspected" {% if filters.incidents.suspected %}checked{% endif %}>
+                        <label for="statusSuspected">Suspected</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="sidebar-section">
+                <h3>🗺️ Map Display</h3>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showParks" name="showParks" {% if filters.show_parks %}checked{% endif %}>
+                    <label for="showParks">Show Manitoba Parks</label>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <div class="d-flex justify-content-between align-items-center">
+                <div>
+                    <h1>Welcome to the Manitoba Water Issues Dashboard</h1>
+                    <p>Click on map features for detailed information. Data is served from Django backend.</p>
+                </div>
+                <a href="{% url 'blog-home' %}" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+            </div>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="switchTab('home')">
+                <i class="fas fa-home"></i> Home Page
+            </button>
+            <button class="tab" onclick="switchTab('report')">
+                <i class="fas fa-exclamation-triangle"></i> Report Incidents
+            </button>
+        </div>
+
+        <div id="homeTab" class="tab-content active">
+            <div class="metrics-container">
+                <div class="metric-card municipalities">
+                    <div class="metric-icon">🏛️</div>
+                    <div class="metric-value" id="muniCount">{{ municipality_count }}</div>
+                    <div class="metric-label">Municipalities</div>
+                </div>
+                <div class="metric-card population">
+                    <div class="metric-icon">👥</div>
+                    <div class="metric-value" id="popCount">{{ total_population|floatformat:0 }}</div>
+                    <div class="metric-label">Population (2021)</div>
+                </div>
+                <div class="metric-card wildfires">
+                    <div class="metric-icon">🔥</div>
+                    <div class="metric-value" id="fireCount">{{ wildfire_count }}</div>
+                    <div class="metric-label">Wildfires</div>
+                </div>
+                <div class="metric-card floods">
+                    <div class="metric-icon">💧</div>
+                    <div class="metric-value" id="floodCount">{{ flood_count }}</div>
+                    <div class="metric-label">Floods</div>
+                </div>
+                <div class="metric-card parks">
+                    <div class="metric-icon">🌲</div>
+                    <div class="metric-value" id="parkCount">{{ park_count }}</div>
+                    <div class="metric-label">Parks</div>
+                </div>
+            </div>
+
+            <div class="map-toolbar">
+                <button id="findMeBtn" class="find-me-btn">📍 Find me</button>
+                <div class="search-wrapper">
+                    <span class="search-icon">🔎</span>
+                    <input id="searchInput" class="search-input" type="text" placeholder="Search towns, cities, RMs, parks, wildfires or floods…">
+                    <button id="clearSearch" class="clear-btn" title="Clear">✕</button>
+                    <div id="suggestions" class="suggestions"></div>
+                </div>
+            </div>
+
+            <div class="map-container">
+                <div id="map"></div>
+            </div>
+        </div>
+
+        <div id="reportTab" class="tab-content">
+            <h2>🚨 Report Incidents</h2>
+            <p>Upload incident data to be added to the map. New incidents will be appended to existing data.</p>
+
+            <div class="upload-area" onclick="document.getElementById('fileInput').click()" 
+                 ondragover="handleDragOver(event)" 
+                 ondragleave="handleDragLeave(event)" 
+                 ondrop="handleDrop(event)">
+                <i class="fas fa-cloud-upload-alt" style="font-size: 3em; color: #667eea; margin-bottom: 15px;"></i>
+                <h3>Drop files here or click to upload</h3>
+                <p>Supported formats: GeoJSON (.geojson), JSON (.json)</p>
+                <input type="file" id="fileInput" accept=".json,.geojson" onchange="handleFileSelect(event)">
+            </div>
+
+            <div id="uploadResult" style="margin-top: 20px;"></div>
+
+            <div class="divider"></div>
+
+            <h3>📊 Current Data Summary</h3>
+            <div id="dataSummary">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4>By Type:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>🔥 Wildfire: {{ incidents|length|add:0 }}</li>
+                            <li>💧 Flood: {{ incidents|length|add:0 }}</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>By Status:</h4>
+                        <ul style="list-style: none; padding: 0;">
+                            <li>✅ Confirmed: {{ incidents|length|add:0 }}</li>
+                            <li>⚠️ Suspected: {{ incidents|length|add:0 }}</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <h4 style="margin-top: 20px;">Recent Incidents:</h4>
+                <table class="summary-table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Type</th>
+                            <th>Status</th>
+                            <th>Started</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for incident in incidents|slice:":5" %}
+                        <tr>
+                            <td>{{ incident.name }}</td>
+                            <td>{{ incident.incident_type|title }}</td>
+                            <td>{{ incident.status|title }}</td>
+                            <td>{{ incident.started_at|default:"N/A" }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4">No incidents found</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                
+                {% if incidents.count > 5 %}
+                <p style="color: #666; font-size: 0.9em;">Showing first 5 of {{ incidents.count }} incidents</p>
+                {% endif %}
+            </div>
+
+            <div class="divider"></div>
+
+            <h3>📋 File Format Guidelines</h3>
+            <div style="background: #f8f9fa; padding: 15px; border-radius: 8px;">
+                <h4>GeoJSON Format Example:</h4>
+                <pre style="background: white; padding: 10px; border-radius: 4px; overflow-x: auto;">
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[lon, lat], ...]]
+      },
+      "properties": {
+        "name": "Incident Name",
+        "type": "wildfire" or "flood",
+        "status": "confirmed" or "suspected",
+        "started_at": "2024-01-01",
+        "description": "Details..."
+      }
+    }
+  ]
+}
+                </pre>
+            </div>
+
+            <button class="btn btn-primary" style="margin-top: 20px;" onclick="downloadExampleData()">
+                📥 Download Example GeoJSON
+            </button>
+        </div>
+    </div>
+</div>
+
+<script>
+    const csrfToken = '{{ csrf_token }}';
+    const apiBaseUrl = "{% url 'water_issues_dashboard:api_geojson' %}";
+    const searchApiUrl = "{% url 'water_issues_dashboard:api_search' %}";
+    const uploadUrl = "{% url 'water_issues_dashboard:upload' %}";
+</script>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'water_issues_dashboard/script.js' %}" defer></script>
+{% endblock %}

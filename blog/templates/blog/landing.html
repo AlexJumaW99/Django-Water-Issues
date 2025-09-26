@@ -1,0 +1,93 @@
+{% extends "blog/base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="landing-container">
+    <div class="landing-overlay"></div>
+    <div class="landing-content">
+        <h1 class="landing-title">Their Silence, Your Voice</h1>
+        <p class="landing-subtitle">Exposing the truth and empowering Northern Manitoba's Indigenous communities.</p>
+        <div class="landing-cta">
+            <a href="{% url 'blog-home' %}" class="btn btn-primary">Share Your Story</a>
+            <a href="{% url 'water_issues_dashboard:home' %}" class="btn btn-secondary">View Dashboard</a>
+        </div>
+    </div>
+</div>
+{% endblock content %}
+
+{% block extra_css %}
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+    }
+
+    .landing-container {
+        position: relative;
+        height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        background: url('https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center/cover;
+    }
+
+    .landing-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .landing-content {
+        position: relative;
+        z-index: 1;
+    }
+
+    .landing-title {
+        font-size: 4rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+
+    .landing-subtitle {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .landing-cta .btn {
+        padding: 1rem 2rem;
+        margin: 0 1rem;
+        border-radius: 5px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: white;
+        border: 1px solid #007bff;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3;
+    }
+
+    .btn-secondary {
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+    }
+
+    .btn-secondary:hover {
+        background-color: white;
+        color: black;
+    }
+</style>
+{% endblock extra_css %}

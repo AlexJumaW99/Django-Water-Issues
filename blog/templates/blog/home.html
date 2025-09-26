@@ -1,0 +1,27 @@
+{% extends 'blog/base.html'%}
+{% block content %}
+    <div class="alert alert-info mb-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <div>
+                <h5 class="mb-1">Manitoba Water Issues Dashboard</h5>
+                <p class="mb-0">Track wildfires, floods, and municipal data across Manitoba</p>
+            </div>
+            <a href="{% url 'water_issues_dashboard:home' %}" class="btn btn-primary btn-lg">
+                View Dashboard
+            </a>
+        </div>
+    </div>
+    {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'blog-profile' post.author.id %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+          </div>
+        </article>
+    {% endfor %}
+{% endblock content %}
+
