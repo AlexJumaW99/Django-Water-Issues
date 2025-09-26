@@ -2,54 +2,55 @@ from django.core.management.base import BaseCommand
 from water_issues_dashboard.models import Municipality, Park, Incident
 import json
 import os
+from datetime import datetime
 
 class Command(BaseCommand):
     help = 'Load initial data from GeoJSON files'
-    
+
     def add_arguments(self, parser):
-        parser.add_argument('--data-dir', type=str, help='Path to data directory')
-    
+        parser.add_argument('--data-dir', type=str, help='Path to data directory', default='data')
+
     def handle(self, *args, **options):
-        data_dir = options['data_dir'] or 'data'
-        
+        data_dir = options['data_dir']
+
         # Load municipalities
         self.load_geojson_data(
             os.path.join(data_dir, 'mb_with_winnipeg.geojson'),
             Municipality,
             self.process_municipality
         )
-        
+
         # Load parks
         self.load_geojson_data(
             os.path.join(data_dir, 'Manitoba_Parks_full.geojson'),
             Park,
             self.process_park
         )
-        
+
         # Load incidents
         self.load_geojson_data(
             os.path.join(data_dir, 'incidents_dummy.geojson'),
             Incident,
             self.process_incident
         )
-    
+
     def load_geojson_data(self, filepath, model_class, processor_func):
         if not os.path.exists(filepath):
-            self.stdout.write(f"File not found: {filepath}")
+            self.stdout.write(self.style.ERROR(f"File not found: {filepath}"))
             return
-        
+
         with open(filepath, 'r') as f:
             data = json.load(f)
-        
+
         count = 0
         for feature in data.get('features', []):
             obj = processor_func(feature)
             if obj:
                 obj.save()
                 count += 1
-        
-        self.stdout.write(f"Loaded {count} {model_class.__name__} records")
-    
+
+        self.stdout.write(self.style.SUCCESS(f"Loaded {count} {model_class.__name__} records from {filepath}"))
+
     def process_municipality(self, feature):
         props = feature.get('properties', {})
         return Municipality(
@@ -59,7 +60,7 @@ class Command(BaseCommand):
             geometry=feature.get('geometry', {}),
             properties=props
         )
-    
+
     def process_park(self, feature):
         props = feature.get('properties', {})
         return Park(
@@ -72,10 +73,10 @@ class Command(BaseCommand):
             geometry=feature.get('geometry', {}),
             properties=props
         )
-    
+
     def process_incident(self, feature):
         props = feature.get('properties', {})
-        return Incident(
+        incident = Incident(
             name=props.get('name', ''),
             incident_type=props.get('type', 'wildfire'),
             status=props.get('status', 'suspected'),
@@ -83,3 +84,12 @@ class Command(BaseCommand):
             geometry=feature.get('geometry', {}),
             properties=props
         )
+        if props.get('started_at'):
+            try:
+                # Extract just the date part (e.g., '2025-08-21') from the timestamp
+                date_string = props['started_at'].split('T')[0]
+                incident.started_at = datetime.strptime(date_string, '%Y-%m-%d').date()
+            except (ValueError, TypeError, IndexError):
+                # Silently pass if the date format is invalid or can't be split
+                pass
+        return incident

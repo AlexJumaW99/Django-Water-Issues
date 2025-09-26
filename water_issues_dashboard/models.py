@@ -9,7 +9,7 @@ class Municipality(models.Model):
     population_2021 = models.IntegerField(default=0)
     geometry = JSONField()  # Store GeoJSON geometry
     properties = JSONField(default=dict)  # Additional properties
-    
+
     def __str__(self):
         return f"{self.status.title()} of {self.name}"
 
@@ -22,7 +22,7 @@ class Park(models.Model):
     url = models.URLField(blank=True)
     geometry = JSONField()
     properties = JSONField(default=dict)
-    
+
     def __str__(self):
         return self.name
 
@@ -31,12 +31,12 @@ class Incident(models.Model):
         ('wildfire', 'Wildfire'),
         ('flood', 'Flood'),
     ]
-    
+
     STATUS_CHOICES = [
         ('confirmed', 'Confirmed'),
         ('suspected', 'Suspected'),
     ]
-    
+
     name = models.CharField(max_length=200)
     incident_type = models.CharField(max_length=20, choices=INCIDENT_TYPES)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
@@ -46,7 +46,7 @@ class Incident(models.Model):
     properties = JSONField(default=dict)
     uploaded_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return f"{self.name} ({self.incident_type})"
 
@@ -56,6 +56,6 @@ class UploadedFile(models.Model):
     uploaded_at = models.DateTimeField(auto_now_add=True)
     processed = models.BooleanField(default=False)
     incidents_added = models.IntegerField(default=0)
-    
+
     def __str__(self):
         return f"Upload by {self.uploaded_by} on {self.uploaded_at}"

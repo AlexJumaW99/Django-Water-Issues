@@ -18,19 +18,19 @@ def dashboard_home(request):
         'town': request.GET.get('statusTown', 'true') == 'true',
         'rm': request.GET.get('statusRM', 'true') == 'true',
     }
-    
+
     pop_min = int(request.GET.get('popMin', 0))
     pop_max = int(request.GET.get('popMax', 1000000))
-    
+
     incident_filters = {
         'wildfires': request.GET.get('showWildfires', 'true') == 'true',
         'floods': request.GET.get('showFloods', 'true') == 'true',
         'confirmed': request.GET.get('statusConfirmed', 'true') == 'true',
         'suspected': request.GET.get('statusSuspected', 'true') == 'true',
     }
-    
+
     show_parks = request.GET.get('showParks', 'true') == 'true'
-    
+
     # Build queryset for municipalities
     muni_query = Municipality.objects.all()
     if not status_filters['city']:
@@ -39,12 +39,12 @@ def dashboard_home(request):
         muni_query = muni_query.exclude(status='town')
     if not status_filters['rm']:
         muni_query = muni_query.exclude(status__in=['rm', 'rural municipality'])
-    
+
     municipalities = muni_query.filter(
         population_2021__gte=pop_min,
         population_2021__lte=pop_max
     )
-    
+
     # Build queryset for incidents
     incident_query = Incident.objects.all()
     incident_types = []
@@ -52,21 +52,21 @@ def dashboard_home(request):
         incident_types.append('wildfire')
     if incident_filters['floods']:
         incident_types.append('flood')
-    
+
     incident_statuses = []
     if incident_filters['confirmed']:
         incident_statuses.append('confirmed')
     if incident_filters['suspected']:
         incident_statuses.append('suspected')
-    
+
     incidents = incident_query.filter(
         incident_type__in=incident_types,
         status__in=incident_statuses
     )
-    
+
     # Get parks if needed
     parks = Park.objects.all() if show_parks else Park.objects.none()
-    
+
     context = {
         'municipalities': municipalities,
         'incidents': incidents,
@@ -84,20 +84,20 @@ def dashboard_home(request):
             'show_parks': show_parks,
         }
     }
-    
+
     return render(request, 'water_issues_dashboard/dashboard.html', context)
 
 def api_geojson_data(request):
     """API endpoint to return GeoJSON data for the map"""
     data_type = request.GET.get('type', 'all')
-    
+
     response_data = {
         'municipalities': {
             'type': 'FeatureCollection',
             'features': []
         },
         'incidents': {
-            'type': 'FeatureCollection', 
+            'type': 'FeatureCollection',
             'features': []
         },
         'parks': {
@@ -105,7 +105,7 @@ def api_geojson_data(request):
             'features': []
         }
     }
-    
+
     if data_type in ['all', 'municipalities']:
         for muni in Municipality.objects.all():
             feature = {
@@ -119,7 +119,7 @@ def api_geojson_data(request):
                 }
             }
             response_data['municipalities']['features'].append(feature)
-    
+
     if data_type in ['all', 'incidents']:
         for incident in Incident.objects.all():
             feature = {
@@ -136,7 +136,7 @@ def api_geojson_data(request):
                 }
             }
             response_data['incidents']['features'].append(feature)
-    
+
     if data_type in ['all', 'parks']:
         for park in Park.objects.all():
             feature = {
@@ -153,7 +153,7 @@ def api_geojson_data(request):
                 }
             }
             response_data['parks']['features'].append(feature)
-    
+
     return JsonResponse(response_data)
 
 
@@ -166,14 +166,14 @@ def upload_incidents(request):
             uploaded_file = form.save(commit=False)
             uploaded_file.uploaded_by = request.user
             uploaded_file.save()
-            
+
             # Process the uploaded file
             try:
                 result = process_geojson_file(uploaded_file)
                 uploaded_file.processed = True
                 uploaded_file.incidents_added = result['added']
                 uploaded_file.save()
-                
+
                 return JsonResponse({
                     'success': True,
                     'added': result['added'],
@@ -187,30 +187,30 @@ def upload_incidents(request):
                 })
     else:
         form = IncidentUploadForm()
-    
+
     return render(request, 'water_issues_dashboard/upload.html', {'form': form})
 
 def process_geojson_file(uploaded_file):
     """Process uploaded GeoJSON file and create incidents"""
     with open(uploaded_file.file.path, 'r') as f:
         data = json.load(f)
-    
+
     if data.get('type') != 'FeatureCollection' or 'features' not in data:
         raise ValueError('Invalid GeoJSON format')
-    
+
     added = 0
     duplicates = 0
-    
+
     for feature in data['features']:
         props = feature.get('properties', {})
         name = props.get('name', '').strip()
         incident_type = props.get('type', '').strip().lower()
-        
+
         # Simple duplicate check
         if Incident.objects.filter(name=name, incident_type=incident_type).exists():
             duplicates += 1
             continue
-        
+
         # Create new incident
         incident = Incident(
             name=name,
@@ -221,7 +221,7 @@ def process_geojson_file(uploaded_file):
             properties=props,
             uploaded_by=uploaded_file.uploaded_by
         )
-        
+
         # ** FIX STARTS HERE **
         # Parse date if provided, handling full ISO 8601 timestamps
         if props.get('started_at'):
@@ -233,10 +233,10 @@ def process_geojson_file(uploaded_file):
                 # Silently pass if the date format is invalid or can't be split
                 pass
         # ** FIX ENDS HERE **
-        
+
         incident.save()
         added += 1
-    
+
     return {'added': added, 'duplicates': duplicates}
 
 def api_search(request):
@@ -244,9 +244,9 @@ def api_search(request):
     query = request.GET.get('q', '').lower().strip()
     if not query:
         return JsonResponse({'results': []})
-    
+
     results = []
-    
+
     # Search municipalities
     munis = Municipality.objects.filter(name__icontains=query)[:5]
     for muni in munis:
@@ -255,7 +255,7 @@ def api_search(request):
             'type': muni.status.title(),
             'geometry': muni.geometry
         })
-    
+
     # Search parks
     parks = Park.objects.filter(name__icontains=query)[:5]
     for park in parks:
@@ -264,7 +264,7 @@ def api_search(request):
             'type': 'Park',
             'geometry': park.geometry
         })
-    
+
     # Search incidents
     incidents = Incident.objects.filter(name__icontains=query)[:5]
     for incident in incidents:
@@ -273,5 +273,5 @@ def api_search(request):
             'type': incident.incident_type.title(),
             'geometry': incident.geometry
         })
-    
+
     return JsonResponse({'results': results})
