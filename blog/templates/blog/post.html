@@ -4,11 +4,81 @@
 <article class="media content-section">
   <div class="media-body">
     <div class="article-metadata">
-      <a class="mr-2" href="#">{{ post.author }}</a>
+      <a class="mr-2" href="{% url 'blog-profile' post.author.id %}">{{ post.author }}</a>
       <small class="text-muted">{{ post.date_posted }}</small>
     </div>
-    <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+    <h2 class="article-title">{{ post.title }}</h2>
     <p class="article-content">{{ post.content }}</p>
+    <button class="like-btn {% if is_liked %}liked{% endif %}" data-post-id="{{ post.id }}">
+        <i class="fas fa-heart"></i>
+    </button>
+    <span class="like-count">{{ post.number_of_likes }}</span>
   </div>
 </article>
+
+<div class="content-section">
+    <button id="comment-btn" class="btn btn-primary mb-4">Add a Comment</button>
+
+    <div id="comment-form-div" style="display: none;">
+        <form method="POST" action="{% url 'add-comment' post.id %}">
+            {% csrf_token %}
+            <fieldset class="form-group">
+                <legend class="border-bottom mb-4">Your Comment</legend>
+                {{ comment_form.as_p }}
+            </fieldset>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <h3 class="border-bottom mb-4">Comments</h3>
+    {% for comment in comments %}
+        <article class="media mb-4">
+            <div class="media-body">
+                <div class="article-metadata">
+                    <a class="mr-2" href="{% url 'blog-profile' comment.author.id %}">{{ comment.author }}</a>
+                    <small class="text-muted">{{ comment.date_posted|date:"F d, Y, fA" }}</small>
+                </div>
+                <p>{{ comment.content }}</p>
+            </div>
+        </article>
+    {% empty %}
+        <p>No comments yet.</p>
+    {% endfor %}
+</div>
+
+<script>
+    document.getElementById('comment-btn').addEventListener('click', function() {
+        var form = document.getElementById('comment-form-div');
+        if (form.style.display === 'none') {
+            form.style.display = 'block';
+        } else {
+            form.style.display = 'none';
+        }
+    });
+
+    document.querySelector('.like-btn').addEventListener('click', function() {
+        const postId = this.dataset.postId;
+        const likeCountSpan = this.nextElementSibling;
+        
+        fetch("{% url 'like-post' %}", {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': '{{ csrf_token }}'
+            },
+            body: JSON.stringify({ post_id: postId })
+        })
+        .then(response => response.json())
+        .then(data => {
+            likeCountSpan.textContent = data.likes_count;
+            if (data.liked) {
+                this.classList.add('liked');
+            } else {
+                this.classList.remove('liked');
+            }
+        });
+    });
+</script>
 {% endblock content %}

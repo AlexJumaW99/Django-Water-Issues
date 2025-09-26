@@ -126,6 +126,7 @@ def api_geojson_data(request):
                 'type': 'Feature',
                 'geometry': incident.geometry,
                 'properties': {
+                    'id': incident.id,
                     'name': incident.name,
                     'type': incident.incident_type,
                     'status': incident.status,

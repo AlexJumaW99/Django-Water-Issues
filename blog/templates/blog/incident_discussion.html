@@ -1,0 +1,65 @@
+{% extends 'blog/base.html'%}
+
+{% block content %}
+  <h2 class="border-bottom mb-4">Discussion for {{ incident.name }}</h2>
+
+  {% for post in posts %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="{% url 'blog-profile' post.author.id %}">{{ post.author }}</a>
+          <small class="text-muted">{{ post.date_posted|date:"F d, Y, fA" }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.content }}</p>
+        <a href="{% url 'blog-post' post.id %}" class="btn btn-primary btn-sm mt-1 mb-1">Comment</a>
+        <button class="like-btn {% if post.id in liked_post_ids %}liked{% endif %}" data-post-id="{{ post.id }}">
+            <i class="fas fa-heart"></i>
+        </button>
+        <span class="like-count">{{ post.number_of_likes }}</span>
+      </div>
+    </article>
+  {% empty %}
+    <p>No posts for this incident yet. Be the first to start the discussion!</p>
+  {% endfor %}
+
+  <div class="content-section">
+      <form method="POST">
+          {% csrf_token %}
+          <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Start a New Discussion</legend>
+              {{ form.as_p }}
+          </fieldset>
+          <div class="form-group">
+              <button class="btn btn-outline-info" type="submit">Post</button>
+          </div>
+      </form>
+  </div>
+
+<script>
+    document.querySelectorAll('.like-btn').forEach(button => {
+        button.addEventListener('click', function() {
+            const postId = this.dataset.postId;
+            const likeCountSpan = this.nextElementSibling;
+            
+            fetch("{% url 'like-post' %}", {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': '{{ csrf_token }}'
+                },
+                body: JSON.stringify({ post_id: postId })
+            })
+            .then(response => response.json())
+            .then(data => {
+                likeCountSpan.textContent = data.likes_count;
+                if (data.liked) {
+                    this.classList.add('liked');
+                } else {
+                    this.classList.remove('liked');
+                }
+            });
+        });
+    });
+</script>
+{% endblock content %}

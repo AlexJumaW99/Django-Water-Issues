@@ -5,7 +5,7 @@
 
 {% block content %}
 <div class="container">
-    <div class="sidebar">
+    <div class="sidebar" id="sidebar">
         <h2>🗺️ Manitoba Dashboard</h2>
         
         <div class="sidebar-section">
@@ -102,16 +102,20 @@
         </form>
     </div>
 
-    <div class="main-content">
+    <div class="main-content" id="main-content">
         <div class="header">
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <h1>Welcome to the Manitoba Water Issues Dashboard</h1>
                     <p>Click on map features for detailed information. Data is served from Django backend.</p>
                 </div>
-                <a href="{% url 'blog-home' %}" class="btn btn-secondary">
-                    <i class="fas fa-arrow-left"></i> Back to Blog
-                </a>
+                <div>
+                    <button id="toggle-sidebar-btn" class="btn btn-info btn-sm">Toggle Sidebar</button>
+                    <button id="toggle-metrics-btn" class="btn btn-info btn-sm">Toggle Metrics</button>
+                    <a href="{% url 'blog-home' %}" class="btn btn-secondary">
+                        <i class="fas fa-arrow-left"></i> Back to Blog
+                    </a>
+                </div>
             </div>
         </div>
 
@@ -125,7 +129,7 @@
         </div>
 
         <div id="homeTab" class="tab-content active">
-            <div class="metrics-container">
+            <div class="metrics-container" id="metrics-container">
                 <div class="metric-card municipalities">
                     <div class="metric-icon">🏛️</div>
                     <div class="metric-value" id="muniCount">{{ municipality_count }}</div>
@@ -163,7 +167,7 @@
                 </div>
             </div>
 
-            <div class="map-container">
+            <div class="map-container" id="map-container">
                 <div id="map"></div>
             </div>
         </div>

@@ -176,6 +176,10 @@ function initMap() {
 
 // Setup event listeners
 function setupEventListeners() {
+    // Toggle buttons
+    document.getElementById('toggle-sidebar-btn').addEventListener('click', toggleSidebar);
+    document.getElementById('toggle-metrics-btn').addEventListener('click', toggleMetrics);
+
     // Municipality filters
     document.getElementById('statusCity').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusTown').addEventListener('change', updateFiltersAndMap);
@@ -219,6 +223,28 @@ function setupEventListeners() {
         const wrap = document.querySelector('.search-wrapper');
         if (!wrap.contains(e.target)) hideSuggestions();
     });
+}
+
+
+// New functions to toggle sidebar and metrics
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('main-content');
+    sidebar.classList.toggle('hidden');
+    mainContent.classList.toggle('full-width');
+    // Invalidate map size to make it redraw correctly
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 300); // Should match the transition duration
+}
+
+function toggleMetrics() {
+    const metricsContainer = document.getElementById('metrics-container');
+    metricsContainer.classList.toggle('hidden');
+    // Invalidate map size to make it redraw correctly
+    setTimeout(() => {
+        map.invalidateSize();
+    }, 300); // Should match the transition duration
 }
 
 // Update filters and map (for Django form integration)
@@ -400,6 +426,7 @@ function addIncidents(filters) {
         const props = feature.properties;
         const type = props.type;
         const status = props.status || props.confidence;
+        const incidentId = props.id;
 
         // Check status filter
         if (status === 'confirmed' && !filters.confirmed) return;
@@ -417,6 +444,8 @@ function addIncidents(filters) {
         } else {
             return; // Skip unsupported geometry types
         }
+
+        const discussionUrl = `/incident/${incidentId}/discussion/`;
 
         if (type === 'wildfire' && filters.wildfires) {
             // Add wildfire polygon
@@ -451,6 +480,8 @@ function addIncidents(filters) {
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
+                        <br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
                     </div>
                 `)
                 .addTo(wildfireGroup);
@@ -489,6 +520,8 @@ function addIncidents(filters) {
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
+                        <br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
                     </div>
                 `)
                 .addTo(floodGroup);
