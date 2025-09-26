@@ -4,7 +4,36 @@
 {% block title %}Manitoba Water Issues Dashboard{% endblock %}
 
 {% block content %}
-<div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+    <div class="container-fluid">
+        <a class="navbar-brand mr-4" href="#">MB Dashboard</a>
+        <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+                <button class="nav-item nav-link tab active" onclick="switchTab('home')">
+                    <i class="fas fa-home"></i> Home Page
+                </button>
+                <button class="nav-item nav-link tab" onclick="switchTab('report')">
+                    <i class="fas fa-exclamation-triangle"></i> Report Incidents
+                </button>
+                <a href="{% url 'blog-home' %}" class="nav-item nav-link">
+                    <i class="fas fa-arrow-left"></i> Back to Blog
+                </a>
+            </div>
+            <div class="navbar-nav">
+                <div class="form-check form-switch mr-3">
+                    <input class="form-check-input" type="checkbox" role="switch" id="toggleSidebarSwitch" checked>
+                    <label class="form-check-label" for="toggleSidebarSwitch">Sidebar</label>
+                </div>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="toggleMetricsSwitch" checked>
+                    <label class="form-check-label" for="toggleMetricsSwitch">Metrics</label>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid content-container">
     <div class="sidebar" id="sidebar">
         <h2>🗺️ Manitoba Dashboard</h2>
         
@@ -103,31 +132,6 @@
     </div>
 
     <div class="main-content" id="main-content">
-        <div class="header">
-            <div class="d-flex justify-content-between align-items-center">
-                <div>
-                    <h1>Welcome to the Manitoba Water Issues Dashboard</h1>
-                    <p>Click on map features for detailed information. Data is served from Django backend.</p>
-                </div>
-                <div>
-                    <button id="toggle-sidebar-btn" class="btn btn-info btn-sm">Toggle Sidebar</button>
-                    <button id="toggle-metrics-btn" class="btn btn-info btn-sm">Toggle Metrics</button>
-                    <a href="{% url 'blog-home' %}" class="btn btn-secondary">
-                        <i class="fas fa-arrow-left"></i> Back to Blog
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="tabs">
-            <button class="tab active" onclick="switchTab('home')">
-                <i class="fas fa-home"></i> Home Page
-            </button>
-            <button class="tab" onclick="switchTab('report')">
-                <i class="fas fa-exclamation-triangle"></i> Report Incidents
-            </button>
-        </div>
-
         <div id="homeTab" class="tab-content active">
             <div class="metrics-container" id="metrics-container">
                 <div class="metric-card municipalities">

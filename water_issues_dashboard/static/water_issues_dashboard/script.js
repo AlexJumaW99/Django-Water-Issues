@@ -152,6 +152,7 @@ async function initApp() {
     
     initMap();
     setupEventListeners();
+    applyCachedSettings();
     updateMap();
     updateMetrics();
     buildSearchIndex();
@@ -176,9 +177,9 @@ function initMap() {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Toggle buttons
-    document.getElementById('toggle-sidebar-btn').addEventListener('click', toggleSidebar);
-    document.getElementById('toggle-metrics-btn').addEventListener('click', toggleMetrics);
+    // Toggle switches
+    document.getElementById('toggleSidebarSwitch').addEventListener('change', toggleSidebar);
+    document.getElementById('toggleMetricsSwitch').addEventListener('change', toggleMetrics);
 
     // Municipality filters
     document.getElementById('statusCity').addEventListener('change', updateFiltersAndMap);
@@ -225,26 +226,34 @@ function setupEventListeners() {
     });
 }
 
-
-// New functions to toggle sidebar and metrics
+// Functions to toggle sidebar and metrics and save preferences
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
-    const mainContent = document.getElementById('main-content');
-    sidebar.classList.toggle('hidden');
-    mainContent.classList.toggle('full-width');
-    // Invalidate map size to make it redraw correctly
-    setTimeout(() => {
-        map.invalidateSize();
-    }, 300); // Should match the transition duration
+    const isVisible = sidebar.classList.toggle('hidden');
+    localStorage.setItem('sidebarVisible', !isVisible);
+    setTimeout(() => map.invalidateSize(), 300);
 }
 
 function toggleMetrics() {
     const metricsContainer = document.getElementById('metrics-container');
-    metricsContainer.classList.toggle('hidden');
-    // Invalidate map size to make it redraw correctly
-    setTimeout(() => {
-        map.invalidateSize();
-    }, 300); // Should match the transition duration
+    const isVisible = metricsContainer.classList.toggle('hidden');
+    localStorage.setItem('metricsVisible', !isVisible);
+    setTimeout(() => map.invalidateSize(), 300);
+}
+
+function applyCachedSettings() {
+    const sidebarVisible = localStorage.getItem('sidebarVisible') !== 'false';
+    const metricsVisible = localStorage.getItem('metricsVisible') !== 'false';
+
+    document.getElementById('toggleSidebarSwitch').checked = sidebarVisible;
+    if (!sidebarVisible) {
+        document.getElementById('sidebar').classList.add('hidden');
+    }
+
+    document.getElementById('toggleMetricsSwitch').checked = metricsVisible;
+    if (!metricsVisible) {
+        document.getElementById('metrics-container').classList.add('hidden');
+    }
 }
 
 // Update filters and map (for Django form integration)
