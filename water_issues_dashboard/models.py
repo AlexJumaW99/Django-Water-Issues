@@ -30,6 +30,7 @@ class Incident(models.Model):
     INCIDENT_TYPES = [
         ('wildfire', 'Wildfire'),
         ('flood', 'Flood'),
+        ('govt inaction/sabotage', 'Govt Inaction/Sabotage'),
     ]
 
     STATUS_CHOICES = [
@@ -38,7 +39,7 @@ class Incident(models.Model):
     ]
 
     name = models.CharField(max_length=200)
-    incident_type = models.CharField(max_length=20, choices=INCIDENT_TYPES)
+    incident_type = models.CharField(max_length=50, choices=INCIDENT_TYPES)
     status = models.CharField(max_length=20, choices=STATUS_CHOICES)
     started_at = models.DateField(null=True, blank=True)
     description = models.TextField(blank=True)

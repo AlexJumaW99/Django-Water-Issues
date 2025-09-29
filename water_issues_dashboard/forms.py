@@ -1,5 +1,5 @@
 from django import forms
-from .models import UploadedFile
+from .models import UploadedFile, Incident
 
 class IncidentUploadForm(forms.ModelForm):
     class Meta:
@@ -23,3 +23,12 @@ class IncidentUploadForm(forms.ModelForm):
                 raise forms.ValidationError('File size must be under 10MB.')
         
         return file
+
+class IncidentReportForm(forms.ModelForm):
+    class Meta:
+        model = Incident
+        fields = ['name', 'incident_type', 'status', 'started_at', 'description', 'geometry']
+        widgets = {
+            'started_at': forms.DateInput(attrs={'type': 'date'}),
+            'geometry': forms.HiddenInput(),
+        }

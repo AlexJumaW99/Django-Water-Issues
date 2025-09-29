@@ -1,0 +1,104 @@
+{% extends 'water_issues_dashboard/base.html' %}
+{% load static %}
+
+{% block title %}Report an Incident{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <h2>Report a New Incident</h2>
+    <form method="post" id="incidentForm">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_name">Incident Name</label>
+            {{ form.name }}
+        </div>
+        <div class="form-group">
+            <label for="id_incident_type">Type</label>
+            {{ form.incident_type }}
+        </div>
+        <div class="form-group">
+            <label for="id_status">Status</label>
+            {{ form.status }}
+        </div>
+        <div class="form-group">
+            <label for="id_started_at">Started At</label>
+            {{ form.started_at }}
+        </div>
+        <div class="form-group">
+            <label for="id_description">Description</label>
+            {{ form.description }}
+        </div>
+        
+        {{ form.geometry }}
+
+        <h3>Draw Affected Area</h3>
+        <p>Click on the map in four different locations to draw a polygon. Use the reset button to start over.</p>
+        <div id="map" style="height: 500px; width: 100%;"></div>
+        <button type="button" id="resetButton" class="btn btn-secondary mt-2">Reset</button>
+
+        <hr>
+        <button type="submit" class="btn btn-primary">Submit Report</button>
+        <a href="{% url 'water_issues_dashboard:home' %}" class="btn btn-outline-secondary">Cancel</a>
+    </form>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const map = L.map('map').setView([55.0, -97.0], 5);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+        }).addTo(map);
+
+        let points = [];
+        let markers = [];
+        let polygon = null;
+        const geometryInput = document.getElementById('id_geometry');
+
+        map.on('click', function(e) {
+            if (points.length < 4) {
+                const latlng = e.latlng;
+                points.push(latlng);
+
+                const marker = L.marker(latlng).addTo(map);
+                markers.push(marker);
+
+                if (points.length === 4) {
+                    polygon = L.polygon(points, { 
+                        color: 'blue',
+                        fillColor: '#3388ff',
+                        fillOpacity: 0.5 
+                    }).addTo(map);
+                    
+                    // Create a GeoJSON Polygon feature
+                    const coordinates = points.map(p => [p.lng, p.lat]);
+                    coordinates.push(coordinates[0]); // Close the polygon
+                    
+                    const geojson = {
+                        type: "Polygon",
+                        coordinates: [coordinates]
+                    };
+                    geometryInput.value = JSON.stringify(geojson);
+                }
+            } else {
+                alert("You can only select 4 points. Please press 'Reset' to start over.");
+            }
+        });
+
+        document.getElementById('resetButton').addEventListener('click', function() {
+            if (polygon) {
+                map.removeLayer(polygon);
+                polygon = null;
+            }
+            markers.forEach(function(marker) {
+                map.removeLayer(marker);
+            });
+            markers = [];
+            points = [];
+            geometryInput.value = '';
+        });
+    });
+</script>
+{% endblock %}

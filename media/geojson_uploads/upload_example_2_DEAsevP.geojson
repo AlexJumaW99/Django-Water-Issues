@@ -1,0 +1,27 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "flood",
+        "name": "Red River Flood Warning",
+        "status": "confirmed",
+        "started_at": "2025-09-27T18:30:00.000000+00:00",
+        "description": "An active flood warning is in effect for areas along the Red River due to recent heavy rainfall and rapid snowmelt."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-97.13, 50.10],
+            [-97.10, 50.15],
+            [-97.08, 50.14],
+            [-97.11, 50.09],
+            [-97.13, 50.10]
+          ]
+        ]
+      }
+    }
+  ]
+}

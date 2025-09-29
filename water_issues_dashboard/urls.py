@@ -8,4 +8,5 @@ urlpatterns = [
     path('api/geojson/', views.api_geojson_data, name='api_geojson'),
     path('api/search/', views.api_search, name='api_search'),
     path('upload/', views.upload_incidents, name='upload'),
+    path('report/', views.report_incident_view, name='report_incident'),
 ]

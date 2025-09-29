@@ -4,7 +4,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from django.core.paginator import Paginator
 from .models import Municipality, Park, Incident, UploadedFile
-from .forms import IncidentUploadForm
+from .forms import IncidentUploadForm, IncidentReportForm
 import json
 import os
 from datetime import datetime
@@ -275,3 +275,24 @@ def api_search(request):
         })
 
     return JsonResponse({'results': results})
+
+
+@login_required
+def report_incident_view(request):
+    if request.method == 'POST':
+        form = IncidentReportForm(request.POST)
+        if form.is_valid():
+            incident = form.save(commit=False)
+            incident.uploaded_by = request.user
+            
+            # The geometry is received as a string, so we need to parse it
+            geometry_str = request.POST.get('geometry')
+            if geometry_str:
+                incident.geometry = json.loads(geometry_str)
+
+            incident.save()
+            messages.success(request, 'Incident reported successfully!')
+            return redirect('water_issues_dashboard:home')
+    else:
+        form = IncidentReportForm()
+    return render(request, 'water_issues_dashboard/report_incident.html', {'form': form})

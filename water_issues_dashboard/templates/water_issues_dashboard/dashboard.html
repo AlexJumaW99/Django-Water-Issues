@@ -178,7 +178,12 @@
 
         <div id="reportTab" class="tab-content">
             <h2>🚨 Report Incidents</h2>
-            <p>Upload incident data to be added to the map. New incidents will be appended to existing data.</p>
+
+            <a href="{% url 'water_issues_dashboard:report_incident' %}" class="btn btn-primary mb-3">
+                <i class="fas fa-edit"></i> Report Incident via Form
+            </a>
+
+            <p>Or, upload incident data to be added to the map. New incidents will be appended to existing data.</p>
 
             <div class="upload-area" onclick="document.getElementById('fileInput').click()" 
                  ondragover="handleDragOver(event)" 
