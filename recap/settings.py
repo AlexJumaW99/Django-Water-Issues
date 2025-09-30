@@ -40,9 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog.apps.BlogConfig',
     'water_issues_dashboard.apps.WaterIssuesDashboardConfig',
-    'users.apps.UsersConfig'
+    'users.apps.UsersConfig',
+    'crispy_forms'
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 # Add media files configuration
 MEDIA_URL = '/media/'

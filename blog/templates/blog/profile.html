@@ -1,14 +1,51 @@
 {% extends 'blog/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <div class="content-section">
   <div class="media">
-    <img class="rounded-circle account-img" src="{{ user.pic_url }}">
+    <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
     <div class="media-body">
-      <h2 class="account-heading">{{ user.name }}</h2>
+      <h2 class="account-heading">{{ user.username }}</h2>
       <p class="text-secondary">{{ user.email }}</p>
     </div>
   </div>
-  <!-- FORM HERE -->
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <fieldset class="form-group">
+        <legend class="border-bottom mb-4">Profile Info</legend>
+        {{ u_form|crispy }}
+        {{ p_form|crispy }}
+    </fieldset>
+    <div class="form-group">
+        <button class="btn btn-outline-info" type="submit">Update</button>
+    </div>
+  </form>
 </div>
+
+<div class="content-section">
+  <form method="POST">
+      {% csrf_token %}
+      <fieldset class="form-group">
+          <legend class="border-bottom mb-4">New Post</legend>
+          {{ post_form|crispy }}
+      </fieldset>
+      <div class="form-group">
+          <button class="btn btn-outline-info" type="submit">Post</button>
+      </div>
+  </form>
+</div>
+
+{% for post in posts %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <a class="mr-2" href="{% url 'blog-profile' post.author.id %}">{{ post.author }}</a>
+          <small class="text-muted">{{ post.date_posted|date:"F d, Y, fA" }}</small>
+        </div>
+        <h2><a class="article-title" href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h2>
+        <p class="article-content">{{ post.content }}</p>
+      </div>
+    </article>
+{% endfor %}
 {% endblock content %}

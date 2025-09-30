@@ -3,9 +3,11 @@ from django.contrib.auth.decorators import login_required
 from .models import Post, Like
 from django.contrib.auth.models import User
 from .forms import PostForm, CommentForm, IncidentPostForm
+from users.forms import UserUpdateForm, ProfileUpdateForm
 from django.http import JsonResponse
 import json
 from water_issues_dashboard.models import Incident
+from django.contrib import messages
 
 @login_required
 def home(request):
@@ -69,11 +71,39 @@ def post(request, post_id):
 def profile(request, user_id):
     user = get_object_or_404(User, id=user_id)
     posts = Post.objects.filter(author=user).order_by('-date_posted')
+    
+    if request.method == 'POST' and request.user == user:
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+        post_form = PostForm(request.POST)
+        
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            messages.success(request, f'Your account has been updated!')
+            return redirect('blog-profile', user_id=user.id)
+
+        if post_form.is_valid():
+            post = post_form.save(commit=False)
+            post.author = request.user
+            post.save()
+            messages.success(request, f'Your post has been created!')
+            return redirect('blog-profile', user_id=user.id)
+
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+        post_form = PostForm()
+
     context = {
         'user': user,
         'posts': posts,
+        'u_form': u_form,
+        'p_form': p_form,
+        'post_form': post_form
     }
     return render(request, 'blog/profile.html', context)
+
 
 def landing(request):
     return render(request, 'blog/landing.html', {'title': 'Welcome'})
