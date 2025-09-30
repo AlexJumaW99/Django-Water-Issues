@@ -33,6 +33,8 @@ class Incident(models.Model):
         ('emergency response failure', 'Emergency Response Failure'),
         ('treaty/land rights infringement', 'Treaty/Land Rights Infringement'),
         ('govt inaction/sabotage', 'Govt Inaction/Sabotage'),
+        ('unfulfilled treaty obligations', 'Unfulfilled Treaty Obligations'),
+        ('forced child apprehension', 'Forced Child Apprehension'),
     ]
 
     STATUS_CHOICES = [

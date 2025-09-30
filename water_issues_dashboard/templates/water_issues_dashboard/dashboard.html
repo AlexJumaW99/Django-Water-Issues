@@ -114,6 +114,14 @@
                     <input type="checkbox" id="showTreatyLandRightsInfringement" name="showTreatyLandRightsInfringement" {% if filters.incidents.treaty_land_rights_infringement %}checked{% endif %}>
                     <label for="showTreatyLandRightsInfringement">Show Treaty/Land Rights Infringements</label>
                 </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showUnfulfilledTreatyObligations" name="showUnfulfilledTreatyObligations" {% if filters.incidents.unfulfilled_treaty_obligations %}checked{% endif %}>
+                    <label for="showUnfulfilledTreatyObligations">Show Unfulfilled Treaty Obligations</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showForcedChildApprehension" name="showForcedChildApprehension" {% if filters.incidents.forced_child_apprehension %}checked{% endif %}>
+                    <label for="showForcedChildApprehension">Show Forced Child Apprehensions</label>
+                </div>
                 <div class="form-group">
                     <label>Incident Status</label>
                     <div class="checkbox-group">
@@ -171,6 +179,16 @@
                     <div class="metric-icon">⚖️</div>
                     <div class="metric-value" id="treatyLandRightsInfringementCount">{{ treaty_land_rights_infringement_count }}</div>
                     <div class="metric-label" style="font-size: 10px;">Treaty/Land Rights Infringement</div>
+                </div>
+                <div class="metric-card unfulfilled-treaty">
+                    <div class="metric-icon">📜</div>
+                    <div class="metric-value" id="unfulfilledTreatyObligationsCount">{{ unfulfilled_treaty_obligations_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Unfulfilled Treaty Obligations</div>
+                </div>
+                <div class="metric-card forced-apprehension">
+                    <div class="metric-icon">👶</div>
+                    <div class="metric-value" id="forcedChildApprehensionCount">{{ forced_child_apprehension_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Forced Child Apprehension</div>
                 </div>
             </div>
 

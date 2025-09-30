@@ -9,6 +9,8 @@ let currentLayers = {
     floods: null,
     emergency_response_failure: null,
     treaty_land_rights_infringement: null,
+    unfulfilled_treaty_obligations: null,
+    forced_child_apprehension: null,
     parks: null
 };
 
@@ -32,6 +34,20 @@ const emergencyResponseFailureIcon = L.icon({
 
 const treatyLandRightsInfringementIcon = L.icon({
     iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="purple"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>'),
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 12.5],
+    popupAnchor: [0, -13]
+});
+
+const unfulfilledTreatyObligationsIcon = L.icon({
+    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" fill="brown"><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"/></svg>'),
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 12.5],
+    popupAnchor: [0, -13]
+});
+
+const forcedChildApprehensionIcon = L.icon({
+    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="black"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM176.4 176.4c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L256 188.1l45.6-45.6c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L289.9 222l45.6 45.6c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L256 255.9l-45.6 45.6c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L222.1 222l-45.6-45.6z"/></svg>'),
     iconSize: [25, 25],
     iconAnchor: [12.5, 12.5],
     popupAnchor: [0, -13]
@@ -219,6 +235,8 @@ function setupEventListeners() {
     document.getElementById('showFloods').addEventListener('change', updateFiltersAndMap);
     document.getElementById('showEmergencyResponseFailure').addEventListener('change', updateFiltersAndMap);
     document.getElementById('showTreatyLandRightsInfringement').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showUnfulfilledTreatyObligations').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showForcedChildApprehension').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusConfirmed').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusSuspected').addEventListener('change', updateFiltersAndMap);
     
@@ -290,6 +308,8 @@ function updateFiltersAndMap() {
     params.set('showFloods', document.getElementById('showFloods').checked);
     params.set('showEmergencyResponseFailure', document.getElementById('showEmergencyResponseFailure').checked);
     params.set('showTreatyLandRightsInfringement', document.getElementById('showTreatyLandRightsInfringement').checked);
+    params.set('showUnfulfilledTreatyObligations', document.getElementById('showUnfulfilledTreatyObligations').checked);
+    params.set('showForcedChildApprehension', document.getElementById('showForcedChildApprehension').checked);
     params.set('statusConfirmed', document.getElementById('statusConfirmed').checked);
     params.set('statusSuspected', document.getElementById('statusSuspected').checked);
     params.set('showParks', document.getElementById('showParks').checked);
@@ -327,6 +347,8 @@ function updateMap() {
             floods: document.getElementById('showFloods').checked,
             emergency_response_failure: document.getElementById('showEmergencyResponseFailure').checked,
             treaty_land_rights_infringement: document.getElementById('showTreatyLandRightsInfringement').checked,
+            unfulfilled_treaty_obligations: document.getElementById('showUnfulfilledTreatyObligations').checked,
+            forced_child_apprehension: document.getElementById('showForcedChildApprehension').checked,
             confirmed: document.getElementById('statusConfirmed').checked,
             suspected: document.getElementById('statusSuspected').checked
         },
@@ -455,6 +477,8 @@ function addIncidents(filters) {
     const floodGroup = L.featureGroup();
     const emergencyResponseFailureGroup = L.featureGroup();
     const treatyLandRightsInfringementGroup = L.featureGroup();
+    const unfulfilledTreatyObligationsGroup = L.featureGroup();
+    const forcedChildApprehensionGroup = L.featureGroup();
 
 
     incidentsData.features.forEach(feature => {
@@ -624,6 +648,68 @@ function addIncidents(filters) {
                 .addTo(treatyLandRightsInfringementGroup);
         }
 
+        if (type === 'unfulfilled treaty obligations' && filters.unfulfilled_treaty_obligations) {
+            // Add unfulfilled treaty obligations polygon
+            const fillColor = status === 'confirmed' ? '#a52a2a' : '#cd5c5c';
+            if (feature.geometry.type !== 'Point') {
+                L.geoJSON(feature, {
+                    style: {
+                        color: fillColor,
+                        weight: 2,
+                        fillColor: fillColor,
+                        fillOpacity: 0.2
+                    }
+                }).addTo(unfulfilledTreatyObligationsGroup);
+            }
+            L.marker([centerLat, centerLng], { icon: unfulfilledTreatyObligationsIcon })
+                .bindPopup(`
+                    <div style='font-family: Arial, sans-serif;'>
+                        <strong>${props.name}</strong><br>
+                        Type: Unfulfilled Treaty Obligations<br>
+                        Status: ${status}<br>
+                        Started: ${props.started_at || 'Unknown'}<br>
+                        ${props.description || ''}
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
+                            🔍 Take a Closer Look
+                        </a>
+                        <br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
+                    </div>
+                `)
+                .addTo(unfulfilledTreatyObligationsGroup);
+        }
+
+        if (type === 'forced child apprehension' && filters.forced_child_apprehension) {
+            // Add forced child apprehension polygon
+            const fillColor = status === 'confirmed' ? '#000000' : '#808080';
+            if (feature.geometry.type !== 'Point') {
+                L.geoJSON(feature, {
+                    style: {
+                        color: fillColor,
+                        weight: 2,
+                        fillColor: fillColor,
+                        fillOpacity: 0.2
+                    }
+                }).addTo(forcedChildApprehensionGroup);
+            }
+            L.marker([centerLat, centerLng], { icon: forcedChildApprehensionIcon })
+                .bindPopup(`
+                    <div style='font-family: Arial, sans-serif;'>
+                        <strong>${props.name}</strong><br>
+                        Type: Forced Child Apprehension<br>
+                        Status: ${status}<br>
+                        Started: ${props.started_at || 'Unknown'}<br>
+                        ${props.description || ''}
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
+                            🔍 Take a Closer Look
+                        </a>
+                        <br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
+                    </div>
+                `)
+                .addTo(forcedChildApprehensionGroup);
+        }
+
 
     });
 
@@ -640,6 +726,12 @@ function addIncidents(filters) {
     if (treatyLandRightsInfringementGroup.getLayers().length > 0) {
         currentLayers.treaty_land_rights_infringement = treatyLandRightsInfringementGroup.addTo(map);
     }
+    if (unfulfilledTreatyObligationsGroup.getLayers().length > 0) {
+        currentLayers.unfulfilled_treaty_obligations = unfulfilledTreatyObligationsGroup.addTo(map);
+    }
+    if (forcedChildApprehensionGroup.getLayers().length > 0) {
+        currentLayers.forced_child_apprehension = forcedChildApprehensionGroup.addTo(map);
+    }
 
 }
 
@@ -650,6 +742,8 @@ function updateMetrics() {
     const showFloods = document.getElementById('showFloods').checked;
     const showEmergencyResponseFailure = document.getElementById('showEmergencyResponseFailure').checked;
     const showTreatyLandRightsInfringement = document.getElementById('showTreatyLandRightsInfringement').checked;
+    const showUnfulfilledTreatyObligations = document.getElementById('showUnfulfilledTreatyObligations').checked;
+    const showForcedChildApprehension = document.getElementById('showForcedChildApprehension').checked;
 
     const statusConfirmed = document.getElementById('statusConfirmed').checked;
     const statusSuspected = document.getElementById('statusSuspected').checked;
@@ -690,6 +784,8 @@ function updateMetrics() {
     let floodCount = 0;
     let emergencyResponseFailureCount = 0;
     let treatyLandRightsInfringementCount = 0;
+    let unfulfilledTreatyObligationsCount = 0;
+    let forcedChildApprehensionCount = 0;
 
 
     if (incidentsData) {
@@ -704,6 +800,8 @@ function updateMetrics() {
                 if (type === 'flood' && showFloods) floodCount++;
                 if (type === 'emergency response failure' && showEmergencyResponseFailure) emergencyResponseFailureCount++;
                 if (type === 'treaty/land rights infringement' && showTreatyLandRightsInfringement) treatyLandRightsInfringementCount++;
+                if (type === 'unfulfilled treaty obligations' && showUnfulfilledTreatyObligations) unfulfilledTreatyObligationsCount++;
+                if (type === 'forced child apprehension' && showForcedChildApprehension) forcedChildApprehensionCount++;
 
             }
         });
@@ -722,6 +820,8 @@ function updateMetrics() {
     document.getElementById('floodCount').textContent = floodCount;
     document.getElementById('emergencyResponseFailureCount').textContent = emergencyResponseFailureCount;
     document.getElementById('treatyLandRightsInfringementCount').textContent = treatyLandRightsInfringementCount;
+    document.getElementById('unfulfilledTreatyObligationsCount').textContent = unfulfilledTreatyObligationsCount;
+    document.getElementById('forcedChildApprehensionCount').textContent = forcedChildApprehensionCount;
 
     
     // Update total incidents
@@ -890,7 +990,14 @@ function updateDataSummary() {
     }
 
     // Count by type and status
-    const typeCounts = { wildfire: 0, flood: 0, 'emergency response failure': 0, 'treaty/land rights infringement': 0 };
+    const typeCounts = { 
+        wildfire: 0, 
+        flood: 0, 
+        'emergency response failure': 0, 
+        'treaty/land rights infringement': 0,
+        'unfulfilled treaty obligations': 0,
+        'forced child apprehension': 0
+    };
     const statusCounts = { confirmed: 0, suspected: 0 };
     
     incidentsData.features.forEach(feature => {
@@ -917,6 +1024,8 @@ function updateDataSummary() {
                     <li>💧 Flood: ${typeCounts.flood || 0}</li>
                     <li>🛡️ Emergency Response Failure: ${typeCounts['emergency response failure'] || 0}</li>
                     <li>⚖️ Treaty/Land Rights Infringement: ${typeCounts['treaty/land rights infringement'] || 0}</li>
+                    <li>📜 Unfulfilled Treaty Obligations: ${typeCounts['unfulfilled treaty obligations'] || 0}</li>
+                    <li>👶 Forced Child Apprehension: ${typeCounts['forced child apprehension'] || 0}</li>
                 </ul>
             </div>
             <div>

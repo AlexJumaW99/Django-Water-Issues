@@ -27,6 +27,8 @@ def dashboard_home(request):
         'floods': request.GET.get('showFloods', 'true') == 'true',
         'emergency_response_failure': request.GET.get('showEmergencyResponseFailure', 'true') == 'true',
         'treaty_land_rights_infringement': request.GET.get('showTreatyLandRightsInfringement', 'true') == 'true',
+        'unfulfilled_treaty_obligations': request.GET.get('showUnfulfilledTreatyObligations', 'true') == 'true',
+        'forced_child_apprehension': request.GET.get('showForcedChildApprehension', 'true') == 'true',
         'confirmed': request.GET.get('statusConfirmed', 'true') == 'true',
         'suspected': request.GET.get('statusSuspected', 'true') == 'true',
     }
@@ -58,6 +60,10 @@ def dashboard_home(request):
         incident_types.append('emergency response failure')
     if incident_filters['treaty_land_rights_infringement']:
         incident_types.append('treaty/land rights infringement')
+    if incident_filters['unfulfilled_treaty_obligations']:
+        incident_types.append('unfulfilled treaty obligations')
+    if incident_filters['forced_child_apprehension']:
+        incident_types.append('forced child apprehension')
 
 
     incident_statuses = []
@@ -84,6 +90,8 @@ def dashboard_home(request):
         'flood_count': incidents.filter(incident_type='flood').count(),
         'emergency_response_failure_count': incidents.filter(incident_type='emergency response failure').count(),
         'treaty_land_rights_infringement_count': incidents.filter(incident_type='treaty/land rights infringement').count(),
+        'unfulfilled_treaty_obligations_count': incidents.filter(incident_type='unfulfilled treaty obligations').count(),
+        'forced_child_apprehension_count': incidents.filter(incident_type='forced child apprehension').count(),
         'park_count': parks.count(),
         'filters': {
             'status': status_filters,
