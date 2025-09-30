@@ -7,6 +7,8 @@ let currentLayers = {
     municipalities: null,
     wildfires: null,
     floods: null,
+    emergency_response_failure: null,
+    treaty_land_rights_infringement: null,
     parks: null
 };
 
@@ -20,6 +22,21 @@ const userIcon = L.icon({
     iconAnchor: [12.5, 12.5],
     popupAnchor: [0, -13]
 });
+
+const emergencyResponseFailureIcon = L.icon({
+    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="red"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>'),
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 12.5],
+    popupAnchor: [0, -13]
+});
+
+const treatyLandRightsInfringementIcon = L.icon({
+    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="purple"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>'),
+    iconSize: [25, 25],
+    iconAnchor: [12.5, 12.5],
+    popupAnchor: [0, -13]
+});
+
 
 // Helper function to make CSRF-safe AJAX requests
 function getCookie(name) {
@@ -200,6 +217,8 @@ function setupEventListeners() {
     // Incident filters
     document.getElementById('showWildfires').addEventListener('change', updateFiltersAndMap);
     document.getElementById('showFloods').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showEmergencyResponseFailure').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showTreatyLandRightsInfringement').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusConfirmed').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusSuspected').addEventListener('change', updateFiltersAndMap);
     
@@ -269,6 +288,8 @@ function updateFiltersAndMap() {
     params.set('statusRM', document.getElementById('statusRM').checked);
     params.set('showWildfires', document.getElementById('showWildfires').checked);
     params.set('showFloods', document.getElementById('showFloods').checked);
+    params.set('showEmergencyResponseFailure', document.getElementById('showEmergencyResponseFailure').checked);
+    params.set('showTreatyLandRightsInfringement', document.getElementById('showTreatyLandRightsInfringement').checked);
     params.set('statusConfirmed', document.getElementById('statusConfirmed').checked);
     params.set('statusSuspected', document.getElementById('statusSuspected').checked);
     params.set('showParks', document.getElementById('showParks').checked);
@@ -304,6 +325,8 @@ function updateMap() {
         incidents: {
             wildfires: document.getElementById('showWildfires').checked,
             floods: document.getElementById('showFloods').checked,
+            emergency_response_failure: document.getElementById('showEmergencyResponseFailure').checked,
+            treaty_land_rights_infringement: document.getElementById('showTreatyLandRightsInfringement').checked,
             confirmed: document.getElementById('statusConfirmed').checked,
             suspected: document.getElementById('statusSuspected').checked
         },
@@ -430,6 +453,9 @@ function addMunicipalities(filters) {
 function addIncidents(filters) {
     const wildfireGroup = L.featureGroup();
     const floodGroup = L.featureGroup();
+    const emergencyResponseFailureGroup = L.featureGroup();
+    const treatyLandRightsInfringementGroup = L.featureGroup();
+
 
     incidentsData.features.forEach(feature => {
         const props = feature.properties;
@@ -535,6 +561,70 @@ function addIncidents(filters) {
                 `)
                 .addTo(floodGroup);
         }
+
+        if (type === 'emergency response failure' && filters.emergency_response_failure) {
+            // Add emergency response failure polygon
+            const fillColor = status === 'confirmed' ? '#d73027' : '#fc8d59';
+            if (feature.geometry.type !== 'Point') {
+                L.geoJSON(feature, {
+                    style: {
+                        color: fillColor,
+                        weight: 2,
+                        fillColor: fillColor,
+                        fillOpacity: 0.2
+                    }
+                }).addTo(emergencyResponseFailureGroup);
+            }
+            L.marker([centerLat, centerLng], { icon: emergencyResponseFailureIcon })
+                .bindPopup(`
+                    <div style='font-family: Arial, sans-serif;'>
+                        <strong>${props.name}</strong><br>
+                        Type: Emergency Response Failure<br>
+                        Status: ${status}<br>
+                        Started: ${props.started_at || 'Unknown'}<br>
+                        ${props.description || ''}
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
+                            🔍 Take a Closer Look
+                        </a>
+                        <br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
+                    </div>
+                `)
+                .addTo(emergencyResponseFailureGroup);
+        }
+
+        if (type === 'treaty/land rights infringement' && filters.treaty_land_rights_infringement) {
+            // Add treaty/land rights infringement polygon
+            const fillColor = status === 'confirmed' ? '#800080' : '#da70d6';
+            if (feature.geometry.type !== 'Point') {
+                L.geoJSON(feature, {
+                    style: {
+                        color: fillColor,
+                        weight: 2,
+                        fillColor: fillColor,
+                        fillOpacity: 0.2
+                    }
+                }).addTo(treatyLandRightsInfringementGroup);
+            }
+            L.marker([centerLat, centerLng], { icon: treatyLandRightsInfringementIcon })
+                .bindPopup(`
+                    <div style='font-family: Arial, sans-serif;'>
+                        <strong>${props.name}</strong><br>
+                        Type: Treaty/Land Rights Infringement<br>
+                        Status: ${status}<br>
+                        Started: ${props.started_at || 'Unknown'}<br>
+                        ${props.description || ''}
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
+                            🔍 Take a Closer Look
+                        </a>
+                        <br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
+                    </div>
+                `)
+                .addTo(treatyLandRightsInfringementGroup);
+        }
+
+
     });
 
     if (wildfireGroup.getLayers().length > 0) {
@@ -544,6 +634,13 @@ function addIncidents(filters) {
     if (floodGroup.getLayers().length > 0) {
         currentLayers.floods = floodGroup.addTo(map);
     }
+    if (emergencyResponseFailureGroup.getLayers().length > 0) {
+        currentLayers.emergency_response_failure = emergencyResponseFailureGroup.addTo(map);
+    }
+    if (treatyLandRightsInfringementGroup.getLayers().length > 0) {
+        currentLayers.treaty_land_rights_infringement = treatyLandRightsInfringementGroup.addTo(map);
+    }
+
 }
 
 // Update metrics display
@@ -551,6 +648,9 @@ function updateMetrics() {
     // Get filter states
     const showWildfires = document.getElementById('showWildfires').checked;
     const showFloods = document.getElementById('showFloods').checked;
+    const showEmergencyResponseFailure = document.getElementById('showEmergencyResponseFailure').checked;
+    const showTreatyLandRightsInfringement = document.getElementById('showTreatyLandRightsInfringement').checked;
+
     const statusConfirmed = document.getElementById('statusConfirmed').checked;
     const statusSuspected = document.getElementById('statusSuspected').checked;
     const showParks = document.getElementById('showParks').checked;
@@ -588,6 +688,9 @@ function updateMetrics() {
     // Calculate incidents count
     let fireCount = 0;
     let floodCount = 0;
+    let emergencyResponseFailureCount = 0;
+    let treatyLandRightsInfringementCount = 0;
+
 
     if (incidentsData) {
         incidentsData.features.forEach(feature => {
@@ -599,6 +702,9 @@ function updateMetrics() {
                 (status === 'suspected' && statusSuspected)) {
                 if (type === 'wildfire' && showWildfires) fireCount++;
                 if (type === 'flood' && showFloods) floodCount++;
+                if (type === 'emergency response failure' && showEmergencyResponseFailure) emergencyResponseFailureCount++;
+                if (type === 'treaty/land rights infringement' && showTreatyLandRightsInfringement) treatyLandRightsInfringementCount++;
+
             }
         });
     }
@@ -614,7 +720,9 @@ function updateMetrics() {
     document.getElementById('popCount').textContent = totalPop.toLocaleString();
     document.getElementById('fireCount').textContent = fireCount;
     document.getElementById('floodCount').textContent = floodCount;
-    document.getElementById('parkCount').textContent = parkCount;
+    document.getElementById('emergencyResponseFailureCount').textContent = emergencyResponseFailureCount;
+    document.getElementById('treatyLandRightsInfringementCount').textContent = treatyLandRightsInfringementCount;
+
     
     // Update total incidents
     document.getElementById('totalIncidents').textContent = incidentsData ? incidentsData.features.length : 0;
@@ -782,7 +890,7 @@ function updateDataSummary() {
     }
 
     // Count by type and status
-    const typeCounts = { wildfire: 0, flood: 0 };
+    const typeCounts = { wildfire: 0, flood: 0, 'emergency response failure': 0, 'treaty/land rights infringement': 0 };
     const statusCounts = { confirmed: 0, suspected: 0 };
     
     incidentsData.features.forEach(feature => {
@@ -807,6 +915,8 @@ function updateDataSummary() {
                 <ul style="list-style: none; padding: 0;">
                     <li>🔥 Wildfire: ${typeCounts.wildfire || 0}</li>
                     <li>💧 Flood: ${typeCounts.flood || 0}</li>
+                    <li>🛡️ Emergency Response Failure: ${typeCounts['emergency response failure'] || 0}</li>
+                    <li>⚖️ Treaty/Land Rights Infringement: ${typeCounts['treaty/land rights infringement'] || 0}</li>
                 </ul>
             </div>
             <div>
@@ -966,11 +1076,11 @@ function buildSearchIndex() {
         incidentsData.features.forEach(feature => {
             const p = feature.properties || {};
             const t = (p.type || '').toLowerCase();
-            const label = `${p.name} (${t === 'wildfire' ? 'Wildfire' : 'Flood'})`;
+            const label = `${p.name} (${t.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())})`;
             index.push({
                 label,
                 labelLower: label.toLowerCase(),
-                type: t === 'wildfire' ? 'Wildfire' : 'Flood',
+                type: t.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase()),
                 feature
             });
         });

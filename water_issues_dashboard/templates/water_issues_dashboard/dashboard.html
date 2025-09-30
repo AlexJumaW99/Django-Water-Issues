@@ -106,6 +106,14 @@
                     <input type="checkbox" id="showFloods" name="showFloods" {% if filters.incidents.floods %}checked{% endif %}>
                     <label for="showFloods">Show Floods</label>
                 </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showEmergencyResponseFailure" name="showEmergencyResponseFailure" {% if filters.incidents.emergency_response_failure %}checked{% endif %}>
+                    <label for="showEmergencyResponseFailure">Show Emergency Response Failures</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showTreatyLandRightsInfringement" name="showTreatyLandRightsInfringement" {% if filters.incidents.treaty_land_rights_infringement %}checked{% endif %}>
+                    <label for="showTreatyLandRightsInfringement">Show Treaty/Land Rights Infringements</label>
+                </div>
                 <div class="form-group">
                     <label>Incident Status</label>
                     <div class="checkbox-group">
@@ -154,10 +162,15 @@
                     <div class="metric-value" id="floodCount">{{ flood_count }}</div>
                     <div class="metric-label">Floods</div>
                 </div>
-                <div class="metric-card parks">
-                    <div class="metric-icon">🌲</div>
-                    <div class="metric-value" id="parkCount">{{ park_count }}</div>
-                    <div class="metric-label">Parks</div>
+                <div class="metric-card emergency-response">
+                    <div class="metric-icon">🛡️</div>
+                    <div class="metric-value" id="emergencyResponseFailureCount">{{ emergency_response_failure_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Emergency Response Failure</div>
+                </div>
+                <div class="metric-card treaty-infringement">
+                    <div class="metric-icon">⚖️</div>
+                    <div class="metric-value" id="treatyLandRightsInfringementCount">{{ treaty_land_rights_infringement_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Treaty/Land Rights Infringement</div>
                 </div>
             </div>
 

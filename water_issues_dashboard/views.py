@@ -25,6 +25,8 @@ def dashboard_home(request):
     incident_filters = {
         'wildfires': request.GET.get('showWildfires', 'true') == 'true',
         'floods': request.GET.get('showFloods', 'true') == 'true',
+        'emergency_response_failure': request.GET.get('showEmergencyResponseFailure', 'true') == 'true',
+        'treaty_land_rights_infringement': request.GET.get('showTreatyLandRightsInfringement', 'true') == 'true',
         'confirmed': request.GET.get('statusConfirmed', 'true') == 'true',
         'suspected': request.GET.get('statusSuspected', 'true') == 'true',
     }
@@ -52,6 +54,11 @@ def dashboard_home(request):
         incident_types.append('wildfire')
     if incident_filters['floods']:
         incident_types.append('flood')
+    if incident_filters['emergency_response_failure']:
+        incident_types.append('emergency response failure')
+    if incident_filters['treaty_land_rights_infringement']:
+        incident_types.append('treaty/land rights infringement')
+
 
     incident_statuses = []
     if incident_filters['confirmed']:
@@ -75,6 +82,8 @@ def dashboard_home(request):
         'total_population': sum(m.population_2021 for m in municipalities),
         'wildfire_count': incidents.filter(incident_type='wildfire').count(),
         'flood_count': incidents.filter(incident_type='flood').count(),
+        'emergency_response_failure_count': incidents.filter(incident_type='emergency response failure').count(),
+        'treaty_land_rights_infringement_count': incidents.filter(incident_type='treaty/land rights infringement').count(),
         'park_count': parks.count(),
         'filters': {
             'status': status_filters,
@@ -87,6 +96,7 @@ def dashboard_home(request):
 
     return render(request, 'water_issues_dashboard/dashboard.html', context)
 
+@login_required
 def api_geojson_data(request):
     """API endpoint to return GeoJSON data for the map"""
     data_type = request.GET.get('type', 'all')
@@ -239,6 +249,7 @@ def process_geojson_file(uploaded_file):
 
     return {'added': added, 'duplicates': duplicates}
 
+@login_required
 def api_search(request):
     """API endpoint for search functionality"""
     query = request.GET.get('q', '').lower().strip()

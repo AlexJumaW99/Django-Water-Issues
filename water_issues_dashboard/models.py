@@ -30,6 +30,8 @@ class Incident(models.Model):
     INCIDENT_TYPES = [
         ('wildfire', 'Wildfire'),
         ('flood', 'Flood'),
+        ('emergency response failure', 'Emergency Response Failure'),
+        ('treaty/land rights infringement', 'Treaty/Land Rights Infringement'),
         ('govt inaction/sabotage', 'Govt Inaction/Sabotage'),
     ]
 

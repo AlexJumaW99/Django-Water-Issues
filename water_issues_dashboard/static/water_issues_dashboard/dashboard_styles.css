@@ -51,3 +51,38 @@ body {
 .form-switch .form-check-label {
     color: white;
 }
+
+/* Styles for Metrics Container */
+.metrics-container {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+}
+
+.metric-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    text-align: center;
+    padding: 10px;
+    margin: 5px;
+    min-width: 120px; /* Minimum width for each card */
+    flex: 1; /* Allow cards to grow and fill the space */
+}
+
+.metric-icon {
+    font-size: 1.5em;
+}
+
+.metric-value {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.metric-label {
+    font-size: 0.8em;
+    color: #6c757d;
+}
