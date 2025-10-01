@@ -71,6 +71,7 @@ body {
     margin: 3px;
     min-width: 100px; /* Minimum width for each card */
     flex: 1; /* Allow cards to grow and fill the space */
+    border-left: 5px solid transparent; /* Default border */
 }
 
 .metric-icon {
@@ -85,4 +86,38 @@ body {
 .metric-label {
     font-size: 0.7em;
     color: #6c757d;
+}
+
+/* --- Added Styles for Metric Card Colors --- */
+
+.metric-card.municipalities {
+    border-left-color: #6c757d; /* Grey */
+}
+
+.metric-card.population {
+    border-left-color: #28a745; /* Green */
+}
+
+.metric-card.wildfires {
+    border-left-color: #dc3545; /* Red */
+}
+
+.metric-card.floods {
+    border-left-color: #007bff; /* Blue */
+}
+
+.metric-card.emergency-response {
+    border-left-color: #ffc107; /* Yellow */
+}
+
+.metric-card.treaty-infringement {
+    border-left-color: #6f42c1; /* Purple */
+}
+
+.metric-card.unfulfilled-treaty {
+    border-left-color: #fd7e14; /* Orange */
+}
+
+.metric-card.forced-apprehension {
+    border-left-color: #17a2b8; /* Teal */
 }
