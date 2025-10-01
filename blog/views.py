@@ -69,10 +69,10 @@ def post(request, post_id):
 
 @login_required
 def profile(request, user_id):
-    user = get_object_or_404(User, id=user_id)
-    posts = Post.objects.filter(author=user).order_by('-date_posted')
+    profile_user = get_object_or_404(User, id=user_id)
+    posts = Post.objects.filter(author=profile_user).order_by('-date_posted')
     
-    if request.method == 'POST' and request.user == user:
+    if request.method == 'POST' and request.user == profile_user:
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         post_form = PostForm(request.POST)
@@ -81,14 +81,14 @@ def profile(request, user_id):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('blog-profile', user_id=user.id)
+            return redirect('blog-profile', user_id=profile_user.id)
 
         if post_form.is_valid():
             post = post_form.save(commit=False)
             post.author = request.user
             post.save()
             messages.success(request, f'Your post has been created!')
-            return redirect('blog-profile', user_id=user.id)
+            return redirect('blog-profile', user_id=profile_user.id)
 
     else:
         u_form = UserUpdateForm(instance=request.user)
@@ -96,7 +96,7 @@ def profile(request, user_id):
         post_form = PostForm()
 
     context = {
-        'user': user,
+        'profile_user': profile_user,
         'posts': posts,
         'u_form': u_form,
         'p_form': p_form,

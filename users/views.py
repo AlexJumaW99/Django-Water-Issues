@@ -1,9 +1,10 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
 from django.contrib.auth.forms import AuthenticationForm
 from .forms import UserRegisterForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import User
 
 def register(request):
     if request.method == 'POST':
@@ -39,7 +40,12 @@ def logout_view(request):
     return redirect('landing')
 
 @login_required
-def profile(request):
+def profile(request, pk):
+    user = get_object_or_404(User, pk=pk)
+    if request.user != user:
+        messages.error(request, "You are not authorized to view that profile.")
+        return redirect('blog-home')
+
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST,
@@ -49,7 +55,7 @@ def profile(request):
             u_form.save()
             p_form.save()
             messages.success(request, f'Your account has been updated!')
-            return redirect('profile')
+            return redirect('profile', pk=user.pk)
 
     else:
         u_form = UserUpdateForm(instance=request.user)
