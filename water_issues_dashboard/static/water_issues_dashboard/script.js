@@ -535,7 +535,7 @@ function addIncidents(filters) {
                         Type: Wildfire<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
-                        ${props.description || ''}
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
@@ -575,7 +575,8 @@ function addIncidents(filters) {
                         Type: Flood<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
-                        ${props.description || ''}
+                        
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
@@ -606,7 +607,7 @@ function addIncidents(filters) {
                         Type: Emergency Response Failure<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
-                        ${props.description || ''}
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
@@ -637,7 +638,7 @@ function addIncidents(filters) {
                         Type: Treaty/Land Rights Infringement<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
-                        ${props.description || ''}
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
@@ -668,7 +669,7 @@ function addIncidents(filters) {
                         Type: Unfulfilled Treaty Obligations<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
-                        ${props.description || ''}
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
@@ -699,7 +700,7 @@ function addIncidents(filters) {
                         Type: Forced Child Apprehension<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
-                        ${props.description || ''}
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
                         </a>
