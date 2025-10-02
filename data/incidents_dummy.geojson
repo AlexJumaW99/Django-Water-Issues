@@ -18,10 +18,7 @@
             [-96.73628, 50.229178],
             [-96.758842, 50.13933],
             [-96.858196, 50.13024],
-            [-96.897342, 50.197927],
-            [-96.889494, 50.255862],
-            [-96.843629, 50.303666],
-            [-96.784899, 50.29958]
+            [-96.897342, 50.197927]
           ]
         ]
       }
@@ -43,11 +40,7 @@
             [-97.443657, 50.961921],
             [-97.497978, 50.929035],
             [-97.558834, 50.930534],
-            [-97.591407, 50.970998],
-            [-97.583982, 51.019261],
-            [-97.524334, 51.053483],
-            [-97.458772, 51.051915],
-            [-97.424369, 51.01878]
+            [-97.591407, 50.970998]
           ]
         ]
       }
@@ -69,13 +62,7 @@
             [-98.308862, 49.936473],
             [-98.378474, 49.88351],
             [-98.470533, 49.883851],
-            [-98.521119, 49.928878],
-            [-98.539635, 49.986558],
-            [-98.506606, 50.0437],
-            [-98.420476, 50.074548],
-            [-98.332067, 50.064637],
-            [-98.275298, 50.028948],
-            [-98.265723, 49.990275]
+            [-98.521119, 49.928878]
           ]
         ]
       }
@@ -97,10 +84,183 @@
             [-96.958266, 50.750996],
             [-97.023556, 50.714937],
             [-97.073762, 50.723066],
-            [-97.091302, 50.777949],
-            [-97.04933, 50.831266],
-            [-96.986431, 50.84407],
-            [-96.922894, 50.820206]
+            [-97.091302, 50.777949]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "wildfire",
+        "name": "Manitoba Community Left Stranded During 2025 Wildfires as Dam Prevents Ferry Evacuation",
+        "status": "suspected",
+        "started_at": "2025-08-14T11:15:00Z",
+        "description": "**Residents say government ignored urgent pleas to open floodgates as fires threatened isolated town**\nA Manitoba community faced catastrophic losses during summer 2025 wildfires after provincial authorities refused to open floodgates at an upstream Manitoba Hydro dam, preventing residents from using a critical ferry evacuation route.\nThe community found itself cut off from essential services as wildfires encroached on the area, blocking primary access roads. Residents were unable to evacuate, receive crucial supplies including food and medication, or allow firefighters to reach the blaze.\nAn alternative escape route existed via ferry across a river bordering the community. The waterway could have provided passage for evacuees, incoming supplies, and first responders needed to combat the spreading flames.\nHowever, water levels had dropped too low for the ferry to operate due to flow control at a Manitoba Hydro dam located upstream. Community members repeatedly urged government officials to open the dam's floodgates to raise water levels and make the ferry route viable.\nAccording to residents, their urgent appeals went unanswered by authorities. The failure to raise water levels left the community stranded throughout the emergency, resulting in significant property damage and economic losses.\nThe incident has raised questions about emergency response protocols and the coordination between Manitoba Hydro operations and disaster management authorities during critical situations.\nNeither Manitoba Hydro nor provincial emergency management officials have publicly commented on why the request to open the floodgates was denied during the wildfire emergency."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-97.922894, 50.820206],
+            [-97.958266, 50.750996],
+            [-97.023556, 50.714937],
+            [-98.073762, 50.723066],
+            [-98.091302, 50.777949]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "wildfire",
+        "name": "The Fire Line They Wouldn't Draw",
+        "status": "confirmed",
+        "started_at": "2025-10-01T00:00:00Z",
+        "description": "Officials Let It Burn: Ancestral Lands Sacrificed to Protect Commercial Timber\nAs the Red River fire raged, consuming thousands of hectares of boreal forest, the community of Pine Creek First Nation watched in horror. For days, they pleaded with provincial authorities to establish a fire line that would protect their ancestral trapping grounds and sacred sites. Leaked emails from the Ministry of Natural Resources now reveal a chilling truth: resources were deliberately diverted to protect commercial logging interests miles to the south. While water bombers and ground crews worked tirelessly to save timber assets, Pine Creek's heritage was left to burn. \"They drew a line on a map,\" one whistleblower wrote, \"and our history was on the wrong side of it. It wasn't a strategic decision; it was a value judgment.\""
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-95.92745, 49.00026],
+            [-95.92745, 49.01026],
+            [-95.91745, 49.01026],
+            [-95.91745, 49.00026],
+            [-95.92745, 49.00026]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "flood",
+        "name": "The Deliberate Drowning of the North Shore",
+        "status": "confirmed",
+        "started_at": "2025-10-01T00:00:00Z",
+        "description": "Dam Opened to Save Southern Towns, Flooding Reserve Without Warning\nWhen the Fairford River Dam's floodgates were opened to relieve pressure on downstream agricultural towns, the resulting surge of water inundated the North Shore Anishinaabe Nation. With no official warning, families woke up to water pouring into their homes, forcing a chaotic midnight evacuation that left everything behind. Internal government memos show that the decision was made 24 hours in advance, but the First Nation was never notified. The plan, codenamed \"Operation Relief,\" was designed to sacrifice the reserve to prevent politically damaging flooding elsewhere. Now, with their community underwater and their homes destroyed, residents are left with the devastating knowledge that their destruction was not an accident, but a calculated choice."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-98.72795, 51.58832],
+            [-98.72795, 51.59832],
+            [-98.71795, 51.59832],
+            [-98.71795, 51.58832],
+            [-98.72795, 51.58832]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "emergency response failure",
+        "name": "Ice Road to Nowhere",
+        "status": "confirmed",
+        "started_at": "2025-10-01T00:00:00Z",
+        "description": "A Community's Lifeline Melts as Promised Supplies Never Arrive\nFor the isolated Oji-Cree community of Wasagamack, the winter ice road is a lifeline, bringing in essential food, fuel, and medical supplies. This year, after an unusually warm winter, the road became unstable weeks ahead of schedule. Despite urgent requests for an emergency airlift of supplies, provincial officials insisted the road was still passable based on outdated reports. For 12 critical days, as food supplies dwindled and medical patients missed appointments, no planes came. A leaked audio recording of a government logistics meeting reveals the reason: a manager decided to \"wait and see\" to avoid the high cost of a flight charter. By the time they acted, the community was in crisis, a direct result of a calculated delay to save money."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-94.9458329, 53.908333],
+            [-94.9458329, 53.918333],
+            [-94.9358329, 53.918333],
+            [-94.9358329, 53.908333],
+            [-94.9458329, 53.908333]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "treaty/land rights infringement",
+        "name": "The 'Park' That Erased a People",
+        "status": "confirmed",
+        "started_at": "2025-10-01T00:00:00Z",
+        "description": "Province Sells Ancestral Hunting Grounds to Mining Firm Under Guise of 'Eco-Tourism'\nUnder the banner of creating a new protected provincial park, the Manitoba government quietly rezoned 500 square kilometers of Treaty 5 territory—land actively used by the Sayisi Dene First Nation for hunting and ceremonial purposes. It has now come to light that this 'park' designation was a smokescreen. The government has granted exclusive mineral exploration rights within the park's boundaries to a foreign mining corporation. The Sayisi Dene were never consulted. Their treaty right to hunt and fish on this land has been effectively extinguished, replaced by 'No Trespassing' signs and the promise of a low-wage, seasonal eco-tourism industry controlled by outside interests."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-98.479, 58.712],
+            [-98.479, 58.722],
+            [-98.469, 58.722],
+            [-98.469, 58.712],
+            [-98.479, 58.712]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "govt inaction/sabotage",
+        "name": "The Contaminated Wells",
+        "status": "confirmed",
+        "started_at": "2025-10-01T00:00:00Z",
+        "description": "For 20 Years, They Drank Poisoned Water While Officials Hid the Reports\nSince the 1990s, residents of the Garden Hill First Nation have complained of illnesses, rashes, and chronic health problems. They suspected their well water, but federal health officials repeatedly assured them it was safe. A newly uncovered archive of documents proves the government knew otherwise. A 1998 report explicitly identified high levels of E. coli and carcinogenic industrial runoff in the community's water supply, recommending immediate action. The report was buried. For two decades, as children and elders fell ill, the government knowingly allowed the community to drink contaminated water, avoiding the cost of building a water treatment plant."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-94.648889, 53.883333],
+            [-94.648889, 53.893333],
+            [-94.638889, 53.893333],
+            [-94.638889, 53.883333],
+            [-94.648889, 53.883333]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "unfulfilled treaty obligations",
+        "name": "The Promise of a School",
+        "status": "confirmed",
+        "started_at": "2025-10-01T00:00:00Z",
+        "description": "A Century of Waiting: The School That Treaty 6 Promised, But Never Built\nIn the original text of Treaty 6, signed in 1876, the Crown promised to build and maintain a school on the reserve land of the Mathias Colomb Cree Nation. For 149 years, that promise has been broken. Generations of children have been forced to leave their families and community for education, contributing to cultural loss and trauma. Government records show that the school was budgeted for in 1925, 1967, and again in 2002. Each time, the funds were quietly reallocated to other projects in non-Indigenous communities. The unfulfilled promise is not just a failure of infrastructure; it is a symbol of the government's ongoing refusal to honor its sacred obligations."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-101.316897, 55.742055],
+            [-101.316897, 55.752055],
+            [-101.306897, 55.752055],
+            [-101.306897, 55.742055],
+            [-101.316897, 55.742055]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "type": "forced child apprehension",
+        "name": "The 'Hospital Alert' Protocol",
+        "status": "confirmed",
+        "started_at": "2025-10-01T00:00:00Z",
+        "description": "Secret Policy Flags Indigenous Mothers as 'High Risk' Before They Even Give Birth\nA whistleblower from the child welfare system has exposed a shocking secret policy known as the 'Hospital Alert' protocol. This directive encourages hospital staff to flag expectant Indigenous mothers based on their race, postal code, or family history, marking them as 'high-risk' for future neglect before their baby is even born. This pre-emptive flag triggers an immediate investigation by social workers, often resulting in the infant being seized from the mother's arms just hours after birth. These 'apprehensions at birth' are justified with vague concerns about poverty or intergenerational trauma, creating a pipeline that feeds children into the foster care system and perpetuates the very cycles of trauma the system claims to be breaking."
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [-97.1384, 49.8951],
+            [-97.1384, 49.9051],
+            [-97.1284, 49.9051],
+            [-97.1284, 49.8951],
+            [-97.1384, 49.8951]
           ]
         ]
       }
