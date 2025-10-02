@@ -10,6 +10,9 @@
     </div>
     <h2 class="article-title">{{ post.title }}</h2>
     <p class="article-content">{{ post.content }}</p>
+    {% if post.author == user %}
+        <a href="{% url 'delete-post' post.id %}" class="btn btn-danger btn-sm mt-1 mb-1">Delete</a>
+    {% endif %}
     <button class="like-btn {% if is_liked %}liked{% endif %}" data-post-id="{{ post.id }}">
         <i class="fas fa-heart"></i>
     </button>
@@ -42,6 +45,9 @@
                     <small class="text-muted">{{ comment.date_posted|date:"F d, Y, fA" }}</small>
                 </div>
                 <p>{{ comment.content }}</p>
+                {% if comment.author == user %}
+                    <a href="{% url 'delete-comment' comment.id %}" class="btn btn-danger btn-sm">Delete</a>
+                {% endif %}
             </div>
         </article>
     {% empty %}

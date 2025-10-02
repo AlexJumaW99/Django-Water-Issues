@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
-from .models import Post, Like
+from .models import Post, Like, Comment
 from django.contrib.auth.models import User
 from .forms import PostForm, CommentForm, IncidentPostForm
 from users.forms import UserUpdateForm, ProfileUpdateForm
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseForbidden
 import json
 from water_issues_dashboard.models import Incident
 from django.contrib import messages
@@ -153,3 +153,26 @@ def incident_discussion(request, incident_id):
         'liked_post_ids': liked_post_ids
     }
     return render(request, 'blog/incident_discussion.html', context)
+
+@login_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user != post.author:
+        return HttpResponseForbidden()
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, 'Your post has been deleted.')
+        return redirect('blog-home')
+    return render(request, 'blog/confirm_delete.html', {'object': post})
+
+@login_required
+def delete_comment(request, comment_id):
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.user != comment.author:
+        return HttpResponseForbidden()
+    if request.method == 'POST':
+        post_id = comment.post.id
+        comment.delete()
+        messages.success(request, 'Your comment has been deleted.')
+        return redirect('blog-post', post_id=post_id)
+    return render(request, 'blog/confirm_delete.html', {'object': comment})

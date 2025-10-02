@@ -43,19 +43,35 @@
 <h3 class="mt-4 mb-3">Posts by {{ profile_user.username }} ({{ posts.count }})</h3>
 {% for post in posts %}
     <article class="media content-section">
-      <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
-      <div class="media-body">
-        <div class="article-metadata">
-          <a class="mr-2" href="{% url 'blog-profile' post.author.pk %}">{{ post.author }}</a>
-          <small class="text-muted">{{ post.date_posted|date:"F d, Y, fA" }}</small>
-        </div>
-        <h2><a class="article-title" href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h2>
-        <p class="article-content">{{ post.content }}</p>
-      </div>
-    </article>
+          <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="{% url 'blog-profile' post.author.id %}">{{ post.author }}</a>
+              <small class="text-muted">{{ post.date_posted|date:"F d, Y, fA" }}</small>
+            </div>
+            <h2><a class="article-title" href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h2>
+            <p class="article-content">{{ post.content }}</p>
+            <a href="{% url 'add-comment' post.id %}" class="btn btn-primary btn-sm mt-1 mb-1">Comment</a>
+            {% if post.author == user %}
+                <a href="{% url 'delete-post' post.id %}" class="btn btn-danger btn-sm mt-1 mb-1">Delete</a>
+            {% endif %}
+            {% comment %} <button class="like-btn {% if post.id in liked_post_ids %}liked{% endif %}" data-post-id="{{ post.id }}">
+                <i class="fas fa-heart"></i>
+            </button>
+            <span class="like-count">{{ post.number_of_likes }}</span> {% endcomment %}
+
+
+          </div>
+        </article>
 {% empty %}
     <div class="content-section">
         <p>{{ profile_user.username }} has not posted anything yet.</p>
     </div>
 {% endfor %}
 {% endblock content %}
+
+
+
+
+
+        
