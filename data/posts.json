@@ -1,0 +1,18 @@
+[
+  {
+    "title": "Water Quality in the City Center",
+    "content": "I've noticed a strange taste in the tap water recently in the downtown area. Has anyone else experienced this?",
+    "author_username": "john_doe",
+    "incident_id": 1
+  },
+  {
+    "title": "Boil Water Advisory for North End",
+    "content": "Just received a notification about a boil water advisory for the North End. Stay safe everyone!",
+    "author_username": "jane_smith"
+  },
+  {
+    "title": "Low Water Pressure in West Suburbs",
+    "content": "My water pressure has been really low for the past few days. Is there a main break somewhere in the west suburbs?",
+    "author_username": "john_doe"
+  }
+]
