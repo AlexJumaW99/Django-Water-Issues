@@ -8,11 +8,13 @@
   {
     "username": "jane_smith",
     "email": "jane.smith@example.com",
-    "password": "password123"
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
   },
   {
     "username": "bob_johnson",
     "email": "bob.johnson@example.com",
-    "password": "password123"
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
   }
 ]
