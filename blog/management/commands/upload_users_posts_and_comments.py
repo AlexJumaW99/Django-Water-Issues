@@ -2,7 +2,10 @@ import json
 import os
 from django.core.management.base import BaseCommand
 from django.contrib.auth.models import User
+from django.conf import settings
+from django.core.files import File
 from blog.models import Post, Comment
+from users.models import Profile
 from water_issues_dashboard.models import Incident
 
 class Command(BaseCommand):
@@ -37,12 +40,26 @@ class Command(BaseCommand):
         count = 0
         for user_data in users_data:
             if not User.objects.filter(username=user_data['username']).exists():
-                User.objects.create_user(
+                user = User.objects.create_user(
                     username=user_data['username'],
                     email=user_data['email'],
                     password=user_data['password']
                 )
                 count += 1
+                
+                # Check for and process the profile image
+                if 'image_path' in user_data and user_data['image_path']:
+                    # Construct the full path to the image file
+                    image_full_path = os.path.join(settings.BASE_DIR, user_data['image_path'])
+                    
+                    if os.path.exists(image_full_path):
+                        with open(image_full_path, 'rb') as f:
+                            # The Profile is created automatically by a signal, so we get it.
+                            profile = Profile.objects.get(user=user)
+                            # Save the image to the profile's image field
+                            profile.image.save(os.path.basename(user_data['image_path']), File(f), save=True)
+                    else:
+                        self.stdout.write(self.style.WARNING(f"Image not found at {image_full_path}. Skipping for user '{user.username}'."))
 
         self.stdout.write(self.style.SUCCESS(f"Loaded {count} new users from {filepath}"))
 
