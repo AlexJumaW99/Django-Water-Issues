@@ -28,13 +28,13 @@ class Park(models.Model):
 
 class Incident(models.Model):
     INCIDENT_TYPES = [
-        ('wildfire', 'Wildfire'),
         ('flood', 'Flood'),
-        ('emergency response failure', 'Emergency Response Failure'),
-        ('treaty/land rights infringement', 'Treaty/Land Rights Infringement'),
-        ('govt inaction/sabotage', 'Govt Inaction/Sabotage'),
-        ('unfulfilled treaty obligations', 'Unfulfilled Treaty Obligations'),
-        ('forced child apprehension', 'Forced Child Apprehension'),
+        ('drought', 'Drought'),
+        ('algal bloom', 'Algal Bloom'),
+        ('contaminated water', 'Contaminated Water'),
+        ('hydroelectric disruption', 'Hydroelectric Disruption'),
+        ('invasive species', 'Invasive Species'),
+        ('declining fish population', 'Declining Fish Population'),
     ]
 
     STATUS_CHOICES = [

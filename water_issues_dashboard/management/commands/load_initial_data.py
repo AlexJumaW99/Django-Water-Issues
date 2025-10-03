@@ -76,9 +76,23 @@ class Command(BaseCommand):
 
     def process_incident(self, feature):
         props = feature.get('properties', {})
+        
+        # Map old incident types to new ones if needed
+        incident_type = props.get('type', 'flood').lower()
+        
+        # Valid incident types for water issues
+        valid_types = [
+            'flood', 'drought', 'algal bloom', 'contaminated water',
+            'hydroelectric disruption', 'invasive species', 'declining fish population'
+        ]
+        
+        # If the type is not in valid types, default to flood
+        if incident_type not in valid_types:
+            incident_type = 'flood'
+        
         incident = Incident(
             name=props.get('name', ''),
-            incident_type=props.get('type', 'wildfire'),
+            incident_type=incident_type,
             status=props.get('status', 'suspected'),
             description=props.get('description', ''),
             geometry=feature.get('geometry', {}),

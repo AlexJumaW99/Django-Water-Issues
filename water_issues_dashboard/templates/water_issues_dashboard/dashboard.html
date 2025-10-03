@@ -97,30 +97,34 @@
             <div class="divider"></div>
 
             <div class="sidebar-section">
-                <h3>🔥💧 Incident Filters</h3>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="showWildfires" name="showWildfires" {% if filters.incidents.wildfires %}checked{% endif %}>
-                    <label for="showWildfires">Show Wildfires</label>
-                </div>
+                <h3>💧 Water Incident Filters</h3>
                 <div class="checkbox-group">
                     <input type="checkbox" id="showFloods" name="showFloods" {% if filters.incidents.floods %}checked{% endif %}>
                     <label for="showFloods">Show Floods</label>
                 </div>
                 <div class="checkbox-group">
-                    <input type="checkbox" id="showEmergencyResponseFailure" name="showEmergencyResponseFailure" {% if filters.incidents.emergency_response_failure %}checked{% endif %}>
-                    <label for="showEmergencyResponseFailure">Show Emergency Response Failures</label>
+                    <input type="checkbox" id="showDroughts" name="showDroughts" {% if filters.incidents.droughts %}checked{% endif %}>
+                    <label for="showDroughts">Show Droughts</label>
                 </div>
                 <div class="checkbox-group">
-                    <input type="checkbox" id="showTreatyLandRightsInfringement" name="showTreatyLandRightsInfringement" {% if filters.incidents.treaty_land_rights_infringement %}checked{% endif %}>
-                    <label for="showTreatyLandRightsInfringement">Show Treaty/Land Rights Infringements</label>
+                    <input type="checkbox" id="showAlgalBlooms" name="showAlgalBlooms" {% if filters.incidents.algal_blooms %}checked{% endif %}>
+                    <label for="showAlgalBlooms">Show Algal Blooms</label>
                 </div>
                 <div class="checkbox-group">
-                    <input type="checkbox" id="showUnfulfilledTreatyObligations" name="showUnfulfilledTreatyObligations" {% if filters.incidents.unfulfilled_treaty_obligations %}checked{% endif %}>
-                    <label for="showUnfulfilledTreatyObligations">Show Unfulfilled Treaty Obligations</label>
+                    <input type="checkbox" id="showContaminatedWater" name="showContaminatedWater" {% if filters.incidents.contaminated_water %}checked{% endif %}>
+                    <label for="showContaminatedWater">Show Contaminated Water</label>
                 </div>
                 <div class="checkbox-group">
-                    <input type="checkbox" id="showForcedChildApprehension" name="showForcedChildApprehension" {% if filters.incidents.forced_child_apprehension %}checked{% endif %}>
-                    <label for="showForcedChildApprehension">Show Forced Child Apprehensions</label>
+                    <input type="checkbox" id="showHydroelectricDisruption" name="showHydroelectricDisruption" {% if filters.incidents.hydroelectric_disruption %}checked{% endif %}>
+                    <label for="showHydroelectricDisruption">Show Hydroelectric Disruptions</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showInvasiveSpecies" name="showInvasiveSpecies" {% if filters.incidents.invasive_species %}checked{% endif %}>
+                    <label for="showInvasiveSpecies">Show Invasive Species</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showDecliningFishPopulation" name="showDecliningFishPopulation" {% if filters.incidents.declining_fish_population %}checked{% endif %}>
+                    <label for="showDecliningFishPopulation">Show Declining Fish Population</label>
                 </div>
                 <div class="form-group">
                     <label>Incident Status</label>
@@ -160,35 +164,40 @@
                     <div class="metric-value" id="popCount">{{ total_population|floatformat:0 }}</div>
                     <div class="metric-label">Population (2021)</div>
                 </div>
-                <div class="metric-card wildfires">
-                    <div class="metric-icon">🔥</div>
-                    <div class="metric-value" id="fireCount">{{ wildfire_count }}</div>
-                    <div class="metric-label">Wildfires</div>
-                </div>
                 <div class="metric-card floods">
                     <div class="metric-icon">💧</div>
                     <div class="metric-value" id="floodCount">{{ flood_count }}</div>
                     <div class="metric-label">Floods</div>
                 </div>
-                <div class="metric-card emergency-response">
-                    <div class="metric-icon">🛡️</div>
-                    <div class="metric-value" id="emergencyResponseFailureCount">{{ emergency_response_failure_count }}</div>
-                    <div class="metric-label" style="font-size: 10px;">Emergency Response Failure</div>
+                <div class="metric-card droughts">
+                    <div class="metric-icon">🌵</div>
+                    <div class="metric-value" id="droughtCount">{{ drought_count }}</div>
+                    <div class="metric-label">Droughts</div>
                 </div>
-                <div class="metric-card treaty-infringement">
-                    <div class="metric-icon">⚖️</div>
-                    <div class="metric-value" id="treatyLandRightsInfringementCount">{{ treaty_land_rights_infringement_count }}</div>
-                    <div class="metric-label" style="font-size: 10px;">Treaty/Land Rights Infringement</div>
+                <div class="metric-card algal-blooms">
+                    <div class="metric-icon">🦠</div>
+                    <div class="metric-value" id="algalBloomCount">{{ algal_bloom_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Algal Blooms</div>
                 </div>
-                <div class="metric-card unfulfilled-treaty">
-                    <div class="metric-icon">📜</div>
-                    <div class="metric-value" id="unfulfilledTreatyObligationsCount">{{ unfulfilled_treaty_obligations_count }}</div>
-                    <div class="metric-label" style="font-size: 10px;">Unfulfilled Treaty Obligations</div>
+                <div class="metric-card contaminated-water">
+                    <div class="metric-icon">☣️</div>
+                    <div class="metric-value" id="contaminatedWaterCount">{{ contaminated_water_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Contaminated Water</div>
                 </div>
-                <div class="metric-card forced-apprehension">
-                    <div class="metric-icon">👶</div>
-                    <div class="metric-value" id="forcedChildApprehensionCount">{{ forced_child_apprehension_count }}</div>
-                    <div class="metric-label" style="font-size: 10px;">Forced Child Apprehension</div>
+                <div class="metric-card hydroelectric-disruption">
+                    <div class="metric-icon">⚡</div>
+                    <div class="metric-value" id="hydroelectricDisruptionCount">{{ hydroelectric_disruption_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Hydroelectric Disruptions</div>
+                </div>
+                <div class="metric-card invasive-species">
+                    <div class="metric-icon">🐟</div>
+                    <div class="metric-value" id="invasiveSpeciesCount">{{ invasive_species_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Invasive Species</div>
+                </div>
+                <div class="metric-card declining-fish">
+                    <div class="metric-icon">📉</div>
+                    <div class="metric-value" id="decliningFishPopulationCount">{{ declining_fish_population_count }}</div>
+                    <div class="metric-label" style="font-size: 10px;">Declining Fish Population</div>
                 </div>
             </div>
 
@@ -196,7 +205,7 @@
                 <button id="findMeBtn" class="find-me-btn">📍 Find me</button>
                 <div class="search-wrapper">
                     <span class="search-icon">🔎</span>
-                    <input id="searchInput" class="search-input" type="text" placeholder="Search towns, cities, RMs, parks, wildfires or floods…">
+                    <input id="searchInput" class="search-input" type="text" placeholder="Search towns, cities, RMs, parks, or water incidents…">
                     <button id="clearSearch" class="clear-btn" title="Clear">✕</button>
                     <div id="suggestions" class="suggestions"></div>
                 </div>
@@ -236,8 +245,13 @@
                     <div>
                         <h4>By Type:</h4>
                         <ul style="list-style: none; padding: 0;">
-                            <li>🔥 Wildfire: {{ incidents|length|add:0 }}</li>
                             <li>💧 Flood: {{ incidents|length|add:0 }}</li>
+                            <li>🌵 Drought: {{ incidents|length|add:0 }}</li>
+                            <li>🦠 Algal Bloom: {{ incidents|length|add:0 }}</li>
+                            <li>☣️ Contaminated Water: {{ incidents|length|add:0 }}</li>
+                            <li>⚡ Hydroelectric Disruption: {{ incidents|length|add:0 }}</li>
+                            <li>🐟 Invasive Species: {{ incidents|length|add:0 }}</li>
+                            <li>📉 Declining Fish Population: {{ incidents|length|add:0 }}</li>
                         </ul>
                     </div>
                     <div>
@@ -297,7 +311,7 @@
       },
       "properties": {
         "name": "Incident Name",
-        "type": "wildfire" or "flood",
+        "type": "flood" or "drought" or "algal bloom" etc.,
         "status": "confirmed" or "suspected",
         "started_at": "2024-01-01",
         "description": "Details..."

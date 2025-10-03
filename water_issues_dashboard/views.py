@@ -23,12 +23,13 @@ def dashboard_home(request):
     pop_max = int(request.GET.get('popMax', 1000000))
 
     incident_filters = {
-        'wildfires': request.GET.get('showWildfires', 'true') == 'true',
         'floods': request.GET.get('showFloods', 'true') == 'true',
-        'emergency_response_failure': request.GET.get('showEmergencyResponseFailure', 'true') == 'true',
-        'treaty_land_rights_infringement': request.GET.get('showTreatyLandRightsInfringement', 'true') == 'true',
-        'unfulfilled_treaty_obligations': request.GET.get('showUnfulfilledTreatyObligations', 'true') == 'true',
-        'forced_child_apprehension': request.GET.get('showForcedChildApprehension', 'true') == 'true',
+        'droughts': request.GET.get('showDroughts', 'true') == 'true',
+        'algal_blooms': request.GET.get('showAlgalBlooms', 'true') == 'true',
+        'contaminated_water': request.GET.get('showContaminatedWater', 'true') == 'true',
+        'hydroelectric_disruption': request.GET.get('showHydroelectricDisruption', 'true') == 'true',
+        'invasive_species': request.GET.get('showInvasiveSpecies', 'true') == 'true',
+        'declining_fish_population': request.GET.get('showDecliningFishPopulation', 'true') == 'true',
         'confirmed': request.GET.get('statusConfirmed', 'true') == 'true',
         'suspected': request.GET.get('statusSuspected', 'true') == 'true',
     }
@@ -52,19 +53,20 @@ def dashboard_home(request):
     # Build queryset for incidents
     incident_query = Incident.objects.all()
     incident_types = []
-    if incident_filters['wildfires']:
-        incident_types.append('wildfire')
     if incident_filters['floods']:
         incident_types.append('flood')
-    if incident_filters['emergency_response_failure']:
-        incident_types.append('emergency response failure')
-    if incident_filters['treaty_land_rights_infringement']:
-        incident_types.append('treaty/land rights infringement')
-    if incident_filters['unfulfilled_treaty_obligations']:
-        incident_types.append('unfulfilled treaty obligations')
-    if incident_filters['forced_child_apprehension']:
-        incident_types.append('forced child apprehension')
-
+    if incident_filters['droughts']:
+        incident_types.append('drought')
+    if incident_filters['algal_blooms']:
+        incident_types.append('algal bloom')
+    if incident_filters['contaminated_water']:
+        incident_types.append('contaminated water')
+    if incident_filters['hydroelectric_disruption']:
+        incident_types.append('hydroelectric disruption')
+    if incident_filters['invasive_species']:
+        incident_types.append('invasive species')
+    if incident_filters['declining_fish_population']:
+        incident_types.append('declining fish population')
 
     incident_statuses = []
     if incident_filters['confirmed']:
@@ -86,12 +88,13 @@ def dashboard_home(request):
         'parks': parks,
         'municipality_count': municipalities.count(),
         'total_population': sum(m.population_2021 for m in municipalities),
-        'wildfire_count': incidents.filter(incident_type='wildfire').count(),
         'flood_count': incidents.filter(incident_type='flood').count(),
-        'emergency_response_failure_count': incidents.filter(incident_type='emergency response failure').count(),
-        'treaty_land_rights_infringement_count': incidents.filter(incident_type='treaty/land rights infringement').count(),
-        'unfulfilled_treaty_obligations_count': incidents.filter(incident_type='unfulfilled treaty obligations').count(),
-        'forced_child_apprehension_count': incidents.filter(incident_type='forced child apprehension').count(),
+        'drought_count': incidents.filter(incident_type='drought').count(),
+        'algal_bloom_count': incidents.filter(incident_type='algal bloom').count(),
+        'contaminated_water_count': incidents.filter(incident_type='contaminated water').count(),
+        'hydroelectric_disruption_count': incidents.filter(incident_type='hydroelectric disruption').count(),
+        'invasive_species_count': incidents.filter(incident_type='invasive species').count(),
+        'declining_fish_population_count': incidents.filter(incident_type='declining fish population').count(),
         'park_count': parks.count(),
         'filters': {
             'status': status_filters,
@@ -240,7 +243,6 @@ def process_geojson_file(uploaded_file):
             uploaded_by=uploaded_file.uploaded_by
         )
 
-        # ** FIX STARTS HERE **
         # Parse date if provided, handling full ISO 8601 timestamps
         if props.get('started_at'):
             try:
@@ -250,7 +252,6 @@ def process_geojson_file(uploaded_file):
             except (ValueError, TypeError, IndexError):
                 # Silently pass if the date format is invalid or can't be split
                 pass
-        # ** FIX ENDS HERE **
 
         incident.save()
         added += 1

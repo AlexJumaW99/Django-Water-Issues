@@ -72,15 +72,15 @@ body {
     min-width: 100px; /* Minimum width for each card */
     flex: 1; /* Allow cards to grow and fill the space */
     border-left: 5px solid transparent; /* Default border */
-    word-wrap: break-word; /* Add this */
-    overflow-wrap: break-word; /* And this for better browser support */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .metric-label {
     font-size: 0.7em;
     color: #6c757d;
-    word-wrap: break-word; /* Add this */
-    overflow-wrap: break-word; /* And this for better browser support */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .metric-icon {
@@ -93,7 +93,7 @@ body {
 }
 
 
-/* --- Added Styles for Metric Card Colors --- */
+/* --- Metric Card Colors for Water Incidents --- */
 
 .metric-card.municipalities {
     border-left-color: #6c757d; /* Grey */
@@ -103,26 +103,30 @@ body {
     border-left-color: #28a745; /* Green */
 }
 
-.metric-card.wildfires {
-    border-left-color: #dc3545; /* Red */
-}
-
 .metric-card.floods {
     border-left-color: #007bff; /* Blue */
 }
 
-.metric-card.emergency-response {
-    border-left-color: #ffc107; /* Yellow */
+.metric-card.droughts {
+    border-left-color: #d4a373; /* Brown/Tan */
 }
 
-.metric-card.treaty-infringement {
-    border-left-color: #6f42c1; /* Purple */
+.metric-card.algal-blooms {
+    border-left-color: #32cd32; /* Lime Green */
 }
 
-.metric-card.unfulfilled-treaty {
-    border-left-color: #fd7e14; /* Orange */
+.metric-card.contaminated-water {
+    border-left-color: #8b4513; /* Saddle Brown */
 }
 
-.metric-card.forced-apprehension {
-    border-left-color: #17a2b8; /* Teal */
+.metric-card.hydroelectric-disruption {
+    border-left-color: #ffd700; /* Gold */
+}
+
+.metric-card.invasive-species {
+    border-left-color: #ff6347; /* Tomato Red */
+}
+
+.metric-card.declining-fish {
+    border-left-color: #4169e1; /* Royal Blue */
 }

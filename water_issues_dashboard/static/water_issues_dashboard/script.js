@@ -5,12 +5,13 @@ let incidentsData = null;
 let parksData = null;
 let currentLayers = {
     municipalities: null,
-    wildfires: null,
     floods: null,
-    emergency_response_failure: null,
-    treaty_land_rights_infringement: null,
-    unfulfilled_treaty_obligations: null,
-    forced_child_apprehension: null,
+    droughts: null,
+    algal_blooms: null,
+    contaminated_water: null,
+    hydroelectric_disruption: null,
+    invasive_species: null,
+    declining_fish_population: null,
     parks: null
 };
 
@@ -35,12 +36,13 @@ const createIncidentIcon = (iconName) => {
     });
 };
 
-const emergencyResponseFailureIcon = createIncidentIcon('emergency_response_failure');
-const treatyLandRightsInfringementIcon = createIncidentIcon('treaty_land_rights_infringement');
-const unfulfilledTreatyObligationsIcon = createIncidentIcon('unfulfilled_treaty_obligations');
-const forcedChildApprehensionIcon = createIncidentIcon('forced_child_apprehension');
-const wildfireIcon = createIncidentIcon('wildfire');
 const floodIcon = createIncidentIcon('flood');
+const droughtIcon = createIncidentIcon('drought');
+const algalBloomIcon = createIncidentIcon('algal_bloom');
+const contaminatedWaterIcon = createIncidentIcon('contaminated_water');
+const hydroelectricDisruptionIcon = createIncidentIcon('hydroelectric_disruption');
+const invasiveSpeciesIcon = createIncidentIcon('invasive_species');
+const decliningFishPopulationIcon = createIncidentIcon('declining_fish_population');
 
 
 // Helper function to make CSRF-safe AJAX requests
@@ -99,13 +101,11 @@ function getFeatureBounds(feature) {
 
     function processCoords(coords, depth) {
         if (depth === 0) {
-            // This is a coordinate pair [lng, lat]
             minLng = Math.min(minLng, coords[0]);
             maxLng = Math.max(maxLng, coords[0]);
             minLat = Math.min(minLat, coords[1]);
             maxLat = Math.max(maxLat, coords[1]);
         } else {
-            // This is an array of coordinates
             coords.forEach(coord => processCoords(coord, depth - 1));
         }
     }
@@ -125,15 +125,11 @@ function getFeatureBounds(feature) {
 // Function to zoom to a specific feature
 function zoomToFeature(feature, layer) {
     const bounds = getFeatureBounds(feature);
-
-    // Add some padding to the bounds
     const padding = 0.01;
     const paddedBounds = [
         [bounds[0][0] - padding, bounds[0][1] - padding],
         [bounds[1][0] + padding, bounds[1][1] + padding]
     ];
-
-    // Fit the map to the bounds with animation
     map.fitBounds(paddedBounds, {
         animate: true,
         duration: 1.5,
@@ -142,7 +138,7 @@ function zoomToFeature(feature, layer) {
     });
 }
 
-// Zoom to a point (for "Find me" and point results)
+// Zoom to a point
 function zoomToPoint(lat, lng) {
     const padding = 0.01;
     const bounds = [[lat - padding, lng - padding], [lat + padding, lng + padding]];
@@ -158,7 +154,6 @@ function zoomToPoint(lat, lng) {
 async function initApp() {
     document.getElementById('dataStatus').textContent = 'Loading data from Django API...';
 
-    // Load data from Django API
     const allData = await loadJSONData(apiBaseUrl);
     if (!allData) {
         console.warn('Could not load data from Django API');
@@ -182,7 +177,6 @@ async function initApp() {
 
 // Initialize the map
 function initMap() {
-    // Center on Manitoba
     map = L.map('map', {
         fullscreenControl: true,
         fullscreenControlOptions: {
@@ -199,16 +193,13 @@ function initMap() {
 
 // Setup event listeners
 function setupEventListeners() {
-    // Toggle switches
     document.getElementById('toggleSidebarSwitch').addEventListener('change', toggleSidebar);
     document.getElementById('toggleMetricsSwitch').addEventListener('change', toggleMetrics);
 
-    // Municipality filters
     document.getElementById('statusCity').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusTown').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusRM').addEventListener('change', updateFiltersAndMap);
 
-    // Population sliders
     document.getElementById('popMin').addEventListener('input', function() {
         document.getElementById('popMinValue').textContent = parseInt(this.value).toLocaleString();
         updateFiltersAndMap();
@@ -219,20 +210,18 @@ function setupEventListeners() {
         updateFiltersAndMap();
     });
 
-    // Incident filters
-    document.getElementById('showWildfires').addEventListener('change', updateFiltersAndMap);
     document.getElementById('showFloods').addEventListener('change', updateFiltersAndMap);
-    document.getElementById('showEmergencyResponseFailure').addEventListener('change', updateFiltersAndMap);
-    document.getElementById('showTreatyLandRightsInfringement').addEventListener('change', updateFiltersAndMap);
-    document.getElementById('showUnfulfilledTreatyObligations').addEventListener('change', updateFiltersAndMap);
-    document.getElementById('showForcedChildApprehension').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showDroughts').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showAlgalBlooms').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showContaminatedWater').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showHydroelectricDisruption').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showInvasiveSpecies').addEventListener('change', updateFiltersAndMap);
+    document.getElementById('showDecliningFishPopulation').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusConfirmed').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusSuspected').addEventListener('change', updateFiltersAndMap);
 
-    // Map display options
     document.getElementById('showParks').addEventListener('change', updateFiltersAndMap);
 
-    // Find Me & search
     document.getElementById('findMeBtn').addEventListener('click', onFindMe);
     const searchInput = document.getElementById('searchInput');
     const clearBtn = document.getElementById('clearSearch');
@@ -245,14 +234,12 @@ function setupEventListeners() {
         clearBtn.style.display = 'none';
     });
 
-    // Hide suggestions when clicking elsewhere
     document.addEventListener('click', (e) => {
         const wrap = document.querySelector('.search-wrapper');
         if (!wrap.contains(e.target)) hideSuggestions();
     });
 }
 
-// Functions to toggle sidebar and metrics and save preferences
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     const isVisible = sidebar.classList.toggle('hidden');
@@ -282,47 +269,38 @@ function applyCachedSettings() {
     }
 }
 
-// Update filters and map (for Django form integration)
 function updateFiltersAndMap() {
-    // Update URL with current filter state for Django
     const form = document.getElementById('filterForm');
-    const formData = new FormData(form);
     const params = new URLSearchParams();
 
-    // Add checkbox states
     params.set('statusCity', document.getElementById('statusCity').checked);
     params.set('statusTown', document.getElementById('statusTown').checked);
     params.set('statusRM', document.getElementById('statusRM').checked);
-    params.set('showWildfires', document.getElementById('showWildfires').checked);
     params.set('showFloods', document.getElementById('showFloods').checked);
-    params.set('showEmergencyResponseFailure', document.getElementById('showEmergencyResponseFailure').checked);
-    params.set('showTreatyLandRightsInfringement', document.getElementById('showTreatyLandRightsInfringement').checked);
-    params.set('showUnfulfilledTreatyObligations', document.getElementById('showUnfulfilledTreatyObligations').checked);
-    params.set('showForcedChildApprehension', document.getElementById('showForcedChildApprehension').checked);
+    params.set('showDroughts', document.getElementById('showDroughts').checked);
+    params.set('showAlgalBlooms', document.getElementById('showAlgalBlooms').checked);
+    params.set('showContaminatedWater', document.getElementById('showContaminatedWater').checked);
+    params.set('showHydroelectricDisruption', document.getElementById('showHydroelectricDisruption').checked);
+    params.set('showInvasiveSpecies', document.getElementById('showInvasiveSpecies').checked);
+    params.set('showDecliningFishPopulation', document.getElementById('showDecliningFishPopulation').checked);
     params.set('statusConfirmed', document.getElementById('statusConfirmed').checked);
     params.set('statusSuspected', document.getElementById('statusSuspected').checked);
     params.set('showParks', document.getElementById('showParks').checked);
 
-    // Add slider values
     params.set('popMin', document.getElementById('popMin').value);
     params.set('popMax', document.getElementById('popMax').value);
 
-    // Update URL without refreshing page
     const newUrl = window.location.pathname + '?' + params.toString();
     window.history.replaceState({}, '', newUrl);
 
-    // Update the map display
     updateMap();
 }
 
-// Update the map based on current filters
 function updateMap() {
-    // Clear existing layers
     Object.values(currentLayers).forEach(layer => {
         if (layer) map.removeLayer(layer);
     });
 
-    // Get filter values
     const filters = {
         municipalities: {
             city: document.getElementById('statusCity').checked,
@@ -332,12 +310,13 @@ function updateMap() {
             popMax: parseInt(document.getElementById('popMax').value)
         },
         incidents: {
-            wildfires: document.getElementById('showWildfires').checked,
             floods: document.getElementById('showFloods').checked,
-            emergency_response_failure: document.getElementById('showEmergencyResponseFailure').checked,
-            treaty_land_rights_infringement: document.getElementById('showTreatyLandRightsInfringement').checked,
-            unfulfilled_treaty_obligations: document.getElementById('showUnfulfilledTreatyObligations').checked,
-            forced_child_apprehension: document.getElementById('showForcedChildApprehension').checked,
+            droughts: document.getElementById('showDroughts').checked,
+            algal_blooms: document.getElementById('showAlgalBlooms').checked,
+            contaminated_water: document.getElementById('showContaminatedWater').checked,
+            hydroelectric_disruption: document.getElementById('showHydroelectricDisruption').checked,
+            invasive_species: document.getElementById('showInvasiveSpecies').checked,
+            declining_fish_population: document.getElementById('showDecliningFishPopulation').checked,
             confirmed: document.getElementById('statusConfirmed').checked,
             suspected: document.getElementById('statusSuspected').checked
         },
@@ -346,26 +325,21 @@ function updateMap() {
         }
     };
 
-    // Add parks if enabled
     if (filters.display.parks && parksData) {
         addParks();
     }
 
-    // Add municipalities
     if (municipalityData) {
         addMunicipalities(filters.municipalities);
     }
 
-    // Add incidents
     if (incidentsData) {
         addIncidents(filters.incidents);
     }
 
-    // Update metrics
     updateMetrics();
 }
 
-// Add parks to map
 function addParks() {
     const parksGroup = L.featureGroup();
 
@@ -405,7 +379,6 @@ function addParks() {
     }
 }
 
-// Add municipalities to map
 function addMunicipalities(filters) {
     const municipalityGroup = L.featureGroup();
     let selectedCount = 0;
@@ -415,7 +388,6 @@ function addMunicipalities(filters) {
         const status = (props.status || '').toLowerCase();
         const population = props.population_2021 || 0;
 
-        // Check filters
         let passesFilter = false;
         if (status === 'city' && filters.city) passesFilter = true;
         if (status === 'town' && filters.town) passesFilter = true;
@@ -423,8 +395,6 @@ function addMunicipalities(filters) {
 
         if (passesFilter && population >= filters.popMin && population <= filters.popMax) {
             const color = status === 'city' ? '#3b82f6' : status === 'town' ? '#10b981' : '#64748b';
-
-            // Create emoji based on status
             const emoji = status === 'city' ? '🏙️' : status === 'town' ? '🏘️' : '🌾';
             const displayStatus = status === 'city' ? 'City of' : status === 'town' ? 'Town of' : 'RM of';
 
@@ -460,15 +430,14 @@ function addMunicipalities(filters) {
     }
 }
 
-// Add incidents to map
 function addIncidents(filters) {
-    const wildfireGroup = L.featureGroup();
     const floodGroup = L.featureGroup();
-    const emergencyResponseFailureGroup = L.featureGroup();
-    const treatyLandRightsInfringementGroup = L.featureGroup();
-    const unfulfilledTreatyObligationsGroup = L.featureGroup();
-    const forcedChildApprehensionGroup = L.featureGroup();
-
+    const droughtGroup = L.featureGroup();
+    const algalBloomGroup = L.featureGroup();
+    const contaminatedWaterGroup = L.featureGroup();
+    const hydroelectricDisruptionGroup = L.featureGroup();
+    const invasiveSpeciesGroup = L.featureGroup();
+    const decliningFishPopulationGroup = L.featureGroup();
 
     incidentsData.features.forEach(feature => {
         const props = feature.properties;
@@ -476,73 +445,29 @@ function addIncidents(filters) {
         const status = props.status || props.confidence;
         const incidentId = props.id;
 
-        // Check status filter
         if (status === 'confirmed' && !filters.confirmed) return;
         if (status === 'suspected' && !filters.suspected) return;
 
-        // Get centroid for marker placement
         let centerLat, centerLng;
         if (feature.geometry.type === 'Polygon') {
             [centerLat, centerLng] = getCentroid(feature.geometry.coordinates);
         } else if (feature.geometry.type === 'MultiPolygon') {
-            // Use the first polygon's centroid
             [centerLat, centerLng] = getCentroid(feature.geometry.coordinates[0]);
         } else if (feature.geometry.type === 'Point') {
             [centerLng, centerLat] = feature.geometry.coordinates;
         } else {
-            return; // Skip unsupported geometry types
+            return;
         }
 
         const discussionUrl = `/incident/${incidentId}/discussion/`;
 
-        if (type === 'wildfire' && filters.wildfires) {
-            // Add wildfire polygon
-            const fillColor = status === 'confirmed' ? '#d73027' : '#fc8d59';
-
-            if (feature.geometry.type !== 'Point') {
-                L.geoJSON(feature, {
-                    style: {
-                        color: fillColor,
-                        weight: 2,
-                        fillColor: fillColor,
-                        fillOpacity: 0.2
-                    }
-                }).addTo(wildfireGroup);
-            }
-
-            L.marker([centerLat, centerLng], { icon: wildfireIcon })
-                .bindPopup(`
-                    <div style='font-family: Arial, sans-serif;'>
-                        <strong>${props.name}</strong><br>
-                        Type: Wildfire<br>
-                        Status: ${status}<br>
-                        Started: ${props.started_at || 'Unknown'}<br>
-                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
-                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
-                            🔍 Take a Closer Look
-                        </a>
-                        <br>
-                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
-                    </div>
-                `)
-                .addTo(wildfireGroup);
-        }
-
         if (type === 'flood' && filters.floods) {
-            // Add flood polygon
             const fillColor = status === 'confirmed' ? '#2c7fb8' : '#7fcdbb';
-
             if (feature.geometry.type !== 'Point') {
                 L.geoJSON(feature, {
-                    style: {
-                        color: fillColor,
-                        weight: 2,
-                        fillColor: fillColor,
-                        fillOpacity: 0.2
-                    }
+                    style: { color: fillColor, weight: 2, fillColor: fillColor, fillOpacity: 0.2 }
                 }).addTo(floodGroup);
             }
-
             L.marker([centerLat, centerLng], { icon: floodIcon })
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
@@ -550,7 +475,6 @@ function addIncidents(filters) {
                         Type: Flood<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
-                        
                         ${props.description ? props.description.substring(0, 100) + '...' : ''}
                         <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
                             🔍 Take a Closer Look
@@ -562,170 +486,153 @@ function addIncidents(filters) {
                 .addTo(floodGroup);
         }
 
-        if (type === 'emergency response failure' && filters.emergency_response_failure) {
-            // Add emergency response failure polygon
-            const fillColor = status === 'confirmed' ? '#d73027' : '#fc8d59';
+        if (type === 'drought' && filters.droughts) {
+            const fillColor = status === 'confirmed' ? '#d4a373' : '#e6c9a8';
             if (feature.geometry.type !== 'Point') {
                 L.geoJSON(feature, {
-                    style: {
-                        color: fillColor,
-                        weight: 2,
-                        fillColor: fillColor,
-                        fillOpacity: 0.2
-                    }
-                }).addTo(emergencyResponseFailureGroup);
+                    style: { color: fillColor, weight: 2, fillColor: fillColor, fillOpacity: 0.2 }
+                }).addTo(droughtGroup);
             }
-            L.marker([centerLat, centerLng], { icon: emergencyResponseFailureIcon })
+            L.marker([centerLat, centerLng], { icon: droughtIcon })
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
-                        Type: Emergency Response Failure<br>
+                        Type: Drought<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
                         ${props.description ? props.description.substring(0, 100) + '...' : ''}
-                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
-                            🔍 Take a Closer Look
-                        </a>
-                        <br>
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">🔍 Take a Closer Look</a><br>
                         <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
                     </div>
-                `)
-                .addTo(emergencyResponseFailureGroup);
+                `).addTo(droughtGroup);
         }
 
-        if (type === 'treaty/land rights infringement' && filters.treaty_land_rights_infringement) {
-            // Add treaty/land rights infringement polygon
-            const fillColor = status === 'confirmed' ? '#800080' : '#da70d6';
+        if (type === 'algal bloom' && filters.algal_blooms) {
+            const fillColor = status === 'confirmed' ? '#32cd32' : '#90ee90';
             if (feature.geometry.type !== 'Point') {
                 L.geoJSON(feature, {
-                    style: {
-                        color: fillColor,
-                        weight: 2,
-                        fillColor: fillColor,
-                        fillOpacity: 0.2
-                    }
-                }).addTo(treatyLandRightsInfringementGroup);
+                    style: { color: fillColor, weight: 2, fillColor: fillColor, fillOpacity: 0.2 }
+                }).addTo(algalBloomGroup);
             }
-            L.marker([centerLat, centerLng], { icon: treatyLandRightsInfringementIcon })
+            L.marker([centerLat, centerLng], { icon: algalBloomIcon })
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
-                        Type: Treaty/Land Rights Infringement<br>
+                        Type: Algal Bloom<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
                         ${props.description ? props.description.substring(0, 100) + '...' : ''}
-                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
-                            🔍 Take a Closer Look
-                        </a>
-                        <br>
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">🔍 Take a Closer Look</a><br>
                         <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
                     </div>
-                `)
-                .addTo(treatyLandRightsInfringementGroup);
+                `).addTo(algalBloomGroup);
         }
 
-        if (type === 'unfulfilled treaty obligations' && filters.unfulfilled_treaty_obligations) {
-            // Add unfulfilled treaty obligations polygon
-            const fillColor = status === 'confirmed' ? '#a52a2a' : '#cd5c5c';
+        if (type === 'contaminated water' && filters.contaminated_water) {
+            const fillColor = status === 'confirmed' ? '#8b4513' : '#cd853f';
             if (feature.geometry.type !== 'Point') {
                 L.geoJSON(feature, {
-                    style: {
-                        color: fillColor,
-                        weight: 2,
-                        fillColor: fillColor,
-                        fillOpacity: 0.2
-                    }
-                }).addTo(unfulfilledTreatyObligationsGroup);
+                    style: { color: fillColor, weight: 2, fillColor: fillColor, fillOpacity: 0.2 }
+                }).addTo(contaminatedWaterGroup);
             }
-            L.marker([centerLat, centerLng], { icon: unfulfilledTreatyObligationsIcon })
+            L.marker([centerLat, centerLng], { icon: contaminatedWaterIcon })
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
-                        Type: Unfulfilled Treaty Obligations<br>
+                        Type: Contaminated Water<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
                         ${props.description ? props.description.substring(0, 100) + '...' : ''}
-                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
-                            🔍 Take a Closer Look
-                        </a>
-                        <br>
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">🔍 Take a Closer Look</a><br>
                         <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
                     </div>
-                `)
-                .addTo(unfulfilledTreatyObligationsGroup);
+                `).addTo(contaminatedWaterGroup);
         }
 
-        if (type === 'forced child apprehension' && filters.forced_child_apprehension) {
-            // Add forced child apprehension polygon
-            const fillColor = status === 'confirmed' ? '#000000' : '#808080';
+        if (type === 'hydroelectric disruption' && filters.hydroelectric_disruption) {
+            const fillColor = status === 'confirmed' ? '#ffd700' : '#ffec8b';
             if (feature.geometry.type !== 'Point') {
                 L.geoJSON(feature, {
-                    style: {
-                        color: fillColor,
-                        weight: 2,
-                        fillColor: fillColor,
-                        fillOpacity: 0.2
-                    }
-                }).addTo(forcedChildApprehensionGroup);
+                    style: { color: fillColor, weight: 2, fillColor: fillColor, fillOpacity: 0.2 }
+                }).addTo(hydroelectricDisruptionGroup);
             }
-            L.marker([centerLat, centerLng], { icon: forcedChildApprehensionIcon })
+            L.marker([centerLat, centerLng], { icon: hydroelectricDisruptionIcon })
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
-                        Type: Forced Child Apprehension<br>
+                        Type: Hydroelectric Disruption<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
                         ${props.description ? props.description.substring(0, 100) + '...' : ''}
-                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">
-                            🔍 Take a Closer Look
-                        </a>
-                        <br>
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">🔍 Take a Closer Look</a><br>
                         <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
                     </div>
-                `)
-                .addTo(forcedChildApprehensionGroup);
+                `).addTo(hydroelectricDisruptionGroup);
         }
 
+        if (type === 'invasive species' && filters.invasive_species) {
+            const fillColor = status === 'confirmed' ? '#ff6347' : '#ff7f50';
+            if (feature.geometry.type !== 'Point') {
+                L.geoJSON(feature, {
+                    style: { color: fillColor, weight: 2, fillColor: fillColor, fillOpacity: 0.2 }
+                }).addTo(invasiveSpeciesGroup);
+            }
+            L.marker([centerLat, centerLng], { icon: invasiveSpeciesIcon })
+                .bindPopup(`
+                    <div style='font-family: Arial, sans-serif;'>
+                        <strong>${props.name}</strong><br>
+                        Type: Invasive Species<br>
+                        Status: ${status}<br>
+                        Started: ${props.started_at || 'Unknown'}<br>
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">🔍 Take a Closer Look</a><br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
+                    </div>
+                `).addTo(invasiveSpeciesGroup);
+        }
 
+        if (type === 'declining fish population' && filters.declining_fish_population) {
+            const fillColor = status === 'confirmed' ? '#4169e1' : '#87ceeb';
+            if (feature.geometry.type !== 'Point') {
+                L.geoJSON(feature, {
+                    style: { color: fillColor, weight: 2, fillColor: fillColor, fillOpacity: 0.2 }
+                }).addTo(decliningFishPopulationGroup);
+            }
+            L.marker([centerLat, centerLng], { icon: decliningFishPopulationIcon })
+                .bindPopup(`
+                    <div style='font-family: Arial, sans-serif;'>
+                        <strong>${props.name}</strong><br>
+                        Type: Declining Fish Population<br>
+                        Status: ${status}<br>
+                        Started: ${props.started_at || 'Unknown'}<br>
+                        ${props.description ? props.description.substring(0, 100) + '...' : ''}
+                        <a href="#" class="zoom-link" onclick="zoomToFeature(${JSON.stringify(feature).replace(/"/g, '&quot;')}, this); return false;">🔍 Take a Closer Look</a><br>
+                        <a href="${discussionUrl}" class="btn btn-primary btn-sm mt-2 view-discussion-btn" target="_blank">View Discussion</a>
+                    </div>
+                `).addTo(decliningFishPopulationGroup);
+        }
     });
 
-    if (wildfireGroup.getLayers().length > 0) {
-        currentLayers.wildfires = wildfireGroup.addTo(map);
-    }
-
-    if (floodGroup.getLayers().length > 0) {
-        currentLayers.floods = floodGroup.addTo(map);
-    }
-    if (emergencyResponseFailureGroup.getLayers().length > 0) {
-        currentLayers.emergency_response_failure = emergencyResponseFailureGroup.addTo(map);
-    }
-    if (treatyLandRightsInfringementGroup.getLayers().length > 0) {
-        currentLayers.treaty_land_rights_infringement = treatyLandRightsInfringementGroup.addTo(map);
-    }
-    if (unfulfilledTreatyObligationsGroup.getLayers().length > 0) {
-        currentLayers.unfulfilled_treaty_obligations = unfulfilledTreatyObligationsGroup.addTo(map);
-    }
-    if (forcedChildApprehensionGroup.getLayers().length > 0) {
-        currentLayers.forced_child_apprehension = forcedChildApprehensionGroup.addTo(map);
-    }
-
+    if (floodGroup.getLayers().length > 0) currentLayers.floods = floodGroup.addTo(map);
+    if (droughtGroup.getLayers().length > 0) currentLayers.droughts = droughtGroup.addTo(map);
+    if (algalBloomGroup.getLayers().length > 0) currentLayers.algal_blooms = algalBloomGroup.addTo(map);
+    if (contaminatedWaterGroup.getLayers().length > 0) currentLayers.contaminated_water = contaminatedWaterGroup.addTo(map);
+    if (hydroelectricDisruptionGroup.getLayers().length > 0) currentLayers.hydroelectric_disruption = hydroelectricDisruptionGroup.addTo(map);
+    if (invasiveSpeciesGroup.getLayers().length > 0) currentLayers.invasive_species = invasiveSpeciesGroup.addTo(map);
+    if (decliningFishPopulationGroup.getLayers().length > 0) currentLayers.declining_fish_population = decliningFishPopulationGroup.addTo(map);
 }
 
-// Update metrics display
 function updateMetrics() {
-    // Get filter states
-    const showWildfires = document.getElementById('showWildfires').checked;
     const showFloods = document.getElementById('showFloods').checked;
-    const showEmergencyResponseFailure = document.getElementById('showEmergencyResponseFailure').checked;
-    const showTreatyLandRightsInfringement = document.getElementById('showTreatyLandRightsInfringement').checked;
-    const showUnfulfilledTreatyObligations = document.getElementById('showUnfulfilledTreatyObligations').checked;
-    const showForcedChildApprehension = document.getElementById('showForcedChildApprehension').checked;
-
+    const showDroughts = document.getElementById('showDroughts').checked;
+    const showAlgalBlooms = document.getElementById('showAlgalBlooms').checked;
+    const showContaminatedWater = document.getElementById('showContaminatedWater').checked;
+    const showHydroelectricDisruption = document.getElementById('showHydroelectricDisruption').checked;
+    const showInvasiveSpecies = document.getElementById('showInvasiveSpecies').checked;
+    const showDecliningFishPopulation = document.getElementById('showDecliningFishPopulation').checked;
     const statusConfirmed = document.getElementById('statusConfirmed').checked;
     const statusSuspected = document.getElementById('statusSuspected').checked;
-    const showParks = document.getElementById('showParks').checked;
 
-    // Calculate municipalities count
     let muniCount = 0;
     let totalPop = 0;
 
@@ -755,14 +662,9 @@ function updateMetrics() {
         });
     }
 
-    // Calculate incidents count
-    let fireCount = 0;
-    let floodCount = 0;
-    let emergencyResponseFailureCount = 0;
-    let treatyLandRightsInfringementCount = 0;
-    let unfulfilledTreatyObligationsCount = 0;
-    let forcedChildApprehensionCount = 0;
-
+    let floodCount = 0, droughtCount = 0, algalBloomCount = 0;
+    let contaminatedWaterCount = 0, hydroelectricDisruptionCount = 0;
+    let invasiveSpeciesCount = 0, decliningFishPopulationCount = 0;
 
     if (incidentsData) {
         incidentsData.features.forEach(feature => {
@@ -770,56 +672,36 @@ function updateMetrics() {
             const type = props.type;
             const status = props.status || props.confidence;
 
-            if ((status === 'confirmed' && statusConfirmed) ||
-                (status === 'suspected' && statusSuspected)) {
-                if (type === 'wildfire' && showWildfires) fireCount++;
+            if ((status === 'confirmed' && statusConfirmed) || (status === 'suspected' && statusSuspected)) {
                 if (type === 'flood' && showFloods) floodCount++;
-                if (type === 'emergency response failure' && showEmergencyResponseFailure) emergencyResponseFailureCount++;
-                if (type === 'treaty/land rights infringement' && showTreatyLandRightsInfringement) treatyLandRightsInfringementCount++;
-                if (type === 'unfulfilled treaty obligations' && showUnfulfilledTreatyObligations) unfulfilledTreatyObligationsCount++;
-                if (type === 'forced child apprehension' && showForcedChildApprehension) forcedChildApprehensionCount++;
-
+                if (type === 'drought' && showDroughts) droughtCount++;
+                if (type === 'algal bloom' && showAlgalBlooms) algalBloomCount++;
+                if (type === 'contaminated water' && showContaminatedWater) contaminatedWaterCount++;
+                if (type === 'hydroelectric disruption' && showHydroelectricDisruption) hydroelectricDisruptionCount++;
+                if (type === 'invasive species' && showInvasiveSpecies) invasiveSpeciesCount++;
+                if (type === 'declining fish population' && showDecliningFishPopulation) decliningFishPopulationCount++;
             }
         });
     }
 
-    // Calculate parks count
-    let parkCount = 0;
-    if (showParks && parksData) {
-        parkCount = parksData.features.length;
-    }
-
-    // Update display
     document.getElementById('muniCount').textContent = muniCount;
     document.getElementById('popCount').textContent = totalPop.toLocaleString();
-    document.getElementById('fireCount').textContent = fireCount;
     document.getElementById('floodCount').textContent = floodCount;
-    document.getElementById('emergencyResponseFailureCount').textContent = emergencyResponseFailureCount;
-    document.getElementById('treatyLandRightsInfringementCount').textContent = treatyLandRightsInfringementCount;
-    document.getElementById('unfulfilledTreatyObligationsCount').textContent = unfulfilledTreatyObligationsCount;
-    document.getElementById('forcedChildApprehensionCount').textContent = forcedChildApprehensionCount;
-
-
-    // Update total incidents
+    document.getElementById('droughtCount').textContent = droughtCount;
+    document.getElementById('algalBloomCount').textContent = algalBloomCount;
+    document.getElementById('contaminatedWaterCount').textContent = contaminatedWaterCount;
+    document.getElementById('hydroelectricDisruptionCount').textContent = hydroelectricDisruptionCount;
+    document.getElementById('invasiveSpeciesCount').textContent = invasiveSpeciesCount;
+    document.getElementById('decliningFishPopulationCount').textContent = decliningFishPopulationCount;
     document.getElementById('totalIncidents').textContent = incidentsData ? incidentsData.features.length : 0;
 }
 
-// Switch tabs
 function switchTab(tabName) {
-    // Update tab buttons
-    document.querySelectorAll('.tab').forEach(tab => {
-        tab.classList.remove('active');
-    });
+    document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
     event.target.closest('.tab').classList.add('active');
-
-    // Update tab content
-    document.querySelectorAll('.tab-content').forEach(content => {
-        content.classList.remove('active');
-    });
-
+    document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
     if (tabName === 'home') {
         document.getElementById('homeTab').classList.add('active');
-        // Refresh search suggestions if there's a query
         onSearchInput();
     } else if (tabName === 'report') {
         document.getElementById('reportTab').classList.add('active');
@@ -827,37 +709,20 @@ function switchTab(tabName) {
     }
 }
 
-// File upload handlers
-function handleDragOver(e) {
-    e.preventDefault();
-    e.currentTarget.classList.add('dragover');
-}
-
-function handleDragLeave(e) {
-    e.preventDefault();
-    e.currentTarget.classList.remove('dragover');
-}
-
+function handleDragOver(e) { e.preventDefault(); e.currentTarget.classList.add('dragover'); }
+function handleDragLeave(e) { e.preventDefault(); e.currentTarget.classList.remove('dragover'); }
 function handleDrop(e) {
     e.preventDefault();
     e.currentTarget.classList.remove('dragover');
-
     const files = e.dataTransfer.files;
-    if (files.length > 0) {
-        processFile(files[0]);
-    }
+    if (files.length > 0) processFile(files[0]);
 }
-
 function handleFileSelect(e) {
     const files = e.target.files;
-    if (files.length > 0) {
-        processFile(files[0]);
-    }
+    if (files.length > 0) processFile(files[0]);
 }
-
 function processFile(file) {
     const reader = new FileReader();
-
     reader.onload = function(e) {
         try {
             const data = JSON.parse(e.target.result);
@@ -866,7 +731,6 @@ function processFile(file) {
             showError('Failed to parse JSON file: ' + error.message);
         }
     };
-
     reader.readAsText(file);
 }
 
@@ -874,51 +738,40 @@ function uploadFileToServer(file, data) {
     const formData = new FormData();
     formData.append('file', file);
     formData.append('csrfmiddlewaretoken', getCookie('csrftoken'));
-
     fetch(uploadUrl, {
         method: 'POST',
         body: formData,
-        headers: {
-            'X-CSRFToken': getCookie('csrftoken')
-        }
+        headers: { 'X-CSRFToken': getCookie('csrftoken') }
     })
     .then(response => response.json())
     .then(result => {
         if (result.success) {
             showUploadResult(result);
-            // Reload data from server
             reloadDataFromServer();
         } else {
             showError(result.message || 'Upload failed');
         }
     })
-    .catch(error => {
-        showError('Upload failed: ' + error.message);
-    });
+    .catch(error => showError('Upload failed: ' + error.message));
 }
 
 async function reloadDataFromServer() {
-    // Reload data from Django API
     const allData = await loadJSONData(apiBaseUrl);
     if (allData) {
         municipalityData = allData.municipalities;
         incidentsData = allData.incidents;
         parksData = allData.parks;
-
         updateMap();
         updateMetrics();
         updateDataSummary();
         buildSearchIndex();
-
-        // Refresh search if there's a query
         const searchInput = document.getElementById('searchInput');
         if (searchInput.value.trim()) onSearchInput();
     }
 }
 
 function showUploadResult(result) {
-    const resultDiv = document.getElementById('uploadResult');
-    resultDiv.innerHTML = `
+    document.getElementById('uploadResult').innerHTML = `
         <div class="alert alert-success">
             <h4>✅ Upload Successful!</h4>
             <div style="margin-top: 10px;">
@@ -928,14 +781,11 @@ function showUploadResult(result) {
             </div>
         </div>
     `;
-
-    // Update data status
     document.getElementById('dataStatus').textContent = 'Using data with uploads';
 }
 
 function showError(message) {
-    const resultDiv = document.getElementById('uploadResult');
-    resultDiv.innerHTML = `
+    document.getElementById('uploadResult').innerHTML = `
         <div class="alert alert-danger">
             <h4>❌ Upload Failed</h4>
             <p>${message}</p>
@@ -946,49 +796,30 @@ function showError(message) {
 async function resetToDefault() {
     if (confirm('Are you sure you want to reload data from the server? This will refresh all data.')) {
         document.getElementById('dataStatus').textContent = 'Reloading data...';
-
-        // Clear upload results
         document.getElementById('uploadResult').innerHTML = '';
-
-        // Reload from server
         await reloadDataFromServer();
-
         document.getElementById('dataStatus').textContent = 'Data reloaded from Django API';
     }
 }
 
 function updateDataSummary() {
     const summaryDiv = document.getElementById('dataSummary');
-
     if (!incidentsData || !incidentsData.features) {
         summaryDiv.innerHTML = '<p>No incident data available</p>';
         return;
     }
 
-    // Count by type and status
     const typeCounts = {
-        wildfire: 0,
-        flood: 0,
-        'emergency response failure': 0,
-        'treaty/land rights infringement': 0,
-        'unfulfilled treaty obligations': 0,
-        'forced child apprehension': 0
+        flood: 0, drought: 0, 'algal bloom': 0, 'contaminated water': 0,
+        'hydroelectric disruption': 0, 'invasive species': 0, 'declining fish population': 0
     };
     const statusCounts = { confirmed: 0, suspected: 0 };
 
     incidentsData.features.forEach(feature => {
         const props = feature.properties;
-
-        // Count by type
-        if (props.type) {
-            typeCounts[props.type] = (typeCounts[props.type] || 0) + 1;
-        }
-
-        // Count by status
+        if (props.type) typeCounts[props.type] = (typeCounts[props.type] || 0) + 1;
         const status = props.status || props.confidence;
-        if (status) {
-            statusCounts[status] = (statusCounts[status] || 0) + 1;
-        }
+        if (status) statusCounts[status] = (statusCounts[status] || 0) + 1;
     });
 
     let html = `
@@ -996,12 +827,13 @@ function updateDataSummary() {
             <div>
                 <h4>By Type:</h4>
                 <ul style="list-style: none; padding: 0;">
-                    <li>🔥 Wildfire: ${typeCounts.wildfire || 0}</li>
                     <li>💧 Flood: ${typeCounts.flood || 0}</li>
-                    <li>🛡️ Emergency Response Failure: ${typeCounts['emergency response failure'] || 0}</li>
-                    <li>⚖️ Treaty/Land Rights Infringement: ${typeCounts['treaty/land rights infringement'] || 0}</li>
-                    <li>📜 Unfulfilled Treaty Obligations: ${typeCounts['unfulfilled treaty obligations'] || 0}</li>
-                    <li>👶 Forced Child Apprehension: ${typeCounts['forced child apprehension'] || 0}</li>
+                    <li>🌵 Drought: ${typeCounts.drought || 0}</li>
+                    <li>🦠 Algal Bloom: ${typeCounts['algal bloom'] || 0}</li>
+                    <li>☣️ Contaminated Water: ${typeCounts['contaminated water'] || 0}</li>
+                    <li>⚡ Hydroelectric Disruption: ${typeCounts['hydroelectric disruption'] || 0}</li>
+                    <li>🐟 Invasive Species: ${typeCounts['invasive species'] || 0}</li>
+                    <li>📉 Declining Fish Population: ${typeCounts['declining fish population'] || 0}</li>
                 </ul>
             </div>
             <div>
@@ -1012,20 +844,9 @@ function updateDataSummary() {
                 </ul>
             </div>
         </div>
-    `;
-
-    // Add sample data table
-    html += `
         <h4 style="margin-top: 20px;">Sample Data:</h4>
         <table class="summary-table">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Type</th>
-                    <th>Status</th>
-                    <th>Started</th>
-                </tr>
-            </thead>
+            <thead><tr><th>Name</th><th>Type</th><th>Status</th><th>Started</th></tr></thead>
             <tbody>
     `;
 
@@ -1036,26 +857,13 @@ function updateDataSummary() {
         sampleFeatures.forEach(feature => {
             const props = feature.properties;
             const status = props.status || props.confidence;
-            html += `
-                <tr>
-                    <td>${props.name || 'N/A'}</td>
-                    <td>${props.type || 'N/A'}</td>
-                    <td>${status || 'N/A'}</td>
-                    <td>${props.started_at || 'N/A'}</td>
-                </tr>
-            `;
+            html += `<tr><td>${props.name || 'N/A'}</td><td>${props.type || 'N/A'}</td><td>${status || 'N/A'}</td><td>${props.started_at || 'N/A'}</td></tr>`;
         });
     }
-
-    html += `
-            </tbody>
-        </table>
-    `;
-
+    html += '</tbody></table>';
     if (incidentsData.features.length > 5) {
         html += `<p style="color: #666; font-size: 0.9em;">Showing first 5 of ${incidentsData.features.length} incidents</p>`;
     }
-
     summaryDiv.innerHTML = html;
 }
 
@@ -1065,50 +873,18 @@ function downloadExampleData() {
         features: [
             {
                 type: "Feature",
-                geometry: {
-                    type: "Polygon",
-                    coordinates: [[
-                        [-97.2, 49.9],
-                        [-97.1, 49.9],
-                        [-97.1, 49.8],
-                        [-97.2, 49.8],
-                        [-97.2, 49.9]
-                    ]]
-                },
-                properties: {
-                    name: "Example Wildfire",
-                    type: "wildfire",
-                    status: "confirmed",
-                    started_at: "2024-03-15",
-                    description: "Example wildfire incident near Winnipeg"
-                }
+                geometry: { type: "Polygon", coordinates: [[[-97.2, 49.9], [-97.1, 49.9], [-97.1, 49.8], [-97.2, 49.8], [-97.2, 49.9]]] },
+                properties: { name: "Example Flood", type: "flood", status: "confirmed", started_at: "2024-03-15", description: "Example flood incident near Winnipeg" }
             },
             {
                 type: "Feature",
-                geometry: {
-                    type: "Polygon",
-                    coordinates: [[
-                        [-98.5, 53.5],
-                        [-98.4, 53.5],
-                        [-98.4, 53.4],
-                        [-98.5, 53.4],
-                        [-98.5, 53.5]
-                    ]]
-                },
-                properties: {
-                    name: "Example Flood",
-                    type: "flood",
-                    status: "suspected",
-                    started_at: "2024-04-01",
-                    description: "Example flood incident in northern Manitoba"
-                }
+                geometry: { type: "Polygon", coordinates: [[[-98.5, 53.5], [-98.4, 53.5], [-98.4, 53.4], [-98.5, 53.4], [-98.5, 53.5]]] },
+                properties: { name: "Example Drought", type: "drought", status: "suspected", started_at: "2024-04-01", description: "Example drought incident in northern Manitoba" }
             }
         ]
     };
-
     const dataStr = JSON.stringify(exampleData, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-
     const link = document.createElement('a');
     link.setAttribute('href', dataUri);
     link.setAttribute('download', 'example_incidents.geojson');
@@ -1117,12 +893,8 @@ function downloadExampleData() {
     document.body.removeChild(link);
 }
 
-/* -------------------- Search & Find Me logic -------------------- */
-
 function buildSearchIndex() {
     const index = [];
-
-    // Municipalities
     if (municipalityData && municipalityData.features) {
         municipalityData.features.forEach(feature => {
             const p = feature.properties || {};
@@ -1130,50 +902,27 @@ function buildSearchIndex() {
             let prefix = 'RM of';
             if (status === 'city') prefix = 'City of';
             else if (status === 'town') prefix = 'Town of';
-
             const label = `${prefix} ${p.name} MB`;
-            index.push({
-                label,
-                labelLower: label.toLowerCase(),
-                type: status === 'rm' ? 'RM' : (status.charAt(0).toUpperCase() + status.slice(1)),
-                feature
-            });
+            index.push({ label, labelLower: label.toLowerCase(), type: status === 'rm' ? 'RM' : (status.charAt(0).toUpperCase() + status.slice(1)), feature });
         });
     }
-
-    // Parks
     if (parksData && parksData.features) {
         parksData.features.forEach(feature => {
             const p = feature.properties || {};
             const name = p.NAME_E || p.name || 'Unnamed Park';
             const label = `${name} (Park)`;
-            index.push({
-                label,
-                labelLower: label.toLowerCase(),
-                type: 'Park',
-                feature
-            });
+            index.push({ label, labelLower: label.toLowerCase(), type: 'Park', feature });
         });
     }
-
-    // Incidents
     if (incidentsData && incidentsData.features) {
         incidentsData.features.forEach(feature => {
             const p = feature.properties || {};
             const t = (p.type || '').toLowerCase();
             const label = `${p.name} (${t.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase())})`;
-            index.push({
-                label,
-                labelLower: label.toLowerCase(),
-                type: t.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase()),
-                feature
-            });
+            index.push({ label, labelLower: label.toLowerCase(), type: t.replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase()), feature });
         });
     }
-
-    // Sort alphabetically
     index.sort((a, b) => a.label.localeCompare(b.label));
-
     searchIndex = index;
 }
 
@@ -1183,10 +932,7 @@ function onSearchInput() {
     const q = input.value.trim().toLowerCase();
     if (!q) { hideSuggestions(); clearBtn.style.display = 'none'; return; }
     clearBtn.style.display = 'block';
-
-    // Rank results: startsWith first, then includes
-    const starts = [];
-    const includes = [];
+    const starts = [], includes = [];
     for (const item of searchIndex) {
         const idx = item.labelLower.indexOf(q);
         if (idx === 0) starts.push(item);
@@ -1199,17 +945,8 @@ function onSearchInput() {
 function renderSuggestions(results, q) {
     const list = document.getElementById('suggestions');
     if (!results.length) { hideSuggestions(); return; }
-    list.innerHTML = results.map((r, i) => {
-        return `
-            <div class="suggestion-item" data-idx="${i}">
-                <span>${highlightMatch(r.label, q)}</span>
-                <span class="suggestion-type">${r.type}</span>
-            </div>
-        `;
-    }).join('');
+    list.innerHTML = results.map((r, i) => `<div class="suggestion-item" data-idx="${i}"><span>${highlightMatch(r.label, q)}</span><span class="suggestion-type">${r.type}</span></div>`).join('');
     list.style.display = 'block';
-
-    // Click handler
     list.querySelectorAll('.suggestion-item').forEach(el => {
         el.addEventListener('click', () => {
             const idx = parseInt(el.getAttribute('data-idx'), 10);
@@ -1227,9 +964,7 @@ function hideSuggestions() {
 function onSearchKeydown(e) {
     if (e.key === 'Enter') {
         e.preventDefault();
-        if (lastSearchResults.length > 0) {
-            selectSearchResult(lastSearchResults[0]);
-        }
+        if (lastSearchResults.length > 0) selectSearchResult(lastSearchResults[0]);
     } else if (e.key === 'Escape') {
         hideSuggestions();
         document.getElementById('searchInput').blur();
@@ -1256,22 +991,17 @@ function onFindMe() {
         alert('Geolocation is not supported by your browser.');
         return;
     }
-
     navigator.geolocation.getCurrentPosition(
         (pos) => {
             const { latitude, longitude, accuracy } = pos.coords;
-
-            // Remove previous marker if any
             if (userMarker) {
                 map.removeLayer(userMarker);
                 userMarker = null;
             }
-
             userMarker = L.marker([latitude, longitude], { icon: userIcon })
                 .addTo(map)
                 .bindPopup(`You are here<br><small>Accuracy ±${Math.round(accuracy)} m</small>`);
             userMarker.openPopup();
-
             zoomToPoint(latitude, longitude);
         },
         (err) => {
@@ -1282,5 +1012,4 @@ function onFindMe() {
     );
 }
 
-// Initialize app when DOM is loaded
 document.addEventListener('DOMContentLoaded', initApp);
