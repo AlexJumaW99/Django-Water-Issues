@@ -25,33 +25,22 @@ const userIcon = L.icon({
     popupAnchor: [0, -13]
 });
 
-const emergencyResponseFailureIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="red"><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7 .2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8 .2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24V296c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0 -64 0 32 32 0 1 0 64 0z"/></svg>'),
-    iconSize: [25, 25],
-    iconAnchor: [12.5, 12.5],
-    popupAnchor: [0, -13]
-});
+// Helper function to create custom icons from SVG files
+const createIncidentIcon = (iconName) => {
+    return L.icon({
+        iconUrl: `/static/water_issues_dashboard/images/icons/${iconName}.svg`,
+        iconSize: [25, 25],
+        iconAnchor: [12.5, 12.5],
+        popupAnchor: [0, -13]
+    });
+};
 
-const treatyLandRightsInfringementIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="purple"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>'),
-    iconSize: [25, 25],
-    iconAnchor: [12.5, 12.5],
-    popupAnchor: [0, -13]
-});
-
-const unfulfilledTreatyObligationsIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" fill="brown"><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V448c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128z"/></svg>'),
-    iconSize: [25, 25],
-    iconAnchor: [12.5, 12.5],
-    popupAnchor: [0, -13]
-});
-
-const forcedChildApprehensionIcon = L.icon({
-    iconUrl: 'data:image/svg+xml;base64,' + btoa('<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512" fill="black"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM176.4 176.4c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0L256 188.1l45.6-45.6c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9L289.9 222l45.6 45.6c9.4 9.4 9.4 24.6 0 33.9s-24.6 9.4-33.9 0L256 255.9l-45.6 45.6c-9.4 9.4-24.6 9.4-33.9 0s-9.4-24.6 0-33.9L222.1 222l-45.6-45.6z"/></svg>'),
-    iconSize: [25, 25],
-    iconAnchor: [12.5, 12.5],
-    popupAnchor: [0, -13]
-});
+const emergencyResponseFailureIcon = createIncidentIcon('emergency_response_failure');
+const treatyLandRightsInfringementIcon = createIncidentIcon('treaty_land_rights_infringement');
+const unfulfilledTreatyObligationsIcon = createIncidentIcon('unfulfilled_treaty_obligations');
+const forcedChildApprehensionIcon = createIncidentIcon('forced_child_apprehension');
+const wildfireIcon = createIncidentIcon('wildfire');
+const floodIcon = createIncidentIcon('flood');
 
 
 // Helper function to make CSRF-safe AJAX requests
@@ -89,16 +78,16 @@ function getCentroid(coordinates) {
     let totalLat = 0;
     let totalLon = 0;
     let count = 0;
-    
+
     // Handle nested arrays for polygon coordinates
     const coords = Array.isArray(coordinates[0][0]) ? coordinates[0] : coordinates;
-    
+
     coords.forEach(coord => {
         totalLon += coord[0];
         totalLat += coord[1];
         count++;
     });
-    
+
     return [totalLat / count, totalLon / count];
 }
 
@@ -136,14 +125,14 @@ function getFeatureBounds(feature) {
 // Function to zoom to a specific feature
 function zoomToFeature(feature, layer) {
     const bounds = getFeatureBounds(feature);
-    
+
     // Add some padding to the bounds
     const padding = 0.01;
     const paddedBounds = [
         [bounds[0][0] - padding, bounds[0][1] - padding],
         [bounds[1][0] + padding, bounds[1][1] + padding]
     ];
-    
+
     // Fit the map to the bounds with animation
     map.fitBounds(paddedBounds, {
         animate: true,
@@ -168,7 +157,7 @@ function zoomToPoint(lat, lng) {
 // Initialize the application
 async function initApp() {
     document.getElementById('dataStatus').textContent = 'Loading data from Django API...';
-    
+
     // Load data from Django API
     const allData = await loadJSONData(apiBaseUrl);
     if (!allData) {
@@ -176,13 +165,13 @@ async function initApp() {
         document.getElementById('dataStatus').textContent = 'Failed to load data';
         return;
     }
-    
+
     municipalityData = allData.municipalities || { type: "FeatureCollection", features: [] };
     incidentsData = allData.incidents || { type: "FeatureCollection", features: [] };
     parksData = allData.parks || { type: "FeatureCollection", features: [] };
-    
+
     document.getElementById('dataStatus').textContent = 'Data loaded from Django API';
-    
+
     initMap();
     setupEventListeners();
     applyCachedSettings();
@@ -218,18 +207,18 @@ function setupEventListeners() {
     document.getElementById('statusCity').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusTown').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusRM').addEventListener('change', updateFiltersAndMap);
-    
+
     // Population sliders
     document.getElementById('popMin').addEventListener('input', function() {
         document.getElementById('popMinValue').textContent = parseInt(this.value).toLocaleString();
         updateFiltersAndMap();
     });
-    
+
     document.getElementById('popMax').addEventListener('input', function() {
         document.getElementById('popMaxValue').textContent = parseInt(this.value).toLocaleString();
         updateFiltersAndMap();
     });
-    
+
     // Incident filters
     document.getElementById('showWildfires').addEventListener('change', updateFiltersAndMap);
     document.getElementById('showFloods').addEventListener('change', updateFiltersAndMap);
@@ -239,7 +228,7 @@ function setupEventListeners() {
     document.getElementById('showForcedChildApprehension').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusConfirmed').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusSuspected').addEventListener('change', updateFiltersAndMap);
-    
+
     // Map display options
     document.getElementById('showParks').addEventListener('change', updateFiltersAndMap);
 
@@ -299,7 +288,7 @@ function updateFiltersAndMap() {
     const form = document.getElementById('filterForm');
     const formData = new FormData(form);
     const params = new URLSearchParams();
-    
+
     // Add checkbox states
     params.set('statusCity', document.getElementById('statusCity').checked);
     params.set('statusTown', document.getElementById('statusTown').checked);
@@ -313,15 +302,15 @@ function updateFiltersAndMap() {
     params.set('statusConfirmed', document.getElementById('statusConfirmed').checked);
     params.set('statusSuspected', document.getElementById('statusSuspected').checked);
     params.set('showParks', document.getElementById('showParks').checked);
-    
+
     // Add slider values
     params.set('popMin', document.getElementById('popMin').value);
     params.set('popMax', document.getElementById('popMax').value);
-    
+
     // Update URL without refreshing page
     const newUrl = window.location.pathname + '?' + params.toString();
     window.history.replaceState({}, '', newUrl);
-    
+
     // Update the map display
     updateMap();
 }
@@ -383,7 +372,7 @@ function addParks() {
     parksData.features.forEach(feature => {
         const props = feature.properties;
         const name = props.NAME_E || props.name || 'Unknown Park';
-        
+
         const layer = L.geoJSON(feature, {
             style: {
                 fillColor: '#228b22',
@@ -407,7 +396,7 @@ function addParks() {
                 </a>
             </div>
         `);
-        
+
         parksGroup.addLayer(layer);
     });
 
@@ -434,11 +423,11 @@ function addMunicipalities(filters) {
 
         if (passesFilter && population >= filters.popMin && population <= filters.popMax) {
             const color = status === 'city' ? '#3b82f6' : status === 'town' ? '#10b981' : '#64748b';
-            
+
             // Create emoji based on status
             const emoji = status === 'city' ? '🏙️' : status === 'town' ? '🏘️' : '🌾';
             const displayStatus = status === 'city' ? 'City of' : status === 'town' ? 'Town of' : 'RM of';
-            
+
             const layer = L.geoJSON(feature, {
                 style: {
                     fillColor: color,
@@ -458,14 +447,14 @@ function addMunicipalities(filters) {
                     </a>
                 </div>
             `);
-            
+
             municipalityGroup.addLayer(layer);
             selectedCount++;
         }
     });
 
     document.getElementById('selectedPlaces').textContent = selectedCount;
-    
+
     if (selectedCount > 0) {
         currentLayers.municipalities = municipalityGroup.addTo(map);
     }
@@ -509,7 +498,7 @@ function addIncidents(filters) {
         if (type === 'wildfire' && filters.wildfires) {
             // Add wildfire polygon
             const fillColor = status === 'confirmed' ? '#d73027' : '#fc8d59';
-            
+
             if (feature.geometry.type !== 'Point') {
                 L.geoJSON(feature, {
                     style: {
@@ -521,14 +510,7 @@ function addIncidents(filters) {
                 }).addTo(wildfireGroup);
             }
 
-            // Add wildfire marker
-            const icon = L.divIcon({
-                html: '<i class="fas fa-fire" style="color: ' + (status === 'confirmed' ? 'red' : 'orange') + ';"></i>',
-                iconSize: [20, 20],
-                className: 'custom-div-icon'
-            });
-
-            L.marker([centerLat, centerLng], { icon: icon })
+            L.marker([centerLat, centerLng], { icon: wildfireIcon })
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
@@ -549,7 +531,7 @@ function addIncidents(filters) {
         if (type === 'flood' && filters.floods) {
             // Add flood polygon
             const fillColor = status === 'confirmed' ? '#2c7fb8' : '#7fcdbb';
-            
+
             if (feature.geometry.type !== 'Point') {
                 L.geoJSON(feature, {
                     style: {
@@ -561,14 +543,7 @@ function addIncidents(filters) {
                 }).addTo(floodGroup);
             }
 
-            // Add flood marker
-            const icon = L.divIcon({
-                html: '<i class="fas fa-tint" style="color: ' + (status === 'confirmed' ? 'blue' : 'lightblue') + ';"></i>',
-                iconSize: [20, 20],
-                className: 'custom-div-icon'
-            });
-
-            L.marker([centerLat, centerLng], { icon: icon })
+            L.marker([centerLat, centerLng], { icon: floodIcon })
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
@@ -753,7 +728,7 @@ function updateMetrics() {
     // Calculate municipalities count
     let muniCount = 0;
     let totalPop = 0;
-    
+
     if (municipalityData) {
         const filters = {
             city: document.getElementById('statusCity').checked,
@@ -795,7 +770,7 @@ function updateMetrics() {
             const type = props.type;
             const status = props.status || props.confidence;
 
-            if ((status === 'confirmed' && statusConfirmed) || 
+            if ((status === 'confirmed' && statusConfirmed) ||
                 (status === 'suspected' && statusSuspected)) {
                 if (type === 'wildfire' && showWildfires) fireCount++;
                 if (type === 'flood' && showFloods) floodCount++;
@@ -824,7 +799,7 @@ function updateMetrics() {
     document.getElementById('unfulfilledTreatyObligationsCount').textContent = unfulfilledTreatyObligationsCount;
     document.getElementById('forcedChildApprehensionCount').textContent = forcedChildApprehensionCount;
 
-    
+
     // Update total incidents
     document.getElementById('totalIncidents').textContent = incidentsData ? incidentsData.features.length : 0;
 }
@@ -866,7 +841,7 @@ function handleDragLeave(e) {
 function handleDrop(e) {
     e.preventDefault();
     e.currentTarget.classList.remove('dragover');
-    
+
     const files = e.dataTransfer.files;
     if (files.length > 0) {
         processFile(files[0]);
@@ -882,7 +857,7 @@ function handleFileSelect(e) {
 
 function processFile(file) {
     const reader = new FileReader();
-    
+
     reader.onload = function(e) {
         try {
             const data = JSON.parse(e.target.result);
@@ -891,7 +866,7 @@ function processFile(file) {
             showError('Failed to parse JSON file: ' + error.message);
         }
     };
-    
+
     reader.readAsText(file);
 }
 
@@ -929,12 +904,12 @@ async function reloadDataFromServer() {
         municipalityData = allData.municipalities;
         incidentsData = allData.incidents;
         parksData = allData.parks;
-        
+
         updateMap();
         updateMetrics();
         updateDataSummary();
         buildSearchIndex();
-        
+
         // Refresh search if there's a query
         const searchInput = document.getElementById('searchInput');
         if (searchInput.value.trim()) onSearchInput();
@@ -953,7 +928,7 @@ function showUploadResult(result) {
             </div>
         </div>
     `;
-    
+
     // Update data status
     document.getElementById('dataStatus').textContent = 'Using data with uploads';
 }
@@ -971,44 +946,44 @@ function showError(message) {
 async function resetToDefault() {
     if (confirm('Are you sure you want to reload data from the server? This will refresh all data.')) {
         document.getElementById('dataStatus').textContent = 'Reloading data...';
-        
+
         // Clear upload results
         document.getElementById('uploadResult').innerHTML = '';
-        
+
         // Reload from server
         await reloadDataFromServer();
-        
+
         document.getElementById('dataStatus').textContent = 'Data reloaded from Django API';
     }
 }
 
 function updateDataSummary() {
     const summaryDiv = document.getElementById('dataSummary');
-    
+
     if (!incidentsData || !incidentsData.features) {
         summaryDiv.innerHTML = '<p>No incident data available</p>';
         return;
     }
 
     // Count by type and status
-    const typeCounts = { 
-        wildfire: 0, 
-        flood: 0, 
-        'emergency response failure': 0, 
+    const typeCounts = {
+        wildfire: 0,
+        flood: 0,
+        'emergency response failure': 0,
         'treaty/land rights infringement': 0,
         'unfulfilled treaty obligations': 0,
         'forced child apprehension': 0
     };
     const statusCounts = { confirmed: 0, suspected: 0 };
-    
+
     incidentsData.features.forEach(feature => {
         const props = feature.properties;
-        
+
         // Count by type
         if (props.type) {
             typeCounts[props.type] = (typeCounts[props.type] || 0) + 1;
         }
-        
+
         // Count by status
         const status = props.status || props.confidence;
         if (status) {
@@ -1038,7 +1013,7 @@ function updateDataSummary() {
             </div>
         </div>
     `;
-    
+
     // Add sample data table
     html += `
         <h4 style="margin-top: 20px;">Sample Data:</h4>
@@ -1053,7 +1028,7 @@ function updateDataSummary() {
             </thead>
             <tbody>
     `;
-    
+
     const sampleFeatures = incidentsData.features.slice(0, 5);
     if (sampleFeatures.length === 0) {
         html += '<tr><td colspan="4">No incidents found</td></tr>';
@@ -1071,16 +1046,16 @@ function updateDataSummary() {
             `;
         });
     }
-    
+
     html += `
             </tbody>
         </table>
     `;
-    
+
     if (incidentsData.features.length > 5) {
         html += `<p style="color: #666; font-size: 0.9em;">Showing first 5 of ${incidentsData.features.length} incidents</p>`;
     }
-    
+
     summaryDiv.innerHTML = html;
 }
 
@@ -1133,7 +1108,7 @@ function downloadExampleData() {
 
     const dataStr = JSON.stringify(exampleData, null, 2);
     const dataUri = 'data:application/json;charset=utf-8,' + encodeURIComponent(dataStr);
-    
+
     const link = document.createElement('a');
     link.setAttribute('href', dataUri);
     link.setAttribute('download', 'example_incidents.geojson');
