@@ -154,6 +154,7 @@ body {
     overflow: hidden;
 }
 
+/* water_issues_dashboard/static/water_issues_dashboard/styles.css */
 .metric-card {
     background: #ffffff;
     border: 1px solid #dddddd;
@@ -164,6 +165,17 @@ body {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
     cursor: pointer;
+    word-wrap: break-word; /* Add this */
+    overflow-wrap: break-word; /* And this for better browser support */
+}
+
+.metric-label {
+    font-size: 0.9em;
+    color: #333333;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    word-wrap: break-word; /* Add this */
+    overflow-wrap: break-word; /* And this for better browser support */
 }
 
 .metric-card:hover {
@@ -217,12 +229,6 @@ body {
     color: #444444;
 }
 
-.metric-label {
-    font-size: 0.9em;
-    color: #333333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 /* Map Container */
 .map-container {
@@ -522,12 +528,6 @@ body {
     color: #444444;
 }
 
-.metric-label {
-    font-size: 0.9em;
-    color: #333333;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
 
 /* Map Container */
 .map-container {

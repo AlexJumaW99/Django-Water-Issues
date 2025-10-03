@@ -72,6 +72,15 @@ body {
     min-width: 100px; /* Minimum width for each card */
     flex: 1; /* Allow cards to grow and fill the space */
     border-left: 5px solid transparent; /* Default border */
+    word-wrap: break-word; /* Add this */
+    overflow-wrap: break-word; /* And this for better browser support */
+}
+
+.metric-label {
+    font-size: 0.7em;
+    color: #6c757d;
+    word-wrap: break-word; /* Add this */
+    overflow-wrap: break-word; /* And this for better browser support */
 }
 
 .metric-icon {
@@ -83,10 +92,6 @@ body {
     font-weight: bold;
 }
 
-.metric-label {
-    font-size: 0.7em;
-    color: #6c757d;
-}
 
 /* --- Added Styles for Metric Card Colors --- */
 
