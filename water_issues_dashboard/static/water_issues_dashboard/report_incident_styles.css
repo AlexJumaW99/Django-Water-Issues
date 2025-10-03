@@ -1,0 +1,467 @@
+/* Report Incident Page Styles */
+
+/* Container and Layout */
+.report-container {
+    max-width: 1000px;
+    margin: 80px auto 40px;
+    padding: 0 20px;
+}
+
+/* Page Header */
+.report-header {
+    background: linear-gradient(135deg, #5f788a 0%, #4a6175 100%);
+    color: #ffffff;
+    padding: 30px;
+    border-radius: 8px 8px 0 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 0;
+}
+
+.report-header h2 {
+    margin: 0;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+.report-header p {
+    margin: 10px 0 0;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+/* Form Container */
+.report-form-container {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    border: 1px solid #dddddd;
+}
+
+/* Form Sections */
+.form-section {
+    margin-bottom: 35px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.form-section h3 {
+    color: #444444;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-section h3::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: #5f788a;
+    border-radius: 2px;
+}
+
+/* Form Groups */
+#incidentForm .form-group {
+    margin-bottom: 25px;
+}
+
+#incidentForm .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444444;
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+#incidentForm .form-group label::after {
+    content: '*';
+    color: #dc3545;
+    margin-left: 4px;
+}
+
+/* Form Controls */
+#incidentForm .form-control,
+#incidentForm select,
+#incidentForm textarea,
+#incidentForm input[type="text"],
+#incidentForm input[type="date"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    background: #fafafa;
+    color: #333333;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+#incidentForm .form-control:focus,
+#incidentForm select:focus,
+#incidentForm textarea:focus,
+#incidentForm input[type="text"]:focus,
+#incidentForm input[type="date"]:focus {
+    outline: none;
+    border-color: #5f788a;
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(95, 120, 138, 0.1);
+}
+
+#incidentForm textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+#incidentForm select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    padding-right: 40px;
+}
+
+/* Map Section */
+.map-section {
+    background: #f8f9fa;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    border: 2px dashed #d0d0d0;
+}
+
+.map-instructions {
+    background: #e8f4f8;
+    border-left: 4px solid #5f788a;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.map-instructions p {
+    margin: 0;
+    color: #2c5f7a;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.map-instructions strong {
+    color: #1a3d4f;
+    font-weight: 600;
+}
+
+#map {
+    height: 500px;
+    width: 100%;
+    border-radius: 6px;
+    border: 2px solid #dddddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    background: #ffffff;
+}
+
+/* Reset Button */
+#resetButton {
+    background: #6c757d;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+#resetButton:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+#resetButton::before {
+    content: '↻';
+    font-size: 1.2em;
+}
+
+/* Form Actions */
+.form-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-start;
+    padding-top: 25px;
+    border-top: 2px solid #e9ecef;
+}
+
+.form-actions .btn {
+    padding: 12px 30px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.form-actions .btn-primary {
+    background: linear-gradient(135deg, #5f788a 0%, #4a6175 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 6px rgba(95, 120, 138, 0.3);
+}
+
+.form-actions .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(95, 120, 138, 0.4);
+}
+
+.form-actions .btn-primary::before {
+    content: '📝';
+}
+
+.form-actions .btn-outline-secondary {
+    background: transparent;
+    color: #6c757d;
+    border: 2px solid #6c757d;
+    box-shadow: none;
+}
+
+.form-actions .btn-outline-secondary:hover {
+    background: #6c757d;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(108, 117, 125, 0.3);
+}
+
+.form-actions .btn-outline-secondary::before {
+    content: '←';
+    font-weight: bold;
+}
+
+/* Help Text */
+.help-text {
+    font-size: 0.85rem;
+    color: #6c757d;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* Required Field Indicator */
+.required-fields-note {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+    color: #856404;
+}
+
+.required-fields-note::before {
+    content: '⚠️ ';
+    margin-right: 5px;
+}
+
+/* Map Markers Info */
+.marker-legend {
+    background: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.marker-legend h4 {
+    margin: 0 0 10px;
+    font-size: 1rem;
+    color: #444444;
+}
+
+.marker-legend ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.marker-legend li {
+    padding: 5px 0;
+    color: #666666;
+}
+
+.marker-legend li::before {
+    content: '📍';
+    margin-right: 8px;
+}
+
+/* Loading State */
+.form-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.9);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.form-loading.active {
+    display: flex;
+}
+
+.spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #5f788a;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Error States */
+.form-control.error,
+select.error,
+textarea.error,
+input.error {
+    border-color: #dc3545;
+    background: #fff5f5;
+}
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.85rem;
+    margin-top: 6px;
+    display: none;
+}
+
+.error-message.active {
+    display: block;
+}
+
+/* Success Message */
+.success-banner {
+    background: linear-gradient(135deg, #28a745 0%, #20833a 100%);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: none;
+    align-items: center;
+    gap: 15px;
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.3);
+}
+
+.success-banner.active {
+    display: flex;
+}
+
+.success-banner::before {
+    content: '✓';
+    font-size: 2em;
+    background: rgba(255, 255, 255, 0.2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .report-container {
+        margin-top: 70px;
+        padding: 0 15px;
+    }
+
+    .report-header {
+        padding: 20px;
+        border-radius: 6px 6px 0 0;
+    }
+
+    .report-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .report-form-container {
+        padding: 20px;
+    }
+
+    .form-section h3 {
+        font-size: 1.1rem;
+    }
+
+    #map {
+        height: 400px;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .map-section {
+        padding: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .report-header h2 {
+        font-size: 1.3rem;
+    }
+
+    #incidentForm .form-control,
+    #incidentForm select,
+    #incidentForm textarea {
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    #map {
+        height: 350px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .form-actions,
+    #resetButton,
+    .map-instructions {
+        display: none;
+    }
+
+    .report-container {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    #map {
+        border: 1px solid #000;
+        page-break-inside: avoid;
+    }
+}

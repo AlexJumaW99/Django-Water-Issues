@@ -4,45 +4,79 @@
 {% block title %}Report an Incident{% endblock %}
 
 {% block content %}
-<div class="container mt-5">
-    <h2>Report a New Incident</h2>
-    <form method="post" id="incidentForm">
-        {% csrf_token %}
-        <div class="form-group">
-            <label for="id_name">Incident Name</label>
-            {{ form.name }}
+<div class="report-container">
+    <div class="report-header">
+        <h2>🚨 Report a New Incident</h2>
+        <p>Help us track important incidents by providing detailed information below</p>
+    </div>
+    
+    <div class="report-form-container">
+        <div class="required-fields-note">
+            All fields marked with * are required
         </div>
-        <div class="form-group">
-            <label for="id_incident_type">Type</label>
-            {{ form.incident_type }}
-        </div>
-        <div class="form-group">
-            <label for="id_status">Status</label>
-            {{ form.status }}
-        </div>
-        <div class="form-group">
-            <label for="id_started_at">Started At</label>
-            {{ form.started_at }}
-        </div>
-        <div class="form-group">
-            <label for="id_description">Description</label>
-            {{ form.description }}
-        </div>
-        
-        {{ form.geometry }}
 
-        <h3>Draw Affected Area</h3>
-        <p>Click on the map in four different locations to draw a polygon. Use the reset button to start over.</p>
-        <div id="map" style="height: 500px; width: 100%;"></div>
-        <button type="button" id="resetButton" class="btn btn-secondary mt-2">Reset</button>
+        <form method="post" id="incidentForm">
+            {% csrf_token %}
+            
+            <div class="form-section">
+                <h3>Incident Details</h3>
+                
+                <div class="form-group">
+                    <label for="id_name">Incident Name</label>
+                    {{ form.name }}
+                    <div class="help-text">Provide a descriptive name for this incident</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_incident_type">Incident Type</label>
+                    {{ form.incident_type }}
+                    <div class="help-text">Select the type that best describes this incident</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_status">Status</label>
+                    {{ form.status }}
+                    <div class="help-text">Confirmed or suspected incident</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_started_at">Started Date</label>
+                    {{ form.started_at }}
+                    <div class="help-text">When did this incident begin?</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_description">Description</label>
+                    {{ form.description }}
+                    <div class="help-text">Provide additional details about the incident</div>
+                </div>
+            </div>
 
-        <hr>
-        <button type="submit" class="btn btn-primary">Submit Report</button>
-        <a href="{% url 'water_issues_dashboard:home' %}" class="btn btn-outline-secondary">Cancel</a>
-    </form>
+            {{ form.geometry }}
+
+            <div class="form-section">
+                <div class="map-section">
+                    <h3>Draw Affected Area</h3>
+                    <div class="map-instructions">
+                        <p><strong>Instructions:</strong> Click on the map in four different locations to draw a polygon representing the affected area. Each click adds a marker. After four points, a polygon will automatically be created. Use the reset button below to start over if needed.</p>
+                    </div>
+                    <div id="map"></div>
+                    <button type="button" id="resetButton">Reset Map</button>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">Submit Report</button>
+                <a href="{% url 'water_issues_dashboard:home' %}" class="btn btn-outline-secondary">Cancel</a>
+            </div>
+        </form>
+    </div>
 </div>
 {% endblock %}
 
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'water_issues_dashboard/report_incident_styles.css' %}">
+{% endblock %}
 
 {% block extra_js %}
 <script>
@@ -68,9 +102,10 @@
 
                 if (points.length === 4) {
                     polygon = L.polygon(points, { 
-                        color: 'blue',
-                        fillColor: '#3388ff',
-                        fillOpacity: 0.5 
+                        color: '#5f788a',
+                        fillColor: '#5f788a',
+                        fillOpacity: 0.3,
+                        weight: 2
                     }).addTo(map);
                     
                     // Create a GeoJSON Polygon feature
@@ -84,7 +119,7 @@
                     geometryInput.value = JSON.stringify(geojson);
                 }
             } else {
-                alert("You can only select 4 points. Please press 'Reset' to start over.");
+                alert("You can only select 4 points. Please press 'Reset Map' to start over.");
             }
         });
 
