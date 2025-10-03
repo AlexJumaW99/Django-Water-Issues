@@ -1,18 +1,962 @@
 [
   {
-    "title": "Water Quality in the City Center",
-    "content": "I've noticed a strange taste in the tap water recently in the downtown area. Has anyone else experienced this?",
-    "author_username": "john_doe",
+    "title": "Smoke near Red River North",
+    "content": "Just saw the smoke from my backyard. Hope everyone stays safe out there! #RedRiverFire",
+    "author_username": "LocalResident1",
     "incident_id": 1
   },
   {
-    "title": "Boil Water Advisory for North End",
-    "content": "Just received a notification about a boil water advisory for the North End. Stay safe everyone!",
-    "author_username": "jane_smith"
+    "title": "Crews Dispatched to Wildfire",
+    "content": "Crews are on the scene of the wildfire north of the city. Please avoid the area and follow all evacuation orders.",
+    "author_username": "VolunteerFireDept",
+    "incident_id": 1
   },
   {
-    "title": "Low Water Pressure in West Suburbs",
-    "content": "My water pressure has been really low for the past few days. Is there a main break somewhere in the west suburbs?",
-    "author_username": "john_doe"
+    "title": "BREAKING: Wildfire Confirmed",
+    "content": "BREAKING: A wildfire has been confirmed in the Red River North area. Authorities are advising residents to be prepared for possible evacuations.",
+    "author_username": "NewsReporterJay",
+    "incident_id": 1
+  },
+  {
+    "title": "Updates on Red River North fire?",
+    "content": "Does anyone have updates on the Red River North fire? I have family in that area and I'm getting worried.",
+    "author_username": "ConcernedCitizen",
+    "incident_id": 1
+  },
+  {
+    "title": "Official Update from City of Selkirk",
+    "content": "Official Update: The wildfire is currently moving north-east. No evacuation orders have been issued for the City of Selkirk at this time. Stay tuned for further updates.",
+    "author_username": "CityOfSelkirk",
+    "incident_id": 1
+  },
+  {
+    "title": "Our Forests Are Burning",
+    "content": "So sad to see our beautiful forests burning. Thank you to the brave firefighters working to contain the blaze.",
+    "author_username": "NatureLover22",
+    "incident_id": 1
+  },
+  {
+    "title": "Moving Livestock",
+    "content": "Had to move my livestock as a precaution. The smoke is getting pretty thick. #ManitobaFires",
+    "author_username": "FarmerJohn",
+    "incident_id": 1
+  },
+  {
+    "title": "Emergency Shelter",
+    "content": "An emergency shelter has been set up at the Selkirk Community Hall for residents affected by the wildfire.",
+    "author_username": "EmergencyServicesMB",
+    "incident_id": 1
+  },
+  {
+    "title": "Red Cross on Standby",
+    "content": "We are on standby to provide assistance to anyone affected by the Red River North wildfire. Please reach out if you need support.",
+    "author_username": "RedCrossManitoba",
+    "incident_id": 1
+  },
+  {
+    "title": "Harrowing Images",
+    "content": "Captured some harrowing images of the fire from a safe distance. The power of nature is truly humbling.",
+    "author_username": "LocalPhotographer",
+    "incident_id": 1
+  },
+  {
+    "title": "Possible Fire near Lake Winnipeg",
+    "content": "Flew over Lake Winnipeg earlier today and spotted what looked like a fire starting on the west side. Reported it to the authorities.",
+    "author_username": "Pilot_Mike",
+    "incident_id": 2
+  },
+  {
+    "title": "Investigating West Shore Fire",
+    "content": "We have received reports of a potential wildfire on the west shore of Lake Winnipeg. A team is being dispatched to investigate.",
+    "author_username": "MBFireWatch",
+    "incident_id": 2
+  },
+  {
+    "title": "Haze over the lake",
+    "content": "Is it just me or is there a haze over the lake? Smells a bit like smoke.",
+    "author_username": "CamperChris",
+    "incident_id": 2
+  },
+  {
+    "title": "Cottage Trip Concerns",
+    "content": "I'm supposed to be heading to my cottage on the west side of the lake this weekend. Should I be concerned about a fire?",
+    "author_username": "CottageOwner",
+    "incident_id": 2
+  },
+  {
+    "title": "Gimli Harbour Update",
+    "content": "We're keeping an eye on the situation on the west side of the lake. No immediate threat to Gimli at this time.",
+    "author_username": "GimliHarbour",
+    "incident_id": 2
+  },
+  {
+    "title": "Water Bomber Spotted",
+    "content": "Saw a water bomber heading that way a little while ago. Hope they can get it under control quickly.",
+    "author_username": "FishermanFrank",
+    "incident_id": 2
+  },
+  {
+    "title": "Wind Picking Up",
+    "content": "The wind is picking up, which could be bad news for that suspected fire. Everyone in the area should stay alert.",
+    "author_username": "WeatherWatcher",
+    "incident_id": 2
+  },
+  {
+    "title": "Hecla-Grindstone Park Alert",
+    "content": "We are monitoring the suspected wildfire on the west side of the lake. All visitors to Hecla-Grindstone Provincial Park should remain vigilant.",
+    "author_username": "HeclaGrindstone",
+    "incident_id": 2
+  },
+  {
+    "title": "Air Quality Warning",
+    "content": "Air quality may be affected in the Interlake region due to the suspected wildfire. Those with respiratory conditions should take precautions.",
+    "author_username": "MBEnvironment",
+    "incident_id": 2
+  },
+  {
+    "title": "Search and Rescue on Standby",
+    "content": "Our teams are on standby to assist with any potential evacuations if the fire escalates.",
+    "author_username": "SearchAndRescue",
+    "incident_id": 2
+  },
+  {
+    "title": "Assiniboine River Rising",
+    "content": "The Assiniboine River is looking really high this morning. Hope it doesn't breach the banks.",
+    "author_username": "RiverWatcher",
+    "incident_id": 3
+  },
+  {
+    "title": "Overland Flooding Possible",
+    "content": "Public Notice: Due to rising river levels, some low-lying areas near the Assiniboine River may experience overland flooding. Please take necessary precautions.",
+    "author_username": "CityOfPortage",
+    "incident_id": 3
+  },
+  {
+    "title": "Fields are Flooding",
+    "content": "My lower fields are already starting to flood. This is going to be a long day. #MBFlood",
+    "author_username": "FarmerJane",
+    "incident_id": 3
+  },
+  {
+    "title": "Live from the Lowlands",
+    "content": "We are live on the scene in the Assiniboine Lowlands where overland flooding is occurring. More details to come.",
+    "author_username": "LocalNews",
+    "incident_id": 3
+  },
+  {
+    "title": "Flood Warning Issued",
+    "content": "A flood warning has been issued for the Assiniboine River from Portage la Prairie to Headingley. Water levels are expected to continue to rise over the next 24 hours.",
+    "author_username": "MBHydrologic",
+    "incident_id": 3
+  },
+  {
+    "title": "Sandbagging Stations Open",
+    "content": "Sandbagging stations have been set up at the municipal office for residents in need.",
+    "author_username": "RMofCartier",
+    "incident_id": 3
+  },
+  {
+    "title": "Highway 26 Closed",
+    "content": "Highway 26 is closed near St. Francois Xavier due to water over the road. Find an alternate route.",
+    "author_username": "Trucker_Tom",
+    "incident_id": 3
+  },
+  {
+    "title": "Reinforcing Dikes",
+    "content": "Our crews are working to reinforce dikes and protect critical infrastructure. Please stay away from all flood control structures.",
+    "author_username": "MBInfrastructure",
+    "incident_id": 3
+  },
+  {
+    "title": "Need a Sump Pump",
+    "content": "Does anyone have a sump pump I can borrow? My basement is starting to take on water.",
+    "author_username": "HomeownerHelp",
+    "incident_id": 3
+  },
+  {
+    "title": "Red River Relief on the Ground",
+    "content": "Our volunteers are on the ground in the Assiniboine Lowlands, providing assistance to those affected by the flooding. #MBFlood",
+    "author_username": "RedRiverRelief",
+    "incident_id": 3
+  },
+  {
+    "title": "High Water in the Marsh",
+    "content": "The water levels in the marsh are higher than I've ever seen them. The birds don't seem to mind though!",
+    "author_username": "BirdWatcherBill",
+    "incident_id": 4
+  },
+  {
+    "title": "Oak Hammock Marsh Update",
+    "content": "We are aware of the high water levels in the area. Our team is assessing the situation and will provide updates as they become available.",
+    "author_username": "OakHammockMarsh",
+    "incident_id": 4
+  },
+  {
+    "title": "Water on Roads in Rockwood",
+    "content": "We have received reports of pooled water on some roads in the northern part of the municipality. Please drive with caution.",
+    "author_username": "RMofRockwood",
+    "incident_id": 4
+  },
+  {
+    "title": "Trails Closed at Oak Hammock",
+    "content": "Tried to go for a hike at Oak Hammock Marsh today, but some of the trails were closed due to flooding.",
+    "author_username": "LocalHiker",
+    "incident_id": 4
+  },
+  {
+    "title": "Assessment Team Dispatched",
+    "content": "An assessment team is en route to the Interlake Marsh to investigate reports of localized flooding. We will provide more information as it becomes available.",
+    "author_username": "MBWaterStewardship",
+    "incident_id": 4
+  },
+  {
+    "title": "Interlake Open for Business",
+    "content": "Despite the high water levels, the Interlake is still open for business! Come and see the marsh in all its glory.",
+    "author_username": "InterlakeTourism",
+    "incident_id": 4
+  },
+  {
+    "title": "Perfect Day for a Canoe Trip",
+    "content": "Perfect day for a canoe trip in the marsh! The high water makes for some interesting new channels to explore.",
+    "author_username": "CanoeLife",
+    "incident_id": 4
+  },
+  {
+    "title": "Stonewall Chronicle Following Story",
+    "content": "We are following the story of the suspected flooding in the Interlake Marsh. Stay with us for the latest updates.",
+    "author_username": "StonewallChronicle",
+    "incident_id": 4
+  },
+  {
+    "title": "Natural Part of Marsh Ecosystem",
+    "content": "High water levels are a natural part of the marsh ecosystem. We are monitoring the situation to ensure the long-term health of the marsh.",
+    "author_username": "ConservationMB",
+    "incident_id": 4
+  },
+  {
+    "title": "Road Conditions in Interlake",
+    "content": "Motorists are advised to be aware of potential water on roads in the Interlake region due to recent heavy rainfall.",
+    "author_username": "RoadConditionsMB",
+    "incident_id": 4
+  },
+  {
+    "title": "Trapped and Abandoned",
+    "content": "We were trapped. The government and Manitoba Hydro left us to burn. They need to be held accountable. #MBWildfire #JusticeForOurCommunity",
+    "author_username": "CommunityVoice",
+    "incident_id": 5
+  },
+  {
+    "title": "Investigating the Stranded Community",
+    "content": "I'm looking into the story of the community that was stranded during the wildfires. If you have any information, please contact me confidentially.",
+    "author_username": "InvestigativeJournalist",
+    "incident_id": 5
+  },
+  {
+    "title": "Manitoba Hydro Puts Profits Before People",
+    "content": "Manitoba Hydro puts profits before people. This is just another example of their disregard for the safety of our communities.",
+    "author_username": "MBHydroProtester",
+    "incident_id": 5
+  },
+  {
+    "title": "Exploring Legal Options",
+    "content": "We are exploring legal options for the residents of the community that was affected by the wildfire and the failure to operate the dam.",
+    "author_username": "LawyerUp",
+    "incident_id": 5
+  },
+  {
+    "title": "Support for the North",
+    "content": "Let's show our support for the community that was so tragically let down by the government. A fundraiser is being organized.",
+    "author_username": "SupportTheNorth",
+    "incident_id": 5
+  },
+  {
+    "title": "Government's Handling a Disgrace",
+    "content": "The government's handling of this situation is a disgrace. We are calling for a full public inquiry into this matter.",
+    "author_username": "PoliticalOpposition",
+    "incident_id": 5
+  },
+  {
+    "title": "A Story Heard Too Many Times",
+    "content": "This is a story we have heard too many times before. First Nations communities are consistently put at risk by government inaction.",
+    "author_username": "FirstNationsUnited",
+    "incident_id": 5
+  },
+  {
+    "title": "Providing Relief and Support",
+    "content": "We are working with the affected community to provide immediate relief and long-term support. Your donations are greatly appreciated.",
+    "author_username": "MBDisasterRelief",
+    "incident_id": 5
+  },
+  {
+    "title": "A Moral Decision, Not a Technical One",
+    "content": "The decision to not open the floodgates was not just a technical one, it was a moral one. We need to rethink our emergency response protocols.",
+    "author_username": "Engineer4Change",
+    "incident_id": 5
+  },
+  {
+    "title": "Never Forget",
+    "content": "We will not let this be forgotten. The names of those who made this decision will be remembered. #MBWildfire #Accountability",
+    "author_username": "NeverForget",
+    "incident_id": 5
+  },
+  {
+    "title": "Timber Over History",
+    "content": "They chose timber over our history. Our sacred sites are gone, but our spirit is not broken. #JusticeForPineCreek",
+    "author_username": "PineCreekStrong",
+    "incident_id": 6
+  },
+  {
+    "title": "Environmental Racism",
+    "content": "This is a clear case of environmental racism. The government sacrificed Indigenous land to protect corporate profits.",
+    "author_username": "LandDefender",
+    "incident_id": 6
+  },
+  {
+    "title": "Thank You to the Whistleblower",
+    "content": "Thank you to the brave whistleblower who exposed this injustice. We stand with you. #TruthToPower",
+    "author_username": "WhistleblowerSupport",
+    "incident_id": 6
+  },
+  {
+    "title": "Ongoing Colonial Violence",
+    "content": "The story of Pine Creek First Nation is a painful reminder of the ongoing colonial violence against our people. We demand justice.",
+    "author_username": "TheIndigenousVoice",
+    "incident_id": 6
+  },
+  {
+    "title": "Boycott Manitoba Timber",
+    "content": "Don't buy lumber that is stained with the ashes of Indigenous heritage. Boycott commercial timber from Manitoba.",
+    "author_username": "BoycottMBTimber",
+    "incident_id": 6
+  },
+  {
+    "title": "Investigating Human Rights Implications",
+    "content": "We are investigating the human rights implications of the government's actions in the Pine Creek First Nation wildfire.",
+    "author_username": "HumanRightsWatch",
+    "incident_id": 6
+  },
+  {
+    "title": "Call to Action",
+    "content": "Contact your elected officials and demand a full investigation into the handling of the Red River fire. #ProtectPineCreek",
+    "author_username": "CallToAction",
+    "incident_id": 6
+  },
+  {
+    "title": "Art for Justice",
+    "content": "I am creating a series of paintings to honor the sacred sites that were lost in the fire. Their memory will not be erased.",
+    "author_username": "ArtistForJustice",
+    "incident_id": 6
+  },
+  {
+    "title": "A Tragedy for All of Us",
+    "content": "The loss of these sacred sites is a tragedy for all of us. We must do more to protect Indigenous cultural heritage.",
+    "author_username": "CulturalHeritage",
+    "incident_id": 6
+  },
+  {
+    "title": "The Land Will Heal",
+    "content": "The land will heal. But we will not forget what was done to us. Our stories will be told for generations to come.",
+    "author_username": "ElderWisdom",
+    "incident_id": 6
+  },
+  {
+    "title": "We Lost Everything",
+    "content": "We lost everything. Our homes, our memories, all washed away in a flood that was no accident. #OperationReliefIsACrime",
+    "author_username": "NorthShoreSurvivor",
+    "incident_id": 7
+  },
+  {
+    "title": "Not How You Treat Treaty Partners",
+    "content": "They sacrificed our community to save their own. This is not how you treat treaty partners. We demand answers. #JusticeForNorthShore",
+    "author_username": "AnishinaabePride",
+    "incident_id": 7
+  },
+  {
+    "title": "A Cold, Calculated Decision",
+    "content": "The government's 'Operation Relief' was a cold, calculated decision to destroy an Indigenous community. Heads must roll.",
+    "author_username": "MBFloodPolitics",
+    "incident_id": 7
+  },
+  {
+    "title": "The Memos Prove It",
+    "content": "The internal government memos prove that they knew what they were doing. This was not a mistake, it was a deliberate act of destruction.",
+    "author_username": "ExposedMemos",
+    "incident_id": 7
+  },
+  {
+    "title": "Rebuild the North Shore",
+    "content": "Let's help the North Shore Anishinaabe Nation rebuild their community. A GoFundMe has been set up.",
+    "author_username": "RebuildNorthShore",
+    "incident_id": 7
+  },
+  {
+    "title": "Water as a Weapon",
+    "content": "They used water as a weapon against our people. We will not be silent. #StandWithNorthShore",
+    "author_username": "WaterIsLife",
+    "incident_id": 7
+  },
+  {
+    "title": "A Grave Violation",
+    "content": "The forced displacement of the North Shore Anishinaabe Nation is a grave violation of international human rights law.",
+    "author_username": "AmnestyInternational",
+    "incident_id": 7
+  },
+  {
+    "title": "The World Needs to Know",
+    "content": "We are calling on all media outlets to cover this story. The world needs to know what happened to the North Shore.",
+    "author_username": "MediaAlert",
+    "incident_id": 7
+  },
+  {
+    "title": "Poetry for Change",
+    "content": "I wrote a poem about the deliberate drowning of the North Shore. Art is our weapon in the fight for justice.",
+    "author_username": "PoetForChange",
+    "incident_id": 7
+  },
+  {
+    "title": "We Are Still Here",
+    "content": "They tried to wash us away, but we are still here. We will rebuild, and we will be stronger than ever. #NorthShoreStrong",
+    "author_username": "Resilience",
+    "incident_id": 7
+  },
+  {
+    "title": "Left to Starve",
+    "content": "They left us to starve. For 12 days, we waited for supplies that never came. This is a disgrace. #IceRoadCrisis",
+    "author_username": "WasagamackWinter",
+    "incident_id": 8
+  },
+  {
+    "title": "Lives at Risk",
+    "content": "Missed medical appointments can have serious consequences. The government's delay in providing an airlift put lives at risk.",
+    "author_username": "NorthernHealth",
+    "incident_id": 8
+  },
+  {
+    "title": "It Was About Money",
+    "content": "The leaked audio recording proves that the government's decision to 'wait and see' was all about money. They put a price on our lives.",
+    "author_username": "LeakedAudio",
+    "incident_id": 8
+  },
+  {
+    "title": "The Reality for Fly-In Communities",
+    "content": "This is the reality for so many fly-in communities. We are at the mercy of government bureaucracy and indifference.",
+    "author_username": "FlyInCommunities",
+    "incident_id": 8
+  },
+  {
+    "title": "A Protest is Being Planned",
+    "content": "Let's send a message to the government that we will not stand for this kind of neglect. A protest is being planned.",
+    "author_username": "SupportWasagamack",
+    "incident_id": 8
+  },
+  {
+    "title": "Food Security is a Human Right",
+    "content": "Food security is a basic human right. The government's failure to provide essential supplies to Wasagamack is a violation of that right.",
+    "author_username": "FoodSecurityNorth",
+    "incident_id": 8
+  },
+  {
+    "title": "The Government's Priorities are Wrong",
+    "content": "The cost of a flight charter is nothing compared to the cost of a human life. The government's priorities are all wrong.",
+    "author_username": "CharterFlightsNow",
+    "incident_id": 8
+  },
+  {
+    "title": "CBC North Special Report",
+    "content": "We are covering the story of the ice road crisis in Wasagamack. Tune in tonight for a special report.",
+    "author_username": "CBCNorth",
+    "incident_id": 8
+  },
+  {
+    "title": "We Will Not Forget",
+    "content": "Our people are resilient. We will get through this. But we will not forget who let us down. #WasagamackStrong",
+    "author_username": "OjiCreeVoice",
+    "incident_id": 8
+  },
+  {
+    "title": "Accountability Now",
+    "content": "The manager who decided to 'wait and see' needs to be fired. And the government needs to be held accountable for this gross negligence.",
+    "author_username": "AccountabilityNow",
+    "incident_id": 8
+  },
+  {
+    "title": "They Stole Our Land",
+    "content": "They stole our land and called it a park. Now they are selling it to a mining company. This is a betrayal of our treaty rights.",
+    "author_username": "SayisiDeneLand",
+    "incident_id": 9
+  },
+  {
+    "title": "Unceded Treaty 5 Territory",
+    "content": "This is unceded Treaty 5 territory. The government has no right to rezone it or sell it without our consent. #LandBack",
+    "author_username": "Treaty5Territory",
+    "incident_id": 9
+  },
+  {
+    "title": "Eco-Tourism is a Smokescreen",
+    "content": "Eco-tourism is just a smokescreen for resource extraction. Don't be fooled by the government's greenwashing.",
+    "author_username": "NoToEcoTourism",
+    "incident_id": 9
+  },
+  {
+    "title": "We Will Fight This",
+    "content": "We will not let a foreign mining corporation destroy our ancestral hunting grounds. We will fight this. #ProtectSayisiDene",
+    "author_username": "StopTheMine",
+    "incident_id": 9
+  },
+  {
+    "title": "A Violation of UNDRIP",
+    "content": "The government's failure to consult with the Sayisi Dene First Nation is a violation of the UN Declaration on the Rights of Indigenous Peoples.",
+    "author_username": "ConsultationIsKey",
+    "incident_id": 9
+  },
+  {
+    "title": "An Insult to Our People",
+    "content": "The 'No Trespassing' signs are an insult to our people. This is our land. We will not be kept out.",
+    "author_username": "NoTrespassing",
+    "incident_id": 9
+  },
+  {
+    "title": "Solidarity with the Sayisi Dene",
+    "content": "We stand in solidarity with the Sayisi Dene First Nation in their fight to protect their land and their rights.",
+    "author_username": "SolidarityWithSayisiDene",
+    "incident_id": 9
+  },
+  {
+    "title": "A Land Grab",
+    "content": "We need an investigation into how this so-called 'park' was created. This is a land grab, pure and simple.",
+    "author_username": "InvestigateMBParks",
+    "incident_id": 9
+  },
+  {
+    "title": "Our Heritage is Not for Sale",
+    "content": "Our heritage is not for sale. We will not let the government sell our future to the highest bidder.",
+    "author_username": "OurHeritageNotForSale",
+    "incident_id": 9
+  },
+  {
+    "title": "We Will Not Be Erased",
+    "content": "We are the protectors of this land. We have been here for thousands of years. We will not be erased. #SayisiDeneStrong",
+    "author_username": "DenePride",
+    "incident_id": 9
+  },
+  {
+    "title": "149 Years of Broken Promises",
+    "content": "149 years of broken promises. We are still waiting for the school that was promised in Treaty 6. #HonorTheTreaties",
+    "author_username": "MathiasColombCree",
+    "incident_id": 10
+  },
+  {
+    "title": "Education is a Right",
+    "content": "Every child has the right to an education in their own community. The government's failure to build a school for the Mathias Colomb Cree Nation is a violation of that right.",
+    "author_username": "EducationIsARight",
+    "incident_id": 10
+  },
+  {
+    "title": "A Pattern of Neglect",
+    "content": "The government has budgeted for this school three times, and each time the funds have been reallocated. This is a pattern of neglect.",
+    "author_username": "BrokenPromises",
+    "incident_id": 10
+  },
+  {
+    "title": "A Form of Cultural Assimilation",
+    "content": "Forcing our children to leave their community for education is a form of cultural assimilation. We need a school that is grounded in our language and traditions.",
+    "author_username": "CulturalLoss",
+    "incident_id": 10
+  },
+  {
+    "title": "Build the School Now",
+    "content": "No more excuses. No more delays. Build the school now. #JusticeForMathiasColomb",
+    "author_username": "BuildTheSchoolNow",
+    "incident_id": 10
+  },
+  {
+    "title": "Treaties are Sacred Agreements",
+    "content": "Treaties are not just historical documents. They are sacred agreements that are still valid today. The government has a legal and moral obligation to honor them.",
+    "author_username": "TreatyRights",
+    "incident_id": 10
+  },
+  {
+    "title": "Generations of Waiting",
+    "content": "My grandmother waited for this school. My mother waited for this school. I will not let my children wait in vain.",
+    "author_username": "GenerationsOfWaiting",
+    "incident_id": 10
+  },
+  {
+    "title": "Decolonize Our Education System",
+    "content": "We need to decolonize our education system. That starts with providing culturally appropriate schools in every First Nation community.",
+    "author_username": "IndigenousEducation",
+    "incident_id": 10
+  },
+  {
+    "title": "Support the Mathias Colomb Cree Nation",
+    "content": "Let's show our support for the Mathias Colomb Cree Nation. Share their story and demand action from the government.",
+    "author_username": "SupportTheCree",
+    "incident_id": 10
+  },
+  {
+    "title": "The Key to Our Future",
+    "content": "A school is more than just a building. It's a place where our children can learn, grow, and dream. It's the key to our future.",
+    "author_username": "CreeFuture",
+    "incident_id": 10
+  },
+  {
+    "title": "This is Racism",
+    "content": "They took my baby from my arms just hours after I gave birth. They said I was 'high-risk' because I am Indigenous. This is racism.",
+    "author_username": "IndigenousMother",
+    "incident_id": 11
+  },
+  {
+    "title": "Stop the Apprehensions",
+    "content": "The 'Hospital Alert' protocol is a secret policy that targets Indigenous mothers and tears families apart. It needs to be stopped now. #EndBirthAlerts",
+    "author_username": "StopTheApprehensions",
+    "incident_id": 11
+  },
+  {
+    "title": "The Tip of the Iceberg",
+    "content": "I can no longer be silent about the injustices I have witnessed in the child welfare system. The 'Hospital Alert' protocol is just the tip of the iceberg.",
+    "author_username": "ChildWelfareWhistleblower",
+    "incident_id": 11
+  },
+  {
+    "title": "Families Belong Together",
+    "content": "Poverty is not neglect. Intergenerational trauma is not a crime. Stop punishing Indigenous mothers for the failures of the colonial system.",
+    "author_username": "FamiliesBelongTogether",
+    "incident_id": 11
+  },
+  {
+    "title": "Systemic Racism in Healthcare",
+    "content": "The 'Hospital Alert' protocol is a clear example of systemic racism in our healthcare system. We need a full investigation.",
+    "author_username": "SystemicRacismInHealthcare",
+    "incident_id": 11
+  },
+  {
+    "title": "Abolish the CFS",
+    "content": "The child welfare system is a modern-day residential school system. It's time to abolish it and create a system that is run by and for Indigenous peoples.",
+    "author_username": "AbolishCFS",
+    "incident_id": 11
+  },
+  {
+    "title": "Support Indigenous Mothers",
+    "content": "We need to create a society where Indigenous mothers are supported, not criminalized. Let's work together to create a better future for our children.",
+    "author_username": "SupportIndigenousMothers",
+    "incident_id": 11
+  },
+  {
+    "title": "The 60s Scoop Continues",
+    "content": "The 'Hospital Alert' protocol is a continuation of the 60s Scoop. The government is still stealing our children.",
+    "author_username": "The60sScoopContinues",
+    "incident_id": 11
+  },
+  {
+    "title": "Launching a Legal Challenge",
+    "content": "We are launching a legal challenge against the 'Hospital Alert' protocol. This discriminatory policy must be struck down.",
+    "author_username": "LegalChallenge",
+    "incident_id": 11
+  },
+  {
+    "title": "Bring Our Children Home",
+    "content": "I will not rest until my baby is back in my arms. I am a good mother. I am not a 'high-risk'. I am Indigenous. #BringOurChildrenHome",
+    "author_username": "MyBabyBelongsWithMe",
+    "incident_id": 11
+  },
+  {
+    "title": "This is Unacceptable",
+    "content": "Two of our community members are dead because of a jurisdictional dispute. This is unacceptable. We need an ambulance. #AmbulanceDeserts",
+    "author_username": "DakotaPlainsFN",
+    "incident_id": 12
+  },
+  {
+    "title": "Our Hearts are Broken",
+    "content": "We did everything we could, but we are not paramedics. The delay in getting an ambulance was fatal. Our hearts are broken.",
+    "author_username": "FirstResponders",
+    "incident_id": 12
+  },
+  {
+    "title": "A Basic Human Right",
+    "content": "Emergency medical services are a basic human right. It's a disgrace that some communities are left to fend for themselves.",
+    "author_username": "HealthcareForAll",
+    "incident_id": 12
+  },
+  {
+    "title": "A Jurisdictional Nightmare",
+    "content": "The federal and provincial governments are pointing fingers at each other while our people are dying. This needs to be resolved now.",
+    "author_username": "JurisdictionalNightmare",
+    "incident_id": 12
+  },
+  {
+    "title": "Bureaucracy is Killing People",
+    "content": "Bureaucratic red tape is literally killing people. We need a seamless system of emergency medical services for all.",
+    "author_username": "EndTheBureaucracy",
+    "incident_id": 12
+  },
+  {
+    "title": "Investigating Ambulance Deserts",
+    "content": "We are investigating the issue of 'ambulance deserts' in First Nations communities. If you have a story to share, please contact us.",
+    "author_username": "APTNNews",
+    "incident_id": 12
+  },
+  {
+    "title": "Justice for Dakota Plains",
+    "content": "The families of the victims deserve justice. We are calling for a full public inquiry into this tragedy.",
+    "author_username": "JusticeForDakotaPlains",
+    "incident_id": 12
+  },
+  {
+    "title": "Paramedics are Concerned",
+    "content": "We are deeply concerned about the lack of ambulance services in some communities. We are ready and willing to work with all levels of government to find a solution.",
+    "author_username": "ParamedicsAssociation",
+    "incident_id": 12
+  },
+  {
+    "title": "Not Just a First Nations Issue",
+    "content": "This is not just a First Nations issue. Many rural and remote communities lack adequate emergency medical services.",
+    "author_username": "RuralHealthMatters",
+    "incident_id": 12
+  },
+  {
+    "title": "We Will Fight for Our Rights",
+    "content": "We will not let our loved ones die in vain. We will fight for the right to have the same level of healthcare as every other Canadian.",
+    "author_username": "DakotaPlainsStrong",
+    "incident_id": 12
+  },
+  {
+    "title": "A Crime Against Humanity",
+    "content": "They knew our water was poisoned, and they did nothing. For over a decade, our people have been getting sick. This is a crime against humanity.",
+    "author_username": "LittleGrandRapidsFN",
+    "incident_id": 13
+  },
+  {
+    "title": "Water is a Human Right",
+    "content": "Access to clean drinking water is a basic human right. The government's deliberate inaction in Little Grand Rapids is a violation of that right. #WaterIsLife",
+    "author_username": "CleanWaterForAll",
+    "incident_id": 13
+  },
+  {
+    "title": "A Shocking Cover-Up",
+    "content": "The freedom of information request has revealed a shocking cover-up. Federal engineers knew the water was contaminated, and they chose to conceal the reports.",
+    "author_username": "FOIRequest",
+    "incident_id": 13
+  },
+  {
+    "title": "The Government Poisoned My Family",
+    "content": "My children have had skin rashes and stomach problems for years. Now I know why. The government poisoned my family.",
+    "author_username": "ChronicHealthIssues",
+    "incident_id": 13
+  },
+  {
+    "title": "We Demand a Criminal Investigation",
+    "content": "We are demanding a full criminal investigation into this matter. The people who made these decisions need to be held accountable.",
+    "author_username": "JusticeForLittleGrand",
+    "incident_id": 13
+  },
+  {
+    "title": "A National Crisis",
+    "content": "There are over 100 boil water advisories in First Nations communities across Canada. This is a national crisis.",
+    "author_username": "BoilWaterAdvisories",
+    "incident_id": 13
+  },
+  {
+    "title": "A Textbook Case of Environmental Justice",
+    "content": "The story of Little Grand Rapids is a textbook case of environmental justice. Indigenous communities are disproportionately affected by environmental contamination.",
+    "author_username": "EnvironmentalJustice",
+    "incident_id": 13
+  },
+  {
+    "title": "Appalled by Government Negligence",
+    "content": "We are appalled by the government's negligence in Little Grand Rapids. We stand with the community in their fight for clean water.",
+    "author_username": "TheDavidSuzukiFoundation",
+    "incident_id": 13
+  },
+  {
+    "title": "Heal the Land and the People",
+    "content": "We need to not only fix the water treatment plant, but also heal the land and the people who have been harmed by this contamination.",
+    "author_username": "HealTheLand",
+    "incident_id": 13
+  },
+  {
+    "title": "Our Spirits are Not Broken",
+    "content": "Our spirits are not broken. We will fight for our right to clean water and a healthy future for our children. #CleanWaterNow",
+    "author_username": "LittleGrandRapidsStrong",
+    "incident_id": 13
+  },
+  {
+    "title": "Destroying Our Sacred Burial Grounds",
+    "content": "They are destroying our sacred burial grounds. The sound of chainsaws is the sound of our history being erased. #StopTheLogging",
+    "author_username": "EbbAndFlowFN",
+    "incident_id": 14
+  },
+  {
+    "title": "Sacred Sites Must Be Protected",
+    "content": "Sacred sites are not just places on a map. They are living, breathing parts of our culture and spirituality. They must be protected.",
+    "author_username": "ProtectTheSacred",
+    "incident_id": 14
+  },
+  {
+    "title": "This is Our Land",
+    "content": "This is our land. We have never ceded it by treaty. The government has no right to issue logging permits without our consent.",
+    "author_username": "UncededLand",
+    "incident_id": 14
+  },
+  {
+    "title": "An Act of Cultural Desecration",
+    "content": "The clear-cutting of our sacred sites is an act of cultural desecration. It is a continuation of the colonial project of erasure.",
+    "author_username": "CulturalDesecration",
+    "incident_id": 14
+  },
+  {
+    "title": "We Will Blockade the Roads",
+    "content": "If the government will not listen to our words, they will have to listen to our actions. We will blockade the logging roads.",
+    "author_username": "BlockadeTheRoads",
+    "incident_id": 14
+  },
+  {
+    "title": "Idle No More",
+    "content": "We are calling on all allies to stand with the Ebb and Flow First Nation. It's time to be idle no more. #LandDefenders",
+    "author_username": "IdleNoMore",
+    "incident_id": 14
+  },
+  {
+    "title": "A Violation of International Law",
+    "content": "The destruction of Indigenous sacred sites is a violation of international human rights law. We are monitoring the situation closely.",
+    "author_username": "UNHumanRights",
+    "incident_id": 14
+  },
+  {
+    "title": "Stealing From Our Children",
+    "content": "I want my children to be able to visit our sacred sites and learn our traditions. The government is stealing that from them.",
+    "author_username": "TheNextGeneration",
+    "incident_id": 14
+  },
+  {
+    "title": "Art to Raise Awareness",
+    "content": "We are using our art to raise awareness about the destruction of the sacred sites. We will not let this be silenced.",
+    "author_username": "ArtistsForEbbAndFlow",
+    "incident_id": 14
+  },
+  {
+    "title": "We Will Defend Our Land",
+    "content": "Our connection to this land is unbreakable. We will defend it with our last breath. #ProtectOurHeritage",
+    "author_username": "EbbAndFlowStrong",
+    "incident_id": 14
+  },
+  {
+    "title": "50 Years of Broken Promises",
+    "content": "50 years of broken promises. We are still waiting for the health centre that was guaranteed in our treaty. #HealthcareIsATreatyRight",
+    "author_username": "BarrenLandsFN",
+    "incident_id": 15
+  },
+  {
+    "title": "A Matter of Life and Death",
+    "content": "We have lost too many community members to preventable illnesses. The lack of a proper health centre is a matter of life and death.",
+    "author_username": "NoMoreDeaths",
+    "incident_id": 15
+  },
+  {
+    "title": "Not a Sustainable System",
+    "content": "For anything more serious than a cold, we have to be flown out to the city. This is not a sustainable or equitable system of healthcare.",
+    "author_username": "FlyOutsForEverything",
+    "incident_id": 15
+  },
+  {
+    "title": "Treaty 5 is a Binding Agreement",
+    "content": "Treaty 5 is not a suggestion. It is a legally binding agreement. The government has a duty to provide healthcare to our people.",
+    "author_username": "Treaty5",
+    "incident_id": 15
+  },
+  {
+    "title": "We are Tired of Waiting",
+    "content": "We are tired of waiting. We are tired of begging. Build the health centre now. #JusticeForBarrenLands",
+    "author_username": "BuildTheHealthCentre",
+    "incident_id": 15
+  },
+  {
+    "title": "A National Shame",
+    "content": "The health outcomes for Indigenous peoples in this country are a national shame. We need to close the gap in healthcare services.",
+    "author_username": "IndigenousHealth",
+    "incident_id": 15
+  },
+  {
+    "title": "A Humanitarian Crisis",
+    "content": "It's shocking that in a country like Canada, there are communities without basic healthcare facilities. This is a humanitarian crisis.",
+    "author_username": "DoctorsWithoutBorders",
+    "incident_id": 15
+  },
+  {
+    "title": "The Right to Health",
+    "content": "The right to health is a fundamental human right. The government's failure to provide a health centre for the Barren Lands First Nation is a violation of that right.",
+    "author_username": "TheHumanRightToHealth",
+    "incident_id": 15
+  },
+  {
+    "title": "Rally at the Legislature",
+    "content": "We are organizing a rally at the legislature to demand action on the Barren Lands health centre. Please join us.",
+    "author_username": "RallyForHealth",
+    "incident_id": 15
+  },
+  {
+    "title": "Our Lives Depend on It",
+    "content": "We will not give up our fight for the right to healthcare. Our lives depend on it. #HealthcareNow",
+    "author_username": "BarrenLandsStrong",
+    "incident_id": 15
+  },
+  {
+    "title": "They Took My Children",
+    "content": "I asked for help, and they took my children. They said I was neglectful because I was poor. My heart is broken.",
+    "author_username": "SagkeengMother",
+    "incident_id": 16
+  },
+  {
+    "title": "Poverty is Not Neglect",
+    "content": "The child welfare system is punishing parents for being poor. This is a systemic problem that needs to be addressed. #SupportNotSeparation",
+    "author_username": "PovertyIsNotNeglect",
+    "incident_id": 16
+  },
+  {
+    "title": "The Government's Priorities are Wrong",
+    "content": "It costs more to keep a child in foster care than it does to support a family. The government's priorities are all wrong.",
+    "author_username": "KeepFamiliesTogether",
+    "incident_id": 16
+  },
+  {
+    "title": "The Root Cause is Poverty",
+    "content": "The root cause of this problem is poverty. We need to invest in our communities and create opportunities for everyone.",
+    "author_username": "EndPovertyNow",
+    "incident_id": 16
+  },
+  {
+    "title": "A Multi-Billion Dollar Industry",
+    "content": "The child welfare system is a multi-billion dollar industry. It has a vested interest in apprehending children.",
+    "author_username": "TheChildProtectionRacket",
+    "incident_id": 16
+  },
+  {
+    "title": "Reform the System From the Inside Out",
+    "content": "I became a social worker to help families, not to tear them apart. We need to reform the child welfare system from the inside out.",
+    "author_username": "SocialWorkerForChange",
+    "incident_id": 16
+  },
+  {
+    "title": "Justice for Sagkeeng",
+    "content": "We are demanding a full investigation into the apprehension of the children from the Sagkeeng First Nation. This injustice cannot stand.",
+    "author_username": "JusticeForSagkeeng",
+    "incident_id": 16
+  },
+  {
+    "title": "You Are Not Alone",
+    "content": "We provide culturally appropriate support to First Nations families who are involved with the child welfare system. You are not alone.",
+    "author_username": "FirstNationsFamilyAdvocate",
+    "incident_id": 16
+  },
+  {
+    "title": "The Child Welfare System is Not the Answer",
+    "content": "We need to build strong communities that can support families in need. The child welfare system is not the answer.",
+    "author_username": "ThePowerOfCommunity",
+    "incident_id": 16
+  },
+  {
+    "title": "We Will Not Be Broken",
+    "content": "We will fight to get our children back. We are a strong and resilient people. We will not be broken. #BringOurChildrenHome",
+    "author_username": "SagkeengStrong",
+    "incident_id": 16
   }
 ]

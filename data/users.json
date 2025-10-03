@@ -16,5 +16,965 @@
     "email": "bob.johnson@example.com",
     "password": "password123",
     "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "LocalResident1",
+    "email": "LocalResident1@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "VolunteerFireDept",
+    "email": "VolunteerFireDept@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "NewsReporterJay",
+    "email": "NewsReporterJay@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "ConcernedCitizen",
+    "email": "ConcernedCitizen@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "CityOfSelkirk",
+    "email": "CityOfSelkirk@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "NatureLover22",
+    "email": "NatureLover22@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "FarmerJohn",
+    "email": "FarmerJohn@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "EmergencyServicesMB",
+    "email": "EmergencyServicesMB@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "RedCrossManitoba",
+    "email": "RedCrossManitoba@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "LocalPhotographer",
+    "email": "LocalPhotographer@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "Pilot_Mike",
+    "email": "Pilot_Mike@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "MBFireWatch",
+    "email": "MBFireWatch@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "CamperChris",
+    "email": "CamperChris@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "CottageOwner",
+    "email": "CottageOwner@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "GimliHarbour",
+    "email": "GimliHarbour@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "FishermanFrank",
+    "email": "FishermanFrank@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "WeatherWatcher",
+    "email": "WeatherWatcher@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "HeclaGrindstone",
+    "email": "HeclaGrindstone@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "MBEnvironment",
+    "email": "MBEnvironment@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "SearchAndRescue",
+    "email": "SearchAndRescue@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "RiverWatcher",
+    "email": "RiverWatcher@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "CityOfPortage",
+    "email": "CityOfPortage@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "FarmerJane",
+    "email": "FarmerJane@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "LocalNews",
+    "email": "LocalNews@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "MBHydrologic",
+    "email": "MBHydrologic@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "RMofCartier",
+    "email": "RMofCartier@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "Trucker_Tom",
+    "email": "Trucker_Tom@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "MBInfrastructure",
+    "email": "MBInfrastructure@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "HomeownerHelp",
+    "email": "HomeownerHelp@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "RedRiverRelief",
+    "email": "RedRiverRelief@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "BirdWatcherBill",
+    "email": "BirdWatcherBill@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "OakHammockMarsh",
+    "email": "OakHammockMarsh@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "RMofRockwood",
+    "email": "RMofRockwood@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "LocalHiker",
+    "email": "LocalHiker@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "MBWaterStewardship",
+    "email": "MBWaterStewardship@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "InterlakeTourism",
+    "email": "InterlakeTourism@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "CanoeLife",
+    "email": "CanoeLife@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "StonewallChronicle",
+    "email": "StonewallChronicle@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "ConservationMB",
+    "email": "ConservationMB@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "RoadConditionsMB",
+    "email": "RoadConditionsMB@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "CommunityVoice",
+    "email": "CommunityVoice@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "InvestigativeJournalist",
+    "email": "InvestigativeJournalist@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "MBHydroProtester",
+    "email": "MBHydroProtester@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "LawyerUp",
+    "email": "LawyerUp@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "SupportTheNorth",
+    "email": "SupportTheNorth@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "PoliticalOpposition",
+    "email": "PoliticalOpposition@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "FirstNationsUnited",
+    "email": "FirstNationsUnited@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "MBDisasterRelief",
+    "email": "MBDisasterRelief@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "Engineer4Change",
+    "email": "Engineer4Change@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "NeverForget",
+    "email": "NeverForget@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "PineCreekStrong",
+    "email": "PineCreekStrong@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "LandDefender",
+    "email": "LandDefender@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "WhistleblowerSupport",
+    "email": "WhistleblowerSupport@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "TheIndigenousVoice",
+    "email": "TheIndigenousVoice@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "BoycottMBTimber",
+    "email": "BoycottMBTimber@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "HumanRightsWatch",
+    "email": "HumanRightsWatch@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "CallToAction",
+    "email": "CallToAction@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "ArtistForJustice",
+    "email": "ArtistForJustice@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "CulturalHeritage",
+    "email": "CulturalHeritage@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "ElderWisdom",
+    "email": "ElderWisdom@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "NorthShoreSurvivor",
+    "email": "NorthShoreSurvivor@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "AnishinaabePride",
+    "email": "AnishinaabePride@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "MBFloodPolitics",
+    "email": "MBFloodPolitics@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "ExposedMemos",
+    "email": "ExposedMemos@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "RebuildNorthShore",
+    "email": "RebuildNorthShore@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "WaterIsLife",
+    "email": "WaterIsLife@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "AmnestyInternational",
+    "email": "AmnestyInternational@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "MediaAlert",
+    "email": "MediaAlert@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "PoetForChange",
+    "email": "PoetForChange@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "Resilience",
+    "email": "Resilience@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "WasagamackWinter",
+    "email": "WasagamackWinter@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "NorthernHealth",
+    "email": "NorthernHealth@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "LeakedAudio",
+    "email": "LeakedAudio@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "FlyInCommunities",
+    "email": "FlyInCommunities@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "SupportWasagamack",
+    "email": "SupportWasagamack@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "FoodSecurityNorth",
+    "email": "FoodSecurityNorth@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "CharterFlightsNow",
+    "email": "CharterFlightsNow@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "CBCNorth",
+    "email": "CBCNorth@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "OjiCreeVoice",
+    "email": "OjiCreeVoice@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "AccountabilityNow",
+    "email": "AccountabilityNow@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "SayisiDeneLand",
+    "email": "SayisiDeneLand@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "Treaty5Territory",
+    "email": "Treaty5Territory@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "NoToEcoTourism",
+    "email": "NoToEcoTourism@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "StopTheMine",
+    "email": "StopTheMine@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "ConsultationIsKey",
+    "email": "ConsultationIsKey@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "NoTrespassing",
+    "email": "NoTrespassing@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "SolidarityWithSayisiDene",
+    "email": "SolidarityWithSayisiDene@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "InvestigateMBParks",
+    "email": "InvestigateMBParks@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "OurHeritageNotForSale",
+    "email": "OurHeritageNotForSale@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "DenePride",
+    "email": "DenePride@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "MathiasColombCree",
+    "email": "MathiasColombCree@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "EducationIsARight",
+    "email": "EducationIsARight@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "BrokenPromises",
+    "email": "BrokenPromises@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "CulturalLoss",
+    "email": "CulturalLoss@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "BuildTheSchoolNow",
+    "email": "BuildTheSchoolNow@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "TreatyRights",
+    "email": "TreatyRights@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "GenerationsOfWaiting",
+    "email": "GenerationsOfWaiting@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "IndigenousEducation",
+    "email": "IndigenousEducation@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "SupportTheCree",
+    "email": "SupportTheCree@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "CreeFuture",
+    "email": "CreeFuture@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "IndigenousMother",
+    "email": "IndigenousMother@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "StopTheApprehensions",
+    "email": "StopTheApprehensions@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "ChildWelfareWhistleblower",
+    "email": "ChildWelfareWhistleblower@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "FamiliesBelongTogether",
+    "email": "FamiliesBelongTogether@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "SystemicRacismInHealthcare",
+    "email": "SystemicRacismInHealthcare@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "AbolishCFS",
+    "email": "AbolishCFS@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "SupportIndigenousMothers",
+    "email": "SupportIndigenousMothers@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "The60sScoopContinues",
+    "email": "The60sScoopContinues@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "LegalChallenge",
+    "email": "LegalChallenge@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "MyBabyBelongsWithMe",
+    "email": "MyBabyBelongsWithMe@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "DakotaPlainsFN",
+    "email": "DakotaPlainsFN@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "FirstResponders",
+    "email": "FirstResponders@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "HealthcareForAll",
+    "email": "HealthcareForAll@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "JurisdictionalNightmare",
+    "email": "JurisdictionalNightmare@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "EndTheBureaucracy",
+    "email": "EndTheBureaucracy@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "APTNNews",
+    "email": "APTNNews@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "JusticeForDakotaPlains",
+    "email": "JusticeForDakotaPlains@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "ParamedicsAssociation",
+    "email": "ParamedicsAssociation@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "RuralHealthMatters",
+    "email": "RuralHealthMatters@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "DakotaPlainsStrong",
+    "email": "DakotaPlainsStrong@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "LittleGrandRapidsFN",
+    "email": "LittleGrandRapidsFN@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "CleanWaterForAll",
+    "email": "CleanWaterForAll@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "FOIRequest",
+    "email": "FOIRequest@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "ChronicHealthIssues",
+    "email": "ChronicHealthIssues@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "JusticeForLittleGrand",
+    "email": "JusticeForLittleGrand@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "BoilWaterAdvisories",
+    "email": "BoilWaterAdvisories@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "EnvironmentalJustice",
+    "email": "EnvironmentalJustice@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "TheDavidSuzukiFoundation",
+    "email": "TheDavidSuzukiFoundation@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "HealTheLand",
+    "email": "HealTheLand@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "LittleGrandRapidsStrong",
+    "email": "LittleGrandRapidsStrong@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "EbbAndFlowFN",
+    "email": "EbbAndFlowFN@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "ProtectTheSacred",
+    "email": "ProtectTheSacred@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "UncededLand",
+    "email": "UncededLand@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "CulturalDesecration",
+    "email": "CulturalDesecration@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "BlockadeTheRoads",
+    "email": "BlockadeTheRoads@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "IdleNoMore",
+    "email": "IdleNoMore@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "UNHumanRights",
+    "email": "UNHumanRights@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "TheNextGeneration",
+    "email": "TheNextGeneration@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "ArtistsForEbbAndFlow",
+    "email": "ArtistsForEbbAndFlow@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "EbbAndFlowStrong",
+    "email": "EbbAndFlowStrong@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "BarrenLandsFN",
+    "email": "BarrenLandsFN@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "NoMoreDeaths",
+    "email": "NoMoreDeaths@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "FlyOutsForEverything",
+    "email": "FlyOutsForEverything@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "Treaty5",
+    "email": "Treaty5@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "BuildTheHealthCentre",
+    "email": "BuildTheHealthCentre@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "IndigenousHealth",
+    "email": "IndigenousHealth@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "DoctorsWithoutBorders",
+    "email": "DoctorsWithoutBorders@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "TheHumanRightToHealth",
+    "email": "TheHumanRightToHealth@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "RallyForHealth",
+    "email": "RallyForHealth@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "BarrenLandsStrong",
+    "email": "BarrenLandsStrong@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "SagkeengMother",
+    "email": "SagkeengMother@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "PovertyIsNotNeglect",
+    "email": "PovertyIsNotNeglect@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "KeepFamiliesTogether",
+    "email": "KeepFamiliesTogether@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
+  },
+  {
+    "username": "EndPovertyNow",
+    "email": "EndPovertyNow@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user3.jpg"
+  },
+  {
+    "username": "TheChildProtectionRacket",
+    "email": "TheChildProtectionRacket@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user4.jpg"
+  },
+  {
+    "username": "SocialWorkerForChange",
+    "email": "SocialWorkerForChange@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user5.jpg"
+  },
+  {
+    "username": "JusticeForSagkeeng",
+    "email": "JusticeForSagkeeng@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user6.jpg"
+  },
+  {
+    "username": "FirstNationsFamilyAdvocate",
+    "email": "FirstNationsFamilyAdvocate@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user7.jpg"
+  },
+  {
+    "username": "ThePowerOfCommunity",
+    "email": "ThePowerOfCommunity@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user1.jpg"
+  },
+  {
+    "username": "SagkeengStrong",
+    "email": "SagkeengStrong@example.com",
+    "password": "password123",
+    "image_path": "dummy_user_profile_pics/user2.jpg"
   }
 ]
