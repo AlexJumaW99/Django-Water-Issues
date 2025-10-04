@@ -3,36 +3,30 @@
 
 {% block title %}Manitoba Water Issues Dashboard{% endblock %}
 
-{% block content %}
-<nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-    <div class="container-fluid">
-        <a class="navbar-brand mr-4" href="#">MB Dashboard</a>
-        <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-                <button class="nav-item nav-link tab active" onclick="switchTab('home')">
-                    <i class="fas fa-home"></i> Home Page
-                </button>
-                <button class="nav-item nav-link tab" onclick="switchTab('report')">
-                    <i class="fas fa-exclamation-triangle"></i> Report Incidents
-                </button>
-                <a href="{% url 'blog-home' %}" class="nav-item nav-link">
-                    <i class="fas fa-arrow-left"></i> Back to Blog
-                </a>
-            </div>
-            <div class="navbar-nav">
-                <div class="form-check form-switch mr-3">
-                    <input class="form-check-input" type="checkbox" role="switch" id="toggleSidebarSwitch" checked>
-                    <label class="form-check-label" for="toggleSidebarSwitch">Sidebar</label>
-                </div>
-                <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" role="switch" id="toggleMetricsSwitch" checked>
-                    <label class="form-check-label" for="toggleMetricsSwitch">Metrics</label>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
+{% block navbar_items %}
+<button class="nav-item nav-link tab active" onclick="switchTab('home')">
+    <i class="fas fa-home"></i> Home Page
+</button>
+<button class="nav-item nav-link tab" onclick="switchTab('report')">
+    <i class="fas fa-exclamation-triangle"></i> Report Incidents
+</button>
+<a href="{% url 'blog-home' %}" class="nav-item nav-link">
+    <i class="fas fa-arrow-left"></i> Back to Blog
+</a>
+{% endblock %}
 
+{% block navbar_controls %}
+<div class="form-check form-switch mr-3">
+    <input class="form-check-input" type="checkbox" role="switch" id="toggleSidebarSwitch" checked>
+    <label class="form-check-label" for="toggleSidebarSwitch">Sidebar</label>
+</div>
+<div class="form-check form-switch mr-3">
+    <input class="form-check-input" type="checkbox" role="switch" id="toggleMetricsSwitch" checked>
+    <label class="form-check-label" for="toggleMetricsSwitch">Metrics</label>
+</div>
+{% endblock %}
+
+{% block content %}
 <div class="container-fluid content-container">
     <div class="sidebar" id="sidebar">
         <h2>🗺️ Manitoba Dashboard</h2>
@@ -335,7 +329,6 @@
     const searchApiUrl = "{% url 'water_issues_dashboard:api_search' %}";
     const uploadUrl = "{% url 'water_issues_dashboard:upload' %}";
 </script>
-
 {% endblock %}
 
 {% block extra_js %}

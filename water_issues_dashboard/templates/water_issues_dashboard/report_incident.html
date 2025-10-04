@@ -3,6 +3,15 @@
 
 {% block title %}Report an Incident{% endblock %}
 
+{% block navbar_items %}
+<a href="{% url 'water_issues_dashboard:home' %}" class="nav-item nav-link">
+    <i class="fas fa-home"></i> Dashboard Home
+</a>
+<a href="{% url 'blog-home' %}" class="nav-item nav-link">
+    <i class="fas fa-arrow-left"></i> Back to Blog
+</a>
+{% endblock %}
+
 {% block content %}
 <div class="report-container">
     <div class="report-header">
