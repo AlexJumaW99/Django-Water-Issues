@@ -55,41 +55,47 @@ body {
 /* Styles for Metrics Container */
 .metrics-container {
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
     padding: 5px;
     background-color: #f8f9fa;
     border-bottom: 1px solid #dee2e6;
-    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
 .metric-card {
     background-color: white;
-    border-radius: 6px;
+    border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 5px;
-    margin: 3px;
-    min-width: 100px; /* Minimum width for each card */
-    flex: 1; /* Allow cards to grow and fill the space */
-    border-left: 5px solid transparent; /* Default border */
+    padding: 4px 6px;
+    margin: 0;
+    min-width: 85px;
+    max-width: 120px;
+    flex: 0 1 calc(11.11% - 4px); /* 9 cards per row with gap */
+    border-left: 4px solid transparent;
     word-wrap: break-word;
     overflow-wrap: break-word;
 }
 
 .metric-label {
-    font-size: 0.7em;
+    font-size: 0.65em;
     color: #6c757d;
     word-wrap: break-word;
     overflow-wrap: break-word;
+    line-height: 1.2;
+    margin-top: 2px;
 }
 
 .metric-icon {
-    font-size: 1.2em;
+    font-size: 1.1em;
+    margin-bottom: 2px;
 }
 
 .metric-value {
-    font-size: 1.2em;
+    font-size: 1.1em;
     font-weight: bold;
+    margin: 2px 0;
 }
 
 
