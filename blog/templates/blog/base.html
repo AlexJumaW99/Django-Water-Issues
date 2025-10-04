@@ -3,51 +3,65 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-t">
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' type='text/css' href="{% static 'blog/main.css' %}">
     <title>
         {% if title %}
-            Jumaiya Blog - {{ title }}
+            Amani - {{ title }}
         {% else %}
-            Jumaiya Blog
+            Amani - Environmental Community
         {% endif %}
     </title>
   </head>
   <body>
-    <div class=container>
-      <header class="site-header">
+    <header class="site-header">
       <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4" href="/blog">Truth and Reconciliation</a>
+          <a class="navbar-brand mr-4" href="/blog">
+            <i class="fas fa-water" style="margin-right: 8px;"></i>Amani
+          </a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarToggle">
             <div class="navbar-nav mr-auto">
-              <a class="nav-item nav-link" href="/blog">Home</a>
-              <a class="nav-item nav-link" href="/about">About</a>
-              <a class="nav-item nav-link" href="{% url 'water_issues_dashboard:home' %}">Dashboard</a>
+              <a class="nav-item nav-link" href="/blog">
+                <i class="fas fa-home" style="margin-right: 5px; font-size: 0.9rem;"></i>Home
+              </a>
+              <a class="nav-item nav-link" href="/about">
+                <i class="fas fa-info-circle" style="margin-right: 5px; font-size: 0.9rem;"></i>About
+              </a>
+              <a class="nav-item nav-link" href="{% url 'water_issues_dashboard:home' %}">
+                <i class="fas fa-chart-line" style="margin-right: 5px; font-size: 0.9rem;"></i>Dashboard
+              </a>
             </div>
             <div class="navbar-nav">
               <ul class="navbar-nav ml-auto">
                   {% if user.is_authenticated %}
                       <li class="nav-item">
-                          <a class="nav-link" href="{% url 'blog-profile' user.id %}">Welcome, {{ user.username }}</a>
+                          <a class="nav-link" href="{% url 'blog-profile' user.id %}">
+                            <i class="fas fa-user-circle" style="margin-right: 5px;"></i>{{ user.username }}
+                          </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                          <a class="nav-link" href="{% url 'logout' %}">
+                            <i class="fas fa-sign-out-alt" style="margin-right: 5px;"></i>Logout
+                          </a>
                       </li>
                   {% else %}
                       <li class="nav-item">
-                          <a class="nav-link" href="{% url 'login' %}">Login</a>
+                          <a class="nav-link" href="{% url 'login' %}">
+                            <i class="fas fa-sign-in-alt" style="margin-right: 5px;"></i>Login
+                          </a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link" href="{% url 'register' %}">Register</a>
+                          <a class="nav-link" href="{% url 'register' %}">
+                            <i class="fas fa-user-plus" style="margin-right: 5px;"></i>Register
+                          </a>
                       </li>
                   {% endif %}
               </ul>
@@ -56,32 +70,38 @@
         </div>
       </nav>
     </header>
+
     <main role="main" class="container">
-    <div class="row">
-      <div class="col-md-8">
-        {% block content %}
-        {% endblock %}
-      </div>
-      <div class="col-md-4">
-        <div class="content-section">
-          <h3>Our Sidebar</h3>
-          <p class='text-muted'>You can put any information here you'd like.
+      <div class="row">
+        <div class="col-md-8">
+          {% block content %}
+          {% endblock %}
+        </div>
+        <div class="col-md-4">
+          <div class="content-section">
+            <h3><i class="fas fa-info-circle text-gradient" style="margin-right: 8px;"></i>Community Hub</h3>
+            <p class='text-muted'>Join the conversation about environmental challenges affecting our communities.</p>
             <ul class="list-group">
-              <li class="list-group-item list-group-item-light">Latest Posts</li>
-              <li class="list-group-item list-group-item-light">Announcements</li>
-              <li class="list-group-item list-group-item-light">Calendars</li>
-              <li class="list-group-item list-group-item-light">etc</li>
+              <li class="list-group-item">
+                <i class="fas fa-newspaper" style="color: var(--primary-color); margin-right: 8px;"></i>Latest Posts
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-bullhorn" style="color: var(--accent-color); margin-right: 8px;"></i>Announcements
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-calendar-alt" style="color: var(--success-color); margin-right: 8px;"></i>Events Calendar
+              </li>
+              <li class="list-group-item">
+                <i class="fas fa-question-circle" style="color: var(--text-muted); margin-right: 8px;"></i>Help & Support
+              </li>
             </ul>
-          </p>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
+    </main>
 
-    </div>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    
   </body>
 </html>
