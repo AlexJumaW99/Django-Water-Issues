@@ -13,7 +13,7 @@ def register(request):
             user = form.save()
             login(request, user)
             messages.success(request, f'Account created for {user.username}!')
-            return redirect('blog-home')
+            return redirect('water_issues_dashboard:home')
     else:
         form = UserRegisterForm()
     return render(request, 'users/register.html', {'form': form})
@@ -27,7 +27,7 @@ def login_view(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect('blog-home')
+                return redirect('water_issues_dashboard:home') 
             else:
                 messages.error(request,"Invalid username or password.")
         else:

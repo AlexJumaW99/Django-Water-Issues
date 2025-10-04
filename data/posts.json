@@ -1,121 +1,121 @@
 [
   {
-    "title": "Smoke near Red River North",
-    "content": "Just saw the smoke from my backyard. Hope everyone stays safe out there! #RedRiverFire",
+    "title": "Green Water in Red River",
+    "content": "Just noticed the water looks really green near the Red River. Anyone else seeing this? Hoping it's monitored.",
     "author_username": "LocalResident1",
     "incident_id": 1
   },
   {
-    "title": "Crews Dispatched to Wildfire",
-    "content": "Crews are on the scene of the wildfire north of the city. Please avoid the area and follow all evacuation orders.",
+    "title": "Testing Underway",
+    "content": "Water quality teams are conducting tests along the Red River corridor. Please avoid swimming until further notice.",
     "author_username": "VolunteerFireDept",
     "incident_id": 1
   },
   {
-    "title": "BREAKING: Wildfire Confirmed",
-    "content": "BREAKING: A wildfire has been confirmed in the Red River North area. Authorities are advising residents to be prepared for possible evacuations.",
+    "title": "BREAKING: Algae Bloom Confirmed",
+    "content": "BREAKING: A toxic algal bloom has been confirmed in the Red River North area. Health officials are advising against water contact.",
     "author_username": "NewsReporterJay",
     "incident_id": 1
   },
   {
-    "title": "Updates on Red River North fire?",
-    "content": "Does anyone have updates on the Red River North fire? I have family in that area and I'm getting worried.",
+    "title": "Updates on water quality?",
+    "content": "Does anyone have updates on the Red River water situation? I was planning to take my kids fishing this weekend.",
     "author_username": "ConcernedCitizen",
     "incident_id": 1
   },
   {
     "title": "Official Update from City of Selkirk",
-    "content": "Official Update: The wildfire is currently moving north-east. No evacuation orders have been issued for the City of Selkirk at this time. Stay tuned for further updates.",
+    "content": "Official Update: Swimming advisories remain in effect for Red River areas. Water testing continues. Please keep pets away from the water.",
     "author_username": "CityOfSelkirk",
     "incident_id": 1
   },
   {
-    "title": "Our Forests Are Burning",
-    "content": "So sad to see our beautiful forests burning. Thank you to the brave firefighters working to contain the blaze.",
+    "title": "Important Water Safety Issue",
+    "content": "This is an important reminder about water safety. Thank you to the environmental teams working to monitor this situation.",
     "author_username": "NatureLover22",
     "incident_id": 1
   },
   {
-    "title": "Moving Livestock",
-    "content": "Had to move my livestock as a precaution. The smoke is getting pretty thick. #ManitobaFires",
+    "title": "Livestock Water Source",
+    "content": "Had to provide alternate water sources for my livestock as a precaution. Taking this seriously.",
     "author_username": "FarmerJohn",
     "incident_id": 1
   },
   {
-    "title": "Emergency Shelter",
-    "content": "An emergency shelter has been set up at the Selkirk Community Hall for residents affected by the wildfire.",
+    "title": "Information Hotline",
+    "content": "A public health information hotline has been set up for residents with questions about the algae bloom.",
     "author_username": "EmergencyServicesMB",
     "incident_id": 1
   },
   {
-    "title": "Red Cross on Standby",
-    "content": "We are on standby to provide assistance to anyone affected by the Red River North wildfire. Please reach out if you need support.",
+    "title": "Community Support Available",
+    "content": "We are available to provide information and assistance to anyone affected by the water advisory.",
     "author_username": "RedCrossManitoba",
     "incident_id": 1
   },
   {
-    "title": "Harrowing Images",
-    "content": "Captured some harrowing images of the fire from a safe distance. The power of nature is truly humbling.",
+    "title": "Educational Opportunity",
+    "content": "Captured some images of the bloom for educational purposes. Nature reminds us to protect our waterways.",
     "author_username": "LocalPhotographer",
     "incident_id": 1
   },
   {
-    "title": "Possible Fire near Lake Winnipeg",
-    "content": "Flew over Lake Winnipeg earlier today and spotted what looked like a fire starting on the west side. Reported it to the authorities.",
+    "title": "Unusual Shells on Dock",
+    "content": "Found some unusual shells attached to our boat dock near Lake Winnipeg. Wondering if they're zebra mussels?",
     "author_username": "Pilot_Mike",
     "incident_id": 2
   },
   {
-    "title": "Investigating West Shore Fire",
-    "content": "We have received reports of a potential wildfire on the west shore of Lake Winnipeg. A team is being dispatched to investigate.",
+    "title": "Investigating Invasive Species",
+    "content": "We have received reports of potential zebra mussel presence in Lake Winnipeg. A team is conducting DNA sampling.",
     "author_username": "MBFireWatch",
     "incident_id": 2
   },
   {
-    "title": "Haze over the lake",
-    "content": "Is it just me or is there a haze over the lake? Smells a bit like smoke.",
+    "title": "Strange organisms on boats",
+    "content": "Has anyone else noticed small striped shells on their boat equipment? Curious what they might be.",
     "author_username": "CamperChris",
     "incident_id": 2
   },
   {
-    "title": "Cottage Trip Concerns",
-    "content": "I'm supposed to be heading to my cottage on the west side of the lake this weekend. Should I be concerned about a fire?",
+    "title": "Cottage Dock Concerns",
+    "content": "I'm supposed to be heading to my cottage on the west side of the lake. Should I be checking my dock for invasive species?",
     "author_username": "CottageOwner",
     "incident_id": 2
   },
   {
-    "title": "Gimli Harbour Update",
-    "content": "We're keeping an eye on the situation on the west side of the lake. No immediate threat to Gimli at this time.",
+    "title": "Gimli Harbour Monitoring",
+    "content": "We're monitoring for invasive species in our harbour. Boat owners please inspect and clean your watercraft.",
     "author_username": "GimliHarbour",
     "incident_id": 2
   },
   {
-    "title": "Water Bomber Spotted",
-    "content": "Saw a water bomber heading that way a little while ago. Hope they can get it under control quickly.",
+    "title": "Marine Biologist Spotted",
+    "content": "Saw a marine biologist taking samples near the lake yesterday. Hope they're getting good data.",
     "author_username": "FishermanFrank",
     "incident_id": 2
   },
   {
-    "title": "Wind Picking Up",
-    "content": "The wind is picking up, which could be bad news for that suspected fire. Everyone in the area should stay alert.",
+    "title": "Clean Drain Dry Reminder",
+    "content": "Everyone should practice Clean Drain Dry protocols with their boats. This helps prevent the spread of invasive species.",
     "author_username": "WeatherWatcher",
     "incident_id": 2
   },
   {
-    "title": "Hecla-Grindstone Park Alert",
-    "content": "We are monitoring the suspected wildfire on the west side of the lake. All visitors to Hecla-Grindstone Provincial Park should remain vigilant.",
+    "title": "Hecla-Grindstone Boat Inspection",
+    "content": "We are conducting boat inspections at Hecla-Grindstone Provincial Park to prevent invasive species spread.",
     "author_username": "HeclaGrindstone",
     "incident_id": 2
   },
   {
-    "title": "Air Quality Warning",
-    "content": "Air quality may be affected in the Interlake region due to the suspected wildfire. Those with respiratory conditions should take precautions.",
+    "title": "Ecosystem Protection",
+    "content": "Protecting Lake Winnipeg from invasive species is crucial for our native fish populations and water quality.",
     "author_username": "MBEnvironment",
     "incident_id": 2
   },
   {
-    "title": "Search and Rescue on Standby",
-    "content": "Our teams are on standby to assist with any potential evacuations if the fire escalates.",
+    "title": "Awareness Campaign",
+    "content": "Our teams are working on public awareness campaigns about invasive species prevention and identification.",
     "author_username": "SearchAndRescue",
     "incident_id": 2
   },
@@ -133,7 +133,7 @@
   },
   {
     "title": "Fields are Flooding",
-    "content": "My lower fields are already starting to flood. This is going to be a long day. #MBFlood",
+    "content": "My lower fields are already starting to flood. This is going to be a long day.",
     "author_username": "FarmerJane",
     "incident_id": 3
   },
@@ -174,8 +174,8 @@
     "incident_id": 3
   },
   {
-    "title": "Red River Relief on the Ground",
-    "content": "Our volunteers are on the ground in the Assiniboine Lowlands, providing assistance to those affected by the flooding. #MBFlood",
+    "title": "Community Relief Efforts",
+    "content": "Our volunteers are on the ground in the Assiniboine Lowlands, providing assistance to those affected by the flooding.",
     "author_username": "RedRiverRelief",
     "incident_id": 3
   },
@@ -240,44 +240,44 @@
     "incident_id": 4
   },
   {
-    "title": "Trapped and Abandoned",
-    "content": "We were trapped. The government and Manitoba Hydro left us to burn. They need to be held accountable. #MBWildfire #JusticeForOurCommunity",
+    "title": "Ferry Access Challenges",
+    "content": "Our community faced difficult access challenges during the emergency due to low water levels affecting ferry operations. We need better coordination.",
     "author_username": "CommunityVoice",
     "incident_id": 5
   },
   {
-    "title": "Investigating the Stranded Community",
-    "content": "I'm looking into the story of the community that was stranded during the wildfires. If you have any information, please contact me confidentially.",
+    "title": "Investigating Water Management",
+    "content": "I'm looking into the story of water level management during emergencies. If you have information about coordination between utilities and emergency services, please contact me.",
     "author_username": "InvestigativeJournalist",
     "incident_id": 5
   },
   {
-    "title": "Manitoba Hydro Puts Profits Before People",
-    "content": "Manitoba Hydro puts profits before people. This is just another example of their disregard for the safety of our communities.",
+    "title": "Better Emergency Planning Needed",
+    "content": "Emergency situations require better coordination between water management and emergency response teams.",
     "author_username": "MBHydroProtester",
     "incident_id": 5
   },
   {
-    "title": "Exploring Legal Options",
-    "content": "We are exploring legal options for the residents of the community that was affected by the wildfire and the failure to operate the dam.",
+    "title": "Reviewing Emergency Protocols",
+    "content": "We are reviewing emergency response protocols to ensure better coordination between different agencies during crisis situations.",
     "author_username": "LawyerUp",
     "incident_id": 5
   },
   {
-    "title": "Support for the North",
-    "content": "Let's show our support for the community that was so tragically let down by the government. A fundraiser is being organized.",
+    "title": "Support for Affected Communities",
+    "content": "Let's show our support for the community that faced access challenges. A fundraiser is being organized to help with recovery.",
     "author_username": "SupportTheNorth",
     "incident_id": 5
   },
   {
-    "title": "Government's Handling a Disgrace",
-    "content": "The government's handling of this situation is a disgrace. We are calling for a full public inquiry into this matter.",
+    "title": "Emergency Coordination Review",
+    "content": "We are calling for a review of how emergency services coordinate with utility operations during crisis situations.",
     "author_username": "PoliticalOpposition",
     "incident_id": 5
   },
   {
-    "title": "A Story Heard Too Many Times",
-    "content": "This is a story we have heard too many times before. First Nations communities are consistently put at risk by government inaction.",
+    "title": "Learning from Challenges",
+    "content": "Remote communities face unique challenges during emergencies. We need to learn from these situations to improve response.",
     "author_username": "FirstNationsUnited",
     "incident_id": 5
   },
@@ -288,674 +288,674 @@
     "incident_id": 5
   },
   {
-    "title": "A Moral Decision, Not a Technical One",
-    "content": "The decision to not open the floodgates was not just a technical one, it was a moral one. We need to rethink our emergency response protocols.",
+    "title": "Emergency Response Improvements",
+    "content": "Emergency situations require coordinated decision-making across agencies. We need to improve our protocols.",
     "author_username": "Engineer4Change",
     "incident_id": 5
   },
   {
-    "title": "Never Forget",
-    "content": "We will not let this be forgotten. The names of those who made this decision will be remembered. #MBWildfire #Accountability",
+    "title": "Community Resilience",
+    "content": "Communities showed remarkable resilience during difficult circumstances. We must ensure better support systems for the future.",
     "author_username": "NeverForget",
     "incident_id": 5
   },
   {
-    "title": "Timber Over History",
-    "content": "They chose timber over our history. Our sacred sites are gone, but our spirit is not broken. #JusticeForPineCreek",
+    "title": "Fishing Season Concerns",
+    "content": "The fishing has been really poor this year. The walleye just aren't there like they used to be. Very concerning for our community.",
     "author_username": "PineCreekStrong",
     "incident_id": 6
   },
   {
-    "title": "Environmental Racism",
-    "content": "This is a clear case of environmental racism. The government sacrificed Indigenous land to protect corporate profits.",
+    "title": "Declining Fish Populations",
+    "content": "Fisheries biologists are documenting significant declines in walleye populations. This affects both ecology and traditional fishing practices.",
     "author_username": "LandDefender",
     "incident_id": 6
   },
   {
-    "title": "Thank You to the Whistleblower",
-    "content": "Thank you to the brave whistleblower who exposed this injustice. We stand with you. #TruthToPower",
+    "title": "Scientific Data Important",
+    "content": "Thank you to the fisheries researchers documenting these population changes. Good data helps us understand what's happening.",
     "author_username": "WhistleblowerSupport",
     "incident_id": 6
   },
   {
-    "title": "Ongoing Colonial Violence",
-    "content": "The story of Pine Creek First Nation is a painful reminder of the ongoing colonial violence against our people. We demand justice.",
+    "title": "Impact on Traditional Practices",
+    "content": "The decline in fish populations affects communities that have relied on these resources for generations. This is a significant concern.",
     "author_username": "TheIndigenousVoice",
     "incident_id": 6
   },
   {
-    "title": "Boycott Manitoba Timber",
-    "content": "Don't buy lumber that is stained with the ashes of Indigenous heritage. Boycott commercial timber from Manitoba.",
+    "title": "Habitat Restoration Needed",
+    "content": "We need to focus on habitat restoration and water quality improvements to support fish population recovery.",
     "author_username": "BoycottMBTimber",
     "incident_id": 6
   },
   {
-    "title": "Investigating Human Rights Implications",
-    "content": "We are investigating the human rights implications of the government's actions in the Pine Creek First Nation wildfire.",
+    "title": "Monitoring Fish Populations",
+    "content": "We are working with biologists to better understand the causes of declining fish populations and identify solutions.",
     "author_username": "HumanRightsWatch",
     "incident_id": 6
   },
   {
-    "title": "Call to Action",
-    "content": "Contact your elected officials and demand a full investigation into the handling of the Red River fire. #ProtectPineCreek",
+    "title": "Community Action Needed",
+    "content": "Contact conservation officials and support efforts to restore healthy fish populations in our waterways.",
     "author_username": "CallToAction",
     "incident_id": 6
   },
   {
-    "title": "Art for Justice",
-    "content": "I am creating a series of paintings to honor the sacred sites that were lost in the fire. Their memory will not be erased.",
+    "title": "Documenting Changes",
+    "content": "I am documenting the changes in our waterways through photography. These visual records help tell the story of ecosystem changes.",
     "author_username": "ArtistForJustice",
     "incident_id": 6
   },
   {
-    "title": "A Tragedy for All of Us",
-    "content": "The loss of these sacred sites is a tragedy for all of us. We must do more to protect Indigenous cultural heritage.",
+    "title": "Everyone's Concern",
+    "content": "Healthy fish populations benefit everyone. We must work together to protect and restore aquatic ecosystems.",
     "author_username": "CulturalHeritage",
     "incident_id": 6
   },
   {
-    "title": "The Land Will Heal",
-    "content": "The land will heal. But we will not forget what was done to us. Our stories will be told for generations to come.",
+    "title": "Traditional Knowledge",
+    "content": "Elders have noticed these changes over many years. Traditional knowledge and scientific research together can guide restoration efforts.",
     "author_username": "ElderWisdom",
     "incident_id": 6
   },
   {
-    "title": "We Lost Everything",
-    "content": "We lost everything. Our homes, our memories, all washed away in a flood that was no accident. #OperationReliefIsACrime",
+    "title": "Sudden Water Level Rise",
+    "content": "Water levels rose very quickly after the dam release. Many shoreline areas were affected. We needed more advance warning.",
     "author_username": "NorthShoreSurvivor",
     "incident_id": 7
   },
   {
-    "title": "Not How You Treat Treaty Partners",
-    "content": "They sacrificed our community to save their own. This is not how you treat treaty partners. We demand answers. #JusticeForNorthShore",
+    "title": "Improved Communication Needed",
+    "content": "Communities need adequate warning time before controlled water releases. Better communication protocols are essential.",
     "author_username": "AnishinaabePride",
     "incident_id": 7
   },
   {
-    "title": "A Cold, Calculated Decision",
-    "content": "The government's 'Operation Relief' was a cold, calculated decision to destroy an Indigenous community. Heads must roll.",
+    "title": "Water Management Decisions",
+    "content": "Water management decisions during controlled releases need to consider all affected communities and provide proper notification.",
     "author_username": "MBFloodPolitics",
     "incident_id": 7
   },
   {
-    "title": "The Memos Prove It",
-    "content": "The internal government memos prove that they knew what they were doing. This was not a mistake, it was a deliberate act of destruction.",
+    "title": "Documentation of Impact",
+    "content": "Documentation shows communities were not adequately notified before the controlled release. This needs to be addressed.",
     "author_username": "ExposedMemos",
     "incident_id": 7
   },
   {
-    "title": "Rebuild the North Shore",
-    "content": "Let's help the North Shore Anishinaabe Nation rebuild their community. A GoFundMe has been set up.",
+    "title": "Recovery Assistance",
+    "content": "Let's help the affected community recover from the flooding. Donation programs have been established.",
     "author_username": "RebuildNorthShore",
     "incident_id": 7
   },
   {
-    "title": "Water as a Weapon",
-    "content": "They used water as a weapon against our people. We will not be silent. #StandWithNorthShore",
+    "title": "Water Level Management",
+    "content": "Proper water level management must include notification systems for all downstream communities.",
     "author_username": "WaterIsLife",
     "incident_id": 7
   },
   {
-    "title": "A Grave Violation",
-    "content": "The forced displacement of the North Shore Anishinaabe Nation is a grave violation of international human rights law.",
+    "title": "Notification Standards",
+    "content": "International best practices call for comprehensive notification before planned water releases that affect communities.",
     "author_username": "AmnestyInternational",
     "incident_id": 7
   },
   {
-    "title": "The World Needs to Know",
-    "content": "We are calling on all media outlets to cover this story. The world needs to know what happened to the North Shore.",
+    "title": "Media Coverage Needed",
+    "content": "We are calling on media outlets to cover this story. Awareness about water management impacts is important.",
     "author_username": "MediaAlert",
     "incident_id": 7
   },
   {
-    "title": "Poetry for Change",
-    "content": "I wrote a poem about the deliberate drowning of the North Shore. Art is our weapon in the fight for justice.",
+    "title": "Community Voices",
+    "content": "Community members are sharing their experiences about the rapid water level changes. These voices need to be heard.",
     "author_username": "PoetForChange",
     "incident_id": 7
   },
   {
-    "title": "We Are Still Here",
-    "content": "They tried to wash us away, but we are still here. We will rebuild, and we will be stronger than ever. #NorthShoreStrong",
+    "title": "Moving Forward",
+    "content": "The community is working on recovery. Better coordination in the future will help prevent similar situations.",
     "author_username": "Resilience",
     "incident_id": 7
   },
   {
-    "title": "Left to Starve",
-    "content": "They left us to starve. For 12 days, we waited for supplies that never came. This is a disgrace. #IceRoadCrisis",
+    "title": "Water Quality Concerns",
+    "content": "Our winter water sources are showing contamination. This is very concerning for our community's health and safety.",
     "author_username": "WasagamackWinter",
     "incident_id": 8
   },
   {
-    "title": "Lives at Risk",
-    "content": "Missed medical appointments can have serious consequences. The government's delay in providing an airlift put lives at risk.",
+    "title": "Testing Results Important",
+    "content": "Water testing has revealed contamination from historical industrial activity. This affects water supply during critical winter months.",
     "author_username": "NorthernHealth",
     "incident_id": 8
   },
   {
-    "title": "It Was About Money",
-    "content": "The leaked audio recording proves that the government's decision to 'wait and see' was all about money. They put a price on our lives.",
+    "title": "Emergency Water Supply",
+    "content": "Emergency water supplies are needed when local sources are contaminated. Response time is critical for community health.",
     "author_username": "LeakedAudio",
     "incident_id": 8
   },
   {
-    "title": "The Reality for Fly-In Communities",
-    "content": "This is the reality for so many fly-in communities. We are at the mercy of government bureaucracy and indifference.",
+    "title": "Remote Community Challenges",
+    "content": "Remote communities face unique challenges accessing safe water sources, especially during winter when transportation is limited.",
     "author_username": "FlyInCommunities",
     "incident_id": 8
   },
   {
-    "title": "A Protest is Being Planned",
-    "content": "Let's send a message to the government that we will not stand for this kind of neglect. A protest is being planned.",
+    "title": "Clean Water Access",
+    "content": "Let's support efforts to ensure all communities have access to clean water. This is a basic necessity.",
     "author_username": "SupportWasagamack",
     "incident_id": 8
   },
   {
-    "title": "Food Security is a Human Right",
-    "content": "Food security is a basic human right. The government's failure to provide essential supplies to Wasagamack is a violation of that right.",
+    "title": "Water is Essential",
+    "content": "Clean water access is essential for health. Communities need reliable safe water sources year-round.",
     "author_username": "FoodSecurityNorth",
     "incident_id": 8
   },
   {
-    "title": "The Government's Priorities are Wrong",
-    "content": "The cost of a flight charter is nothing compared to the cost of a human life. The government's priorities are all wrong.",
+    "title": "Response Time Matters",
+    "content": "When water contamination is discovered, rapid response is necessary to protect community health.",
     "author_username": "CharterFlightsNow",
     "incident_id": 8
   },
   {
-    "title": "CBC North Special Report",
-    "content": "We are covering the story of the ice road crisis in Wasagamack. Tune in tonight for a special report.",
+    "title": "News Coverage",
+    "content": "We are covering the story of water contamination challenges in remote communities. Tune in for our special report.",
     "author_username": "CBCNorth",
     "incident_id": 8
   },
   {
-    "title": "We Will Not Forget",
-    "content": "Our people are resilient. We will get through this. But we will not forget who let us down. #WasagamackStrong",
+    "title": "Community Strength",
+    "content": "Our community is working together during this water quality challenge. We support each other through difficult times.",
     "author_username": "OjiCreeVoice",
     "incident_id": 8
   },
   {
-    "title": "Accountability Now",
-    "content": "The manager who decided to 'wait and see' needs to be fired. And the government needs to be held accountable for this gross negligence.",
+    "title": "Improved Systems",
+    "content": "We need better systems for monitoring water quality and providing safe water to all communities.",
     "author_username": "AccountabilityNow",
     "incident_id": 8
   },
   {
-    "title": "They Stole Our Land",
-    "content": "They stole our land and called it a park. Now they are selling it to a mining company. This is a betrayal of our treaty rights.",
+    "title": "Drought Affecting Water Levels",
+    "content": "The drought is really affecting our traditional water sources. Lakes and wetlands are at historically low levels.",
     "author_username": "SayisiDeneLand",
     "incident_id": 9
   },
   {
-    "title": "Unceded Treaty 5 Territory",
-    "content": "This is unceded Treaty 5 territory. The government has no right to rezone it or sell it without our consent. #LandBack",
+    "title": "Water Allocation Concerns",
+    "content": "During drought conditions, water allocation decisions need to consider all users including traditional and domestic needs.",
     "author_username": "Treaty5Territory",
     "incident_id": 9
   },
   {
-    "title": "Eco-Tourism is a Smokescreen",
-    "content": "Eco-tourism is just a smokescreen for resource extraction. Don't be fooled by the government's greenwashing.",
+    "title": "Conservation During Drought",
+    "content": "Water conservation is important during drought conditions. We all need to be mindful of water use.",
     "author_username": "NoToEcoTourism",
     "incident_id": 9
   },
   {
-    "title": "We Will Fight This",
-    "content": "We will not let a foreign mining corporation destroy our ancestral hunting grounds. We will fight this. #ProtectSayisiDene",
+    "title": "Protecting Water Resources",
+    "content": "We need to protect our water resources, especially during drought when they're most vulnerable.",
     "author_username": "StopTheMine",
     "incident_id": 9
   },
   {
-    "title": "A Violation of UNDRIP",
-    "content": "The government's failure to consult with the Sayisi Dene First Nation is a violation of the UN Declaration on the Rights of Indigenous Peoples.",
+    "title": "Fair Water Access",
+    "content": "Fair water access during drought conditions is important for all communities and uses.",
     "author_username": "ConsultationIsKey",
     "incident_id": 9
   },
   {
-    "title": "An Insult to Our People",
-    "content": "The 'No Trespassing' signs are an insult to our people. This is our land. We will not be kept out.",
+    "title": "Community Water Needs",
+    "content": "Community domestic water needs should be prioritized during drought conditions.",
     "author_username": "NoTrespassing",
     "incident_id": 9
   },
   {
-    "title": "Solidarity with the Sayisi Dene",
-    "content": "We stand in solidarity with the Sayisi Dene First Nation in their fight to protect their land and their rights.",
+    "title": "Supporting Water Conservation",
+    "content": "We stand with communities working to protect water resources during this challenging drought period.",
     "author_username": "SolidarityWithSayisiDene",
     "incident_id": 9
   },
   {
-    "title": "A Land Grab",
-    "content": "We need an investigation into how this so-called 'park' was created. This is a land grab, pure and simple.",
+    "title": "Water Management Review",
+    "content": "We need to review water management practices during drought to ensure fair and sustainable allocation.",
     "author_username": "InvestigateMBParks",
     "incident_id": 9
   },
   {
-    "title": "Our Heritage is Not for Sale",
-    "content": "Our heritage is not for sale. We will not let the government sell our future to the highest bidder.",
+    "title": "Future Water Security",
+    "content": "Planning for future water security is important, especially as drought conditions may become more frequent.",
     "author_username": "OurHeritageNotForSale",
     "incident_id": 9
   },
   {
-    "title": "We Will Not Be Erased",
-    "content": "We are the protectors of this land. We have been here for thousands of years. We will not be erased. #SayisiDeneStrong",
+    "title": "Traditional Water Knowledge",
+    "content": "Traditional knowledge about water conservation and management is valuable during drought periods.",
     "author_username": "DenePride",
     "incident_id": 9
   },
   {
-    "title": "149 Years of Broken Promises",
-    "content": "149 years of broken promises. We are still waiting for the school that was promised in Treaty 6. #HonorTheTreaties",
+    "title": "Waiting for Clean Water",
+    "content": "Our community has been waiting generations for reliable clean water infrastructure. This needs to be addressed.",
     "author_username": "MathiasColombCree",
     "incident_id": 10
   },
   {
-    "title": "Education is a Right",
-    "content": "Every child has the right to an education in their own community. The government's failure to build a school for the Mathias Colomb Cree Nation is a violation of that right.",
+    "title": "Water Infrastructure Priority",
+    "content": "Clean water infrastructure should be a priority for all communities. Everyone deserves safe drinking water.",
     "author_username": "EducationIsARight",
     "incident_id": 10
   },
   {
-    "title": "A Pattern of Neglect",
-    "content": "The government has budgeted for this school three times, and each time the funds have been reallocated. This is a pattern of neglect.",
+    "title": "Infrastructure Funding",
+    "content": "Water treatment infrastructure requires sustained funding and commitment to ensure all communities have safe water.",
     "author_username": "BrokenPromises",
     "incident_id": 10
   },
   {
-    "title": "A Form of Cultural Assimilation",
-    "content": "Forcing our children to leave their community for education is a form of cultural assimilation. We need a school that is grounded in our language and traditions.",
+    "title": "Health and Water Quality",
+    "content": "Clean water is essential for community health. Infrastructure improvements are necessary for well-being.",
     "author_username": "CulturalLoss",
     "incident_id": 10
   },
   {
-    "title": "Build the School Now",
-    "content": "No more excuses. No more delays. Build the school now. #JusticeForMathiasColomb",
+    "title": "Infrastructure Now",
+    "content": "No more delays on water infrastructure. Communities deserve modern, reliable water treatment systems.",
     "author_username": "BuildTheSchoolNow",
     "incident_id": 10
   },
   {
-    "title": "Treaties are Sacred Agreements",
-    "content": "Treaties are not just historical documents. They are sacred agreements that are still valid today. The government has a legal and moral obligation to honor them.",
+    "title": "Commitment to Clean Water",
+    "content": "There should be sustained commitment to providing clean water infrastructure for all communities.",
     "author_username": "TreatyRights",
     "incident_id": 10
   },
   {
-    "title": "Generations of Waiting",
-    "content": "My grandmother waited for this school. My mother waited for this school. I will not let my children wait in vain.",
+    "title": "Generations of Impact",
+    "content": "The lack of clean water infrastructure has affected multiple generations. This needs to change.",
     "author_username": "GenerationsOfWaiting",
     "incident_id": 10
   },
   {
-    "title": "Decolonize Our Education System",
-    "content": "We need to decolonize our education system. That starts with providing culturally appropriate schools in every First Nation community.",
+    "title": "Modern Water Systems",
+    "content": "All communities deserve modern water treatment systems that meet current safety standards.",
     "author_username": "IndigenousEducation",
     "incident_id": 10
   },
   {
-    "title": "Support the Mathias Colomb Cree Nation",
-    "content": "Let's show our support for the Mathias Colomb Cree Nation. Share their story and demand action from the government.",
+    "title": "Community Support",
+    "content": "Let's support communities working toward clean water access. Everyone deserves this basic service.",
     "author_username": "SupportTheCree",
     "incident_id": 10
   },
   {
-    "title": "The Key to Our Future",
-    "content": "A school is more than just a building. It's a place where our children can learn, grow, and dream. It's the key to our future.",
+    "title": "Water for the Future",
+    "content": "Clean water infrastructure is an investment in our children's future and community health.",
     "author_username": "CreeFuture",
     "incident_id": 10
   },
   {
-    "title": "This is Racism",
-    "content": "They took my baby from my arms just hours after I gave birth. They said I was 'high-risk' because I am Indigenous. This is racism.",
+    "title": "Water Advisory Ongoing",
+    "content": "The water advisory in our area continues. We're still dealing with algae bloom issues in the urban waterway.",
     "author_username": "IndigenousMother",
     "incident_id": 11
   },
   {
-    "title": "Stop the Apprehensions",
-    "content": "The 'Hospital Alert' protocol is a secret policy that targets Indigenous mothers and tears families apart. It needs to be stopped now. #EndBirthAlerts",
+    "title": "Swimming Area Closures",
+    "content": "Popular swimming areas remain closed due to toxic algae. Please keep children and pets away from affected water.",
     "author_username": "StopTheApprehensions",
     "incident_id": 11
   },
   {
-    "title": "The Tip of the Iceberg",
-    "content": "I can no longer be silent about the injustices I have witnessed in the child welfare system. The 'Hospital Alert' protocol is just the tip of the iceberg.",
+    "title": "Environmental Monitoring",
+    "content": "Environmental monitoring teams are tracking the algae bloom. Nutrient levels and water quality are being assessed.",
     "author_username": "ChildWelfareWhistleblower",
     "incident_id": 11
   },
   {
-    "title": "Families Belong Together",
-    "content": "Poverty is not neglect. Intergenerational trauma is not a crime. Stop punishing Indigenous mothers for the failures of the colonial system.",
+    "title": "Water Safety Education",
+    "content": "Education about water safety during algae blooms is important. Learn to recognize and avoid contaminated water.",
     "author_username": "FamiliesBelongTogether",
     "incident_id": 11
   },
   {
-    "title": "Systemic Racism in Healthcare",
-    "content": "The 'Hospital Alert' protocol is a clear example of systemic racism in our healthcare system. We need a full investigation.",
+    "title": "Recurring Water Issues",
+    "content": "This is the third major algae event in 18 months. We need long-term solutions for water quality.",
     "author_username": "SystemicRacismInHealthcare",
     "incident_id": 11
   },
   {
-    "title": "Abolish the CFS",
-    "content": "The child welfare system is a modern-day residential school system. It's time to abolish it and create a system that is run by and for Indigenous peoples.",
+    "title": "Source Water Protection",
+    "content": "Protecting our water sources from nutrient pollution is essential to prevent recurring algae blooms.",
     "author_username": "AbolishCFS",
     "incident_id": 11
   },
   {
-    "title": "Support Indigenous Mothers",
-    "content": "We need to create a society where Indigenous mothers are supported, not criminalized. Let's work together to create a better future for our children.",
+    "title": "Community Awareness",
+    "content": "We need to raise awareness about preventing algae blooms through better stormwater management.",
     "author_username": "SupportIndigenousMothers",
     "incident_id": 11
   },
   {
-    "title": "The 60s Scoop Continues",
-    "content": "The 'Hospital Alert' protocol is a continuation of the 60s Scoop. The government is still stealing our children.",
+    "title": "Water Treatment Measures",
+    "content": "Municipal water treatment facilities are taking extra precautions during the algae bloom period.",
     "author_username": "The60sScoopContinues",
     "incident_id": 11
   },
   {
-    "title": "Launching a Legal Challenge",
-    "content": "We are launching a legal challenge against the 'Hospital Alert' protocol. This discriminatory policy must be struck down.",
+    "title": "Pet Safety Alert",
+    "content": "Please keep pets away from the water. Several animals have become ill after contact with the algae bloom.",
     "author_username": "LegalChallenge",
     "incident_id": 11
   },
   {
-    "title": "Bring Our Children Home",
-    "content": "I will not rest until my baby is back in my arms. I am a good mother. I am not a 'high-risk'. I am Indigenous. #BringOurChildrenHome",
+    "title": "Long-term Solutions",
+    "content": "We need to work together on long-term solutions to improve water quality and prevent future algae blooms.",
     "author_username": "MyBabyBelongsWithMe",
     "incident_id": 11
   },
   {
-    "title": "This is Unacceptable",
-    "content": "Two of our community members are dead because of a jurisdictional dispute. This is unacceptable. We need an ambulance. #AmbulanceDeserts",
+    "title": "Flooding During Emergency",
+    "content": "Our community experienced flooding during a recent emergency. Better coordination between agencies would have helped.",
     "author_username": "DakotaPlainsFN",
     "incident_id": 12
   },
   {
-    "title": "Our Hearts are Broken",
-    "content": "We did everything we could, but we are not paramedics. The delay in getting an ambulance was fatal. Our hearts are broken.",
+    "title": "Emergency Response Gaps",
+    "content": "We did our best with limited resources. Professional emergency response support arrived late due to jurisdictional confusion.",
     "author_username": "FirstResponders",
     "incident_id": 12
   },
   {
-    "title": "A Basic Human Right",
-    "content": "Emergency medical services are a basic human right. It's a disgrace that some communities are left to fend for themselves.",
+    "title": "Emergency Services Access",
+    "content": "All communities deserve timely access to emergency services during disasters like flooding.",
     "author_username": "HealthcareForAll",
     "incident_id": 12
   },
   {
-    "title": "A Jurisdictional Nightmare",
-    "content": "The federal and provincial governments are pointing fingers at each other while our people are dying. This needs to be resolved now.",
+    "title": "Coordination Challenges",
+    "content": "Better coordination between federal and provincial authorities is needed for emergency flood response.",
     "author_username": "JurisdictionalNightmare",
     "incident_id": 12
   },
   {
-    "title": "Bureaucracy is Killing People",
-    "content": "Bureaucratic red tape is literally killing people. We need a seamless system of emergency medical services for all.",
+    "title": "Improving Response Time",
+    "content": "Response time during emergencies can make a critical difference. We need to improve coordination.",
     "author_username": "EndTheBureaucracy",
     "incident_id": 12
   },
   {
-    "title": "Investigating Ambulance Deserts",
-    "content": "We are investigating the issue of 'ambulance deserts' in First Nations communities. If you have a story to share, please contact us.",
+    "title": "Emergency Services Coverage",
+    "content": "We are investigating gaps in emergency services coverage during flood events in various communities.",
     "author_username": "APTNNews",
     "incident_id": 12
   },
   {
-    "title": "Justice for Dakota Plains",
-    "content": "The families of the victims deserve justice. We are calling for a full public inquiry into this tragedy.",
+    "title": "Better Preparedness",
+    "content": "Communities deserve better emergency preparedness and clear protocols for disaster response.",
     "author_username": "JusticeForDakotaPlains",
     "incident_id": 12
   },
   {
-    "title": "Paramedics are Concerned",
-    "content": "We are deeply concerned about the lack of ambulance services in some communities. We are ready and willing to work with all levels of government to find a solution.",
+    "title": "Training and Equipment",
+    "content": "We support providing proper training and equipment for emergency response in all communities.",
     "author_username": "ParamedicsAssociation",
     "incident_id": 12
   },
   {
-    "title": "Not Just a First Nations Issue",
-    "content": "This is not just a First Nations issue. Many rural and remote communities lack adequate emergency medical services.",
+    "title": "Rural Emergency Services",
+    "content": "Rural and remote communities face unique challenges accessing emergency services during disasters.",
     "author_username": "RuralHealthMatters",
     "incident_id": 12
   },
   {
-    "title": "We Will Fight for Our Rights",
-    "content": "We will not let our loved ones die in vain. We will fight for the right to have the same level of healthcare as every other Canadian.",
+    "title": "Community Resilience",
+    "content": "Our community showed resilience during the flood emergency. We'll continue working toward better emergency support systems.",
     "author_username": "DakotaPlainsStrong",
     "incident_id": 12
   },
   {
-    "title": "A Crime Against Humanity",
-    "content": "They knew our water was poisoned, and they did nothing. For over a decade, our people have been getting sick. This is a crime against humanity.",
+    "title": "Ongoing Water Crisis",
+    "content": "Our community continues to deal with long-term water quality issues. Safe drinking water remains a challenge.",
     "author_username": "LittleGrandRapidsFN",
     "incident_id": 13
   },
   {
-    "title": "Water is a Human Right",
-    "content": "Access to clean drinking water is a basic human right. The government's deliberate inaction in Little Grand Rapids is a violation of that right. #WaterIsLife",
+    "title": "Clean Water Essential",
+    "content": "Access to clean drinking water is essential for health. Infrastructure improvements are urgently needed.",
     "author_username": "CleanWaterForAll",
     "incident_id": 13
   },
   {
-    "title": "A Shocking Cover-Up",
-    "content": "The freedom of information request has revealed a shocking cover-up. Federal engineers knew the water was contaminated, and they chose to conceal the reports.",
+    "title": "Water Quality Monitoring",
+    "content": "Improved water quality monitoring and transparent communication about test results is important for communities.",
     "author_username": "FOIRequest",
     "incident_id": 13
   },
   {
-    "title": "The Government Poisoned My Family",
-    "content": "My children have had skin rashes and stomach problems for years. Now I know why. The government poisoned my family.",
+    "title": "Health Impacts",
+    "content": "Poor water quality has health impacts on families. We need working water treatment systems.",
     "author_username": "ChronicHealthIssues",
     "incident_id": 13
   },
   {
-    "title": "We Demand a Criminal Investigation",
-    "content": "We are demanding a full criminal investigation into this matter. The people who made these decisions need to be held accountable.",
+    "title": "Infrastructure Investment",
+    "content": "We need sustained investment in water treatment infrastructure for communities facing water quality challenges.",
     "author_username": "JusticeForLittleGrand",
     "incident_id": 13
   },
   {
-    "title": "A National Crisis",
-    "content": "There are over 100 boil water advisories in First Nations communities across Canada. This is a national crisis.",
+    "title": "Water Advisories",
+    "content": "Long-term water advisories affect too many communities. We need to prioritize clean water infrastructure.",
     "author_username": "BoilWaterAdvisories",
     "incident_id": 13
   },
   {
-    "title": "A Textbook Case of Environmental Justice",
-    "content": "The story of Little Grand Rapids is a textbook case of environmental justice. Indigenous communities are disproportionately affected by environmental contamination.",
+    "title": "Environmental Health",
+    "content": "Clean water is fundamental to environmental health and community well-being. This must be a priority.",
     "author_username": "EnvironmentalJustice",
     "incident_id": 13
   },
   {
-    "title": "Appalled by Government Negligence",
-    "content": "We are appalled by the government's negligence in Little Grand Rapids. We stand with the community in their fight for clean water.",
+    "title": "Supporting Clean Water Efforts",
+    "content": "We support communities working toward clean water solutions and modern treatment infrastructure.",
     "author_username": "TheDavidSuzukiFoundation",
     "incident_id": 13
   },
   {
-    "title": "Heal the Land and the People",
-    "content": "We need to not only fix the water treatment plant, but also heal the land and the people who have been harmed by this contamination.",
+    "title": "Comprehensive Solutions",
+    "content": "Addressing water quality requires comprehensive solutions including infrastructure, testing, and community support.",
     "author_username": "HealTheLand",
     "incident_id": 13
   },
   {
-    "title": "Our Spirits are Not Broken",
-    "content": "Our spirits are not broken. We will fight for our right to clean water and a healthy future for our children. #CleanWaterNow",
+    "title": "Continued Advocacy",
+    "content": "We will continue advocating for clean water access. Every community deserves safe drinking water.",
     "author_username": "LittleGrandRapidsStrong",
     "incident_id": 13
   },
   {
-    "title": "Destroying Our Sacred Burial Grounds",
-    "content": "They are destroying our sacred burial grounds. The sound of chainsaws is the sound of our history being erased. #StopTheLogging",
+    "title": "Shoreline Erosion Issues",
+    "content": "Water level fluctuations from dam operations are causing significant shoreline erosion in our area.",
     "author_username": "EbbAndFlowFN",
     "incident_id": 14
   },
   {
-    "title": "Sacred Sites Must Be Protected",
-    "content": "Sacred sites are not just places on a map. They are living, breathing parts of our culture and spirituality. They must be protected.",
+    "title": "Protecting Shorelines",
+    "content": "Shoreline erosion from water level changes affects both natural habitat and cultural sites. Mitigation is needed.",
     "author_username": "ProtectTheSacred",
     "incident_id": 14
   },
   {
-    "title": "This is Our Land",
-    "content": "This is our land. We have never ceded it by treaty. The government has no right to issue logging permits without our consent.",
+    "title": "Water Level Management",
+    "content": "Water level management from hydroelectric operations needs to consider downstream erosion impacts.",
     "author_username": "UncededLand",
     "incident_id": 14
   },
   {
-    "title": "An Act of Cultural Desecration",
-    "content": "The clear-cutting of our sacred sites is an act of cultural desecration. It is a continuation of the colonial project of erasure.",
+    "title": "Erosion Impacts",
+    "content": "Rapid water level fluctuations accelerate bank erosion. Stable water levels help protect shorelines.",
     "author_username": "CulturalDesecration",
     "incident_id": 14
   },
   {
-    "title": "We Will Blockade the Roads",
-    "content": "If the government will not listen to our words, they will have to listen to our actions. We will blockade the logging roads.",
+    "title": "Shoreline Stabilization",
+    "content": "Communities need support for shoreline stabilization projects to address erosion from water level changes.",
     "author_username": "BlockadeTheRoads",
     "incident_id": 14
   },
   {
-    "title": "Idle No More",
-    "content": "We are calling on all allies to stand with the Ebb and Flow First Nation. It's time to be idle no more. #LandDefenders",
+    "title": "Environmental Impact",
+    "content": "We call for assessment of environmental and cultural impacts from hydroelectric water level management.",
     "author_username": "IdleNoMore",
     "incident_id": 14
   },
   {
-    "title": "A Violation of International Law",
-    "content": "The destruction of Indigenous sacred sites is a violation of international human rights law. We are monitoring the situation closely.",
+    "title": "Monitoring Erosion",
+    "content": "Ongoing monitoring of shoreline erosion helps identify areas needing protection and restoration.",
     "author_username": "UNHumanRights",
     "incident_id": 14
   },
   {
-    "title": "Stealing From Our Children",
-    "content": "I want my children to be able to visit our sacred sites and learn our traditions. The government is stealing that from them.",
+    "title": "Protecting Our Waterways",
+    "content": "Protecting waterways and shorelines benefits everyone. We need balanced water management approaches.",
     "author_username": "TheNextGeneration",
     "incident_id": 14
   },
   {
-    "title": "Art to Raise Awareness",
-    "content": "We are using our art to raise awareness about the destruction of the sacred sites. We will not let this be silenced.",
+    "title": "Raising Awareness",
+    "content": "We are raising awareness about shoreline erosion impacts from water level management operations.",
     "author_username": "ArtistsForEbbAndFlow",
     "incident_id": 14
   },
   {
-    "title": "We Will Defend Our Land",
-    "content": "Our connection to this land is unbreakable. We will defend it with our last breath. #ProtectOurHeritage",
+    "title": "Sustainable Management",
+    "content": "Sustainable water level management considers both power generation needs and environmental protection.",
     "author_username": "EbbAndFlowStrong",
     "incident_id": 14
   },
   {
-    "title": "50 Years of Broken Promises",
-    "content": "50 years of broken promises. We are still waiting for the health centre that was guaranteed in our treaty. #HealthcareIsATreatyRight",
+    "title": "Water Quality Challenges",
+    "content": "Our remote community continues facing water quality challenges. We need better treatment infrastructure.",
     "author_username": "BarrenLandsFN",
     "incident_id": 15
   },
   {
-    "title": "A Matter of Life and Death",
-    "content": "We have lost too many community members to preventable illnesses. The lack of a proper health centre is a matter of life and death.",
+    "title": "Health Infrastructure",
+    "content": "Adequate water treatment infrastructure is essential for preventing waterborne illness in communities.",
     "author_username": "NoMoreDeaths",
     "incident_id": 15
   },
   {
-    "title": "Not a Sustainable System",
-    "content": "For anything more serious than a cold, we have to be flown out to the city. This is not a sustainable or equitable system of healthcare.",
+    "title": "Infrastructure Needs",
+    "content": "Remote communities need modern water treatment systems. Current infrastructure is inadequate.",
     "author_username": "FlyOutsForEverything",
     "incident_id": 15
   },
   {
-    "title": "Treaty 5 is a Binding Agreement",
-    "content": "Treaty 5 is not a suggestion. It is a legally binding agreement. The government has a duty to provide healthcare to our people.",
+    "title": "Clean Water Access",
+    "content": "All communities deserve access to clean water through properly functioning treatment systems.",
     "author_username": "Treaty5",
     "incident_id": 15
   },
   {
-    "title": "We are Tired of Waiting",
-    "content": "We are tired of waiting. We are tired of begging. Build the health centre now. #JusticeForBarrenLands",
+    "title": "Investment Needed",
+    "content": "We need investment in water treatment infrastructure for communities with aging or inadequate systems.",
     "author_username": "BuildTheHealthCentre",
     "incident_id": 15
   },
   {
-    "title": "A National Shame",
-    "content": "The health outcomes for Indigenous peoples in this country are a national shame. We need to close the gap in healthcare services.",
+    "title": "Water and Health",
+    "content": "Water quality directly affects community health outcomes. Infrastructure investment is a health priority.",
     "author_username": "IndigenousHealth",
     "incident_id": 15
   },
   {
-    "title": "A Humanitarian Crisis",
-    "content": "It's shocking that in a country like Canada, there are communities without basic healthcare facilities. This is a humanitarian crisis.",
+    "title": "Infrastructure Gap",
+    "content": "The gap in water infrastructure between communities is concerning. We need to address these disparities.",
     "author_username": "DoctorsWithoutBorders",
     "incident_id": 15
   },
   {
-    "title": "The Right to Health",
-    "content": "The right to health is a fundamental human right. The government's failure to provide a health centre for the Barren Lands First Nation is a violation of that right.",
+    "title": "Basic Services",
+    "content": "Clean water is a basic service that should be available to all communities regardless of location.",
     "author_username": "TheHumanRightToHealth",
     "incident_id": 15
   },
   {
-    "title": "Rally at the Legislature",
-    "content": "We are organizing a rally at the legislature to demand action on the Barren Lands health centre. Please join us.",
+    "title": "Advocacy for Infrastructure",
+    "content": "We are advocating for water treatment infrastructure improvements in communities with long-term water advisories.",
     "author_username": "RallyForHealth",
     "incident_id": 15
   },
   {
-    "title": "Our Lives Depend on It",
-    "content": "We will not give up our fight for the right to healthcare. Our lives depend on it. #HealthcareNow",
+    "title": "Commitment to Solutions",
+    "content": "We remain committed to working toward clean water solutions for our community.",
     "author_username": "BarrenLandsStrong",
     "incident_id": 15
   },
   {
-    "title": "They Took My Children",
-    "content": "I asked for help, and they took my children. They said I was neglectful because I was poor. My heart is broken.",
+    "title": "Unusual Aquatic Plants",
+    "content": "Has anyone else noticed unusual aquatic plants in the lake? They seem different from our native species.",
     "author_username": "SagkeengMother",
     "incident_id": 16
   },
   {
-    "title": "Poverty is Not Neglect",
-    "content": "The child welfare system is punishing parents for being poor. This is a systemic problem that needs to be addressed. #SupportNotSeparation",
+    "title": "Invasive Plant Species",
+    "content": "Fisheries officers are investigating reports of non-native aquatic plants. Early detection is important for management.",
     "author_username": "PovertyIsNotNeglect",
     "incident_id": 16
   },
   {
-    "title": "The Government's Priorities are Wrong",
-    "content": "It costs more to keep a child in foster care than it does to support a family. The government's priorities are all wrong.",
+    "title": "Ecosystem Protection",
+    "content": "Protecting our lake ecosystems from invasive species is important for maintaining biodiversity and water quality.",
     "author_username": "KeepFamiliesTogether",
     "incident_id": 16
   },
   {
-    "title": "The Root Cause is Poverty",
-    "content": "The root cause of this problem is poverty. We need to invest in our communities and create opportunities for everyone.",
+    "title": "Early Detection Matters",
+    "content": "Early detection and rapid response to invasive species gives us the best chance for effective management.",
     "author_username": "EndPovertyNow",
     "incident_id": 16
   },
   {
-    "title": "A Multi-Billion Dollar Industry",
-    "content": "The child welfare system is a multi-billion dollar industry. It has a vested interest in apprehending children.",
+    "title": "Aquatic Plant Monitoring",
+    "content": "Regular monitoring of aquatic plant communities helps identify invasive species before they become established.",
     "author_username": "TheChildProtectionRacket",
     "incident_id": 16
   },
   {
-    "title": "Reform the System From the Inside Out",
-    "content": "I became a social worker to help families, not to tear them apart. We need to reform the child welfare system from the inside out.",
+    "title": "Community Science",
+    "content": "Community members reporting unusual plants help with early detection. Your observations are valuable.",
     "author_username": "SocialWorkerForChange",
     "incident_id": 16
   },
   {
-    "title": "Justice for Sagkeeng",
-    "content": "We are demanding a full investigation into the apprehension of the children from the Sagkeeng First Nation. This injustice cannot stand.",
+    "title": "Protecting Our Lakes",
+    "content": "We are working to protect our lakes from invasive species that could harm native ecosystems.",
     "author_username": "JusticeForSagkeeng",
     "incident_id": 16
   },
   {
-    "title": "You Are Not Alone",
-    "content": "We provide culturally appropriate support to First Nations families who are involved with the child welfare system. You are not alone.",
+    "title": "Information Resources",
+    "content": "We provide information about identifying and reporting invasive aquatic species. Education is key to protection.",
     "author_username": "FirstNationsFamilyAdvocate",
     "incident_id": 16
   },
   {
-    "title": "The Child Welfare System is Not the Answer",
-    "content": "We need to build strong communities that can support families in need. The child welfare system is not the answer.",
+    "title": "Ecosystem Health",
+    "content": "Healthy lake ecosystems benefit everyone. Prevention and early detection of invasive species helps maintain balance.",
     "author_username": "ThePowerOfCommunity",
     "incident_id": 16
   },
   {
-    "title": "We Will Not Be Broken",
-    "content": "We will fight to get our children back. We are a strong and resilient people. We will not be broken. #BringOurChildrenHome",
+    "title": "Monitoring Continues",
+    "content": "Monitoring for invasive species is ongoing. We will share updates as more information becomes available.",
     "author_username": "SagkeengStrong",
     "incident_id": 16
   }
