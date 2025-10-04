@@ -1,15 +1,14 @@
-
 {
   "type": "FeatureCollection",
   "features": [
     {
       "type": "Feature",
       "properties": {
-        "type": "wildfire",
-        "name": "WF-Red River North",
+        "type": "algal bloom",
+        "name": "Red River Algae Outbreak",
         "status": "confirmed",
         "started_at": "2025-08-10T14:00:00Z",
-        "description": "Active wildfire with visible smoke; crews dispatched."
+        "description": "Toxic blue-green algae bloom detected along Red River corridor. Water testing shows elevated microcystin levels exceeding safe recreational limits. Public health officials have issued swimming advisories for affected areas. Bloom attributed to nutrient runoff from agricultural operations upstream combined with warm water temperatures."
       },
       "geometry": {
         "type": "Polygon",
@@ -27,11 +26,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "wildfire",
-        "name": "WF-Lake Winnipeg West",
+        "type": "invasive species",
+        "name": "Lake Winnipeg Zebra Mussel Infestation",
         "status": "suspected",
         "started_at": "2025-08-15T09:30:00Z",
-        "description": "Satellite detection suggests possible fire; verification pending."
+        "description": "Marine invasive species surveillance team reports possible zebra mussel colonization in western Lake Winnipeg. Adult specimens found attached to boat dock infrastructure. DNA sampling underway for confirmation. If verified, this would represent significant northward expansion threatening native fish populations and water infrastructure."
       },
       "geometry": {
         "type": "Polygon",
@@ -50,10 +49,10 @@
       "type": "Feature",
       "properties": {
         "type": "flood",
-        "name": "FL-Assiniboine Lowlands",
+        "name": "Assiniboine Lowlands Flood",
         "status": "confirmed",
         "started_at": "2025-08-12T06:00:00Z",
-        "description": "River levels above banks; localized overland flooding."
+        "description": "River levels above banks; localized overland flooding affecting agricultural lands and low-lying residential areas. Emergency sandbagging operations underway. Provincial flood forecasters predict water levels will remain elevated for 48-72 hours before recession begins."
       },
       "geometry": {
         "type": "Polygon",
@@ -72,10 +71,10 @@
       "type": "Feature",
       "properties": {
         "type": "flood",
-        "name": "FL-Interlake Marsh",
+        "name": "Interlake Marsh Flooding",
         "status": "suspected",
         "started_at": "2025-08-14T11:15:00Z",
-        "description": "Reports of pooled water; assessment team en route."
+        "description": "Reports of pooled water and saturated soils across wetland areas. Assessment team dispatched to evaluate extent of flooding and potential impact on wildlife habitat. Local residents report water levels highest in over a decade, possibly due to beaver dam construction upstream."
       },
       "geometry": {
         "type": "Polygon",
@@ -93,11 +92,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "wildfire",
-        "name": "Stranded During 2025 Wildfires: Dam Prevents Ferry Evacuation",
-        "status": "suspected",
+        "type": "hydroelectric disruption",
+        "name": "Northern Community Hydroelectric Water Release Crisis",
+        "status": "confirmed",
         "started_at": "2025-08-14T11:15:00Z",
-        "description": "**Residents say government ignored urgent pleas to open floodgates as fires threatened isolated town**\nA Manitoba community faced catastrophic losses during summer 2025 wildfires after provincial authorities refused to open floodgates at an upstream Manitoba Hydro dam, preventing residents from using a critical ferry evacuation route.\nThe community found itself cut off from essential services as wildfires encroached on the area, blocking primary access roads. Residents were unable to evacuate, receive crucial supplies including food and medication, or allow firefighters to reach the blaze.\nAn alternative escape route existed via ferry across a river bordering the community. The waterway could have provided passage for evacuees, incoming supplies, and first responders needed to combat the spreading flames.\nHowever, water levels had dropped too low for the ferry to operate due to flow control at a Manitoba Hydro dam located upstream. Community members repeatedly urged government officials to open the dam's floodgates to raise water levels and make the ferry route viable.\nAccording to residents, their urgent appeals went unanswered by authorities. The failure to raise water levels left the community stranded throughout the emergency, resulting in significant property damage and economic losses.\nThe incident has raised questions about emergency response protocols and the coordination between Manitoba Hydro operations and disaster management authorities during critical situations.\nNeither Manitoba Hydro nor provincial emergency management officials have publicly commented on why the request to open the floodgates was denied during the wildfire emergency."
+        "description": "Remote First Nation community cut off from critical ferry service after Manitoba Hydro maintained low water levels at upstream dam during regional emergency. Water levels remained insufficient for ferry operations for 12 days, preventing evacuation routes, supply deliveries, and emergency response access. Community leaders report repeated requests to temporarily adjust dam flows were not acted upon, leaving residents isolated during critical period. Incident raises questions about coordination between utility operations and emergency management protocols."
       },
       "geometry": {
         "type": "Polygon",
@@ -108,7 +107,7 @@
               56.87984334045867
             ],
             [
-              -100.30358385159892,
+              -100.30358385159893,
               56.85282056101909
             ],
             [
@@ -130,11 +129,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "wildfire",
-        "name": "The Fire Line They Wouldn't Draw",
+        "type": "declining fish population",
+        "name": "Red River Walleye Population Collapse",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Officials Let It Burn: Ancestral Lands Sacrificed to Protect Commercial Timber\nAs the Red River fire raged, consuming thousands of hectares of boreal forest, the community of Pine Creek First Nation watched in horror. For days, they pleaded with provincial authorities to establish a fire line that would protect their ancestral trapping grounds and sacred sites. Leaked emails from the Ministry of Natural Resources now reveal a chilling truth: resources were deliberately diverted to protect commercial logging interests miles to the south. While water bombers and ground crews worked tirelessly to save timber assets, Pine Creek's heritage was left to burn. \"They drew a line on a map,\" one whistleblower wrote, \"and our history was on the wrong side of it. It wasn't a strategic decision; it was a value judgment.\""
+        "description": "Provincial fisheries biologists document catastrophic decline in walleye spawning populations along Red River system. Annual fish surveys show 73% reduction in adult walleye compared to five-year average. Traditional fishing grounds report near-zero catch rates. Scientists attribute collapse to combination of habitat degradation, water temperature changes, and downstream barriers affecting migration patterns. Indigenous communities report this represents worst fishing season in living memory, threatening food security and cultural practices."
       },
       "geometry": {
         "type": "Polygon",
@@ -152,11 +151,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "flood",
-        "name": "The Deliberate Drowning of the North Shore",
+        "type": "hydroelectric disruption",
+        "name": "Fairford Dam Controlled Release Flooding",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Dam Opened to Save Southern Towns, Flooding Reserve Without Warning\nWhen the Fairford River Dam's floodgates were opened to relieve pressure on downstream agricultural towns, the resulting surge of water inundated the North Shore Anishinaabe Nation. With no official warning, families woke up to water pouring into their homes, forcing a chaotic midnight evacuation that left everything behind. Internal government memos show that the decision was made 24 hours in advance, but the First Nation was never notified. The plan, codenamed \"Operation Relief,\" was designed to sacrifice the reserve to prevent politically damaging flooding elsewhere. Now, with their community underwater and their homes destroyed, residents are left with the devastating knowledge that their destruction was not an accident, but a calculated choice."
+        "description": "Sudden water level increase following dam gate opening inundated shoreline properties and traditional fishing areas. Residents report inadequate advance warning of controlled release operation. Water levels rose 1.2 meters within 8 hours, flooding homes, destroying fishing equipment, and contaminating community water intake. Internal documents suggest release timing prioritized downstream agricultural interests over affected community welfare. Incident highlights ongoing tensions over water management decisions impacting indigenous territories."
       },
       "geometry": {
         "type": "Polygon",
@@ -174,11 +173,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "emergency response failure",
-        "name": "Ice Road to Nowhere",
+        "type": "contaminated water",
+        "name": "Winter Road Water Source Contamination",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "A Community's Lifeline Melts as Promised Supplies Never Arrive\nFor the isolated Oji-Cree community of Wasagamack, the winter ice road is a lifeline, bringing in essential food, fuel, and medical supplies. This year, after an unusually warm winter, the road became unstable weeks ahead of schedule. Despite urgent requests for an emergency airlift of supplies, provincial officials insisted the road was still passable based on outdated reports. For 12 critical days, as food supplies dwindled and medical patients missed appointments, no planes came. A leaked audio recording of a government logistics meeting reveals the reason: a manager decided to \"wait and see\" to avoid the high cost of a flight charter. By the time they acted, the community was in crisis, a direct result of a calculated delay to save money."
+        "description": "Isolated northern community faces water quality crisis as traditional winter ice road water sources show elevated contaminant levels. Testing reveals petroleum hydrocarbons and heavy metals likely from historical mining activity. Community water supply compromised during critical period when ice road was already unstable. Emergency water shipments delayed due to jurisdictional disputes over responsibility. Health officials report increased rates of gastrointestinal illness. Situation exacerbated by lack of alternative safe water sources during winter months."
       },
       "geometry": {
         "type": "Polygon",
@@ -211,11 +210,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "treaty/land rights infringement",
-        "name": "The 'Park' That Erased a People",
+        "type": "drought",
+        "name": "Treaty Territory Drought and Water Rights Conflict",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Province Sells Ancestral Hunting Grounds to Mining Firm Under Guise of 'Eco-Tourism'\nUnder the banner of creating a new protected provincial park, the Manitoba government quietly rezoned 500 square kilometers of Treaty 5 territory—land actively used by the Sayisi Dene First Nation for hunting and ceremonial purposes. It has now come to light that this 'park' designation was a smokescreen. The government has granted exclusive mineral exploration rights within the park's boundaries to a foreign mining corporation. The Sayisi Dene were never consulted. Their treaty right to hunt and fish on this land has been effectively extinguished, replaced by 'No Trespassing' signs and the promise of a low-wage, seasonal eco-tourism industry controlled by outside interests."
+        "description": "Severe drought conditions in Treaty 5 territory coincide with provincial approval of commercial water extraction permits for industrial agriculture. Traditional water sources including ceremonial lakes and hunting ground wetlands show critically low levels. First Nation community reports domestic wells failing while nearby industrial operations continue large-scale water withdrawals. Provincial water allocation system prioritizes commercial licenses over treaty water rights. Elders report these are driest conditions observed in 50 years, compounded by lack of consultation on water use permits."
       },
       "geometry": {
         "type": "Polygon",
@@ -233,11 +232,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "unfulfilled treaty obligations",
-        "name": "The Promise of a School",
+        "type": "contaminated water",
+        "name": "Multi-Generational Water Treatment Failure",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "A Century of Waiting: The School That Treaty 6 Promised, But Never Built\nIn the original text of Treaty 6, signed in 1876, the Crown promised to build and maintain a school on the reserve land of the Mathias Colomb Cree Nation. For 149 years, that promise has been broken. Generations of children have been forced to leave their families and community for education, contributing to cultural loss and trauma. Government records show that the school was budgeted for in 1925, 1967, and again in 2002. Each time, the funds were quietly reallocated to other projects in non-Indigenous communities. The unfulfilled promise is not just a failure of infrastructure; it is a symbol of the government's ongoing refusal to honor its sacred obligations."
+        "description": "First Nation community continues to endure unsafe drinking water conditions spanning multiple generations. Aging water treatment infrastructure fails to meet modern safety standards. Community members, particularly children and elderly, experience chronic health issues linked to poor water quality. Despite decades of advocacy and funding commitments, promised infrastructure upgrades remain incomplete. Residents continue relying on bottled water for drinking and cooking. Situation represents systemic failure to provide basic service taken for granted in neighboring non-indigenous communities."
       },
       "geometry": {
         "type": "Polygon",
@@ -255,11 +254,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "forced child apprehension",
-        "name": "The 'Hospital Alert' Protocol",
+        "type": "algal bloom",
+        "name": "Urban Waterway Toxic Algae Emergency",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Secret Policy Flags Indigenous Mothers as 'High Risk' Before They Even Give Birth\nA whistleblower from the child welfare system has exposed a shocking secret policy known as the 'Hospital Alert' protocol. This directive encourages hospital staff to flag expectant Indigenous mothers based on their race, postal code, or family history, marking them as 'high-risk' for future neglect before their baby is even born. This pre-emptive flag triggers an immediate investigation by social workers, often resulting in the infant being seized from the mother's arms just hours after birth. These 'apprehensions at birth' are justified with vague concerns about poverty or intergenerational trauma, creating a pipeline that feeds children into the foster care system and perpetuates the very cycles of trauma the system claims to be breaking."
+        "description": "Dense cyanobacteria bloom in urban waterway prompts emergency public health advisories. Water sampling confirms dangerous toxin concentrations exceeding recreational safety thresholds by factor of ten. Popular swimming and fishing areas closed indefinitely. Municipal water intake facilities increase treatment protocols. Several pets reported ill after contact with contaminated water. Bloom attributed to stormwater nutrient loading combined with extended period of high temperatures and low flow conditions. Third major algae event in waterway within 18 months."
       },
       "geometry": {
         "type": "Polygon",
@@ -277,11 +276,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "emergency response failure",
-        "name": "Ambulance Deserts",
+        "type": "flood",
+        "name": "First Nation Emergency Flooding Response Gap",
         "status": "confirmed",
         "started_at": "2025-09-20T00:00:00Z",
-        "description": "Jurisdictional Gaps Leave First Nations Without Emergency Medical Services\nWhen a house fire erupted on the Dakota Plains First Nation, the community's volunteer fire department was on the scene in minutes. But as the smoke cleared and the injured were carried from the blaze, a new crisis emerged: there was no ambulance coming. Due to a longstanding jurisdictional dispute between the federal and provincial governments, the community falls into an 'ambulance desert'—a gap in service where neither level of government takes responsibility for providing emergency medical transport. For over an hour, community members desperately tried to stabilize the injured, but for two of the most severely burned, the delay was fatal. This tragedy is the direct result of a bureaucratic failure that leaves First Nations in a deadly limbo, denied a service that other Canadians take for granted."
+        "description": "Spring flood event overwhelms community infrastructure due to jurisdictional confusion over emergency response responsibility. Federal and provincial authorities dispute flood mitigation obligations while water levels continue rising. Community volunteers construct makeshift flood barriers without professional support or equipment. Critical 48-hour period passes without official emergency response deployment. Multiple homes sustain major water damage. Incident highlights systematic gaps in emergency services delivery to First Nations communities falling between federal-provincial jurisdictional cracks."
       },
       "geometry": {
         "type": "Polygon",
@@ -314,11 +313,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "govt inaction/sabotage",
-        "name": "The Poisoned Well",
+        "type": "contaminated water",
+        "name": "Little Grand Rapids Water Crisis",
         "status": "confirmed",
         "started_at": "2025-09-25T00:00:00Z",
-        "description": "Government Ignored Warnings for Years as Tainted Water Sickened a Community\nFor over a decade, the people of Little Grand Rapids First Nation complained of rashes, stomach illnesses, and other chronic health problems. They suspected their water, but government officials repeatedly assured them it was safe to drink. A freedom of information request has now uncovered a damning paper trail: federal engineers knew as early as 2010 that the community's water treatment plant was failing and that the water was contaminated with high levels of toxic byproducts. Instead of fixing the problem, they chose to conceal the reports and downplay the risks. This deliberate inaction has had devastating consequences, leaving a legacy of illness and mistrust that will take generations to heal."
+        "description": "Decade-long drinking water contamination crisis impacts community health outcomes. Water testing reveals persistent presence of trihalomethanes and other disinfection byproducts at levels exceeding health guidelines. Community members report chronic skin conditions, digestive issues, and other health problems. Freedom of information requests uncover that authorities were aware of treatment plant deficiencies years before public disclosure. Residents lost faith in official assurances of water safety. Situation demonstrates systemic failure to prioritize indigenous community water infrastructure and transparent communication about health risks."
       },
       "geometry": {
         "type": "Polygon",
@@ -336,11 +335,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "treaty/land rights infringement",
-        "name": "Logging on Sacred Ground",
+        "type": "hydroelectric disruption",
+        "name": "Hydroelectric Development Shoreline Erosion",
         "status": "confirmed",
         "started_at": "2025-09-28T00:00:00Z",
-        "description": "Province Approves Clear-Cutting on Unceded Land, Destroying Ancient Burial Sites\nWithout consulting the Ebb and Flow First Nation, the provincial government has issued logging permits for a vast tract of land that includes ancient burial grounds and sacred ceremonial sites. The community has used this land for generations, and their right to it has never been ceded by treaty. Now, the roar of chainsaws is drowning out the voices of the elders, and the sacred landscape is being irrevocably scarred. The government's actions are a blatant violation of the community's inherent rights and a profound act of cultural desecration."
+        "description": "Regulated water level fluctuations from upstream hydroelectric operations cause accelerated shoreline erosion on unceded traditional territory. Daily water level changes of up to 60 centimeters destabilize banks, destroying sacred sites and burial grounds along waterway. Community traditional land use including fishing camps and ceremonial areas rendered inaccessible or destroyed. Attempts to protect cultural sites through consultation with utility operator unsuccessful. Erosion rates increased tenfold since dam operations began, with no compensation or mitigation measures implemented."
       },
       "geometry": {
         "type": "Polygon",
@@ -358,11 +357,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "unfulfilled treaty obligations",
-        "name": "The Health Centre That Never Was",
+        "type": "contaminated water",
+        "name": "Remote Community Water Quality Emergency",
         "status": "confirmed",
         "started_at": "2025-09-30T00:00:00Z",
-        "description": "Decades of Broken Promises Leave a Community Without Basic Healthcare\nTreaty 5 explicitly guarantees the provision of healthcare for the Barren Lands First Nation. Yet, for over 50 years, the community has been without a proper health centre. They have a small, under-equipped nursing station, but for anything more serious than a common cold, they must be flown out to the nearest city, hundreds of kilometers away. This lack of accessible healthcare has had tragic consequences, leading to preventable deaths and immense hardship for the community. The government's failure to build a health centre is not just a logistical oversight; it is a direct violation of its treaty obligations and a denial of the basic human right to health."
+        "description": "Northern First Nation faces ongoing drinking water crisis as treatment system proves inadequate for source water quality. Residents boil water for all consumption despite presence of treatment facility. High turbidity and bacterial contamination detected regularly in distribution system. Chronic underfunding prevents necessary equipment upgrades. Medical evacuations for waterborne illness strain community resources. Promised replacement water treatment plant delayed repeatedly over two decades. Situation exemplifies healthcare inequity where basic safe water access remains unavailable."
       },
       "geometry": {
         "type": "Polygon",
@@ -380,11 +379,11 @@
     {
       "type": "Feature",
       "properties": {
-        "type": "forced child apprehension",
-        "name": "The 'Poverty is Not Neglect' Myth",
-        "status": "confirmed",
+        "type": "invasive species",
+        "name": "Aquatic Invasive Species Lake System Threat",
+        "status": "suspected",
         "started_at": "2025-10-02T00:00:00Z",
-        "description": "Child Welfare System Uses Lack of Resources as a Pretext for Seizing Children\nIn theory, poverty is not supposed to be a reason to apprehend a child. But in practice, it is often the deciding factor. When a mother from the Sagkeeng First Nation was struggling to make ends meet, she reached out to social services for help. Instead of providing her with the support she needed, they used her poverty against her, claiming that her lack of resources constituted neglect. They seized her children and placed them in foster care, where the government now spends thousands of dollars a month on their upkeep—money that could have been used to support the family and keep them together in the first place. This is not an isolated incident; it is a systemic problem that punishes parents for being poor and tears families apart under the guise of child protection."
+        "description": "Fisheries officers investigate reports of non-native aquatic plants in traditionally productive fishing waters. Visual surveys identify vegetation consistent with Eurasian watermilfoil, an aggressive invasive species. If confirmed, infestation could fundamentally alter lake ecosystem, choking out native plant species and degrading fish habitat. Community relies on lake fishery for food security and cultural practices spanning generations. Early detection offers opportunity for control measures, but response requires resources and coordination currently unavailable. Delay in confirmation and treatment may allow irreversible ecosystem damage."
       },
       "geometry": {
         "type": "Polygon",
