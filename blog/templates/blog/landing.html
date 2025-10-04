@@ -4,41 +4,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Truth and Reconciliation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <title>Amani - Voice for Environmental Change</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{% static 'blog/landing.css' %}">
 </head>
 <body>
+    <!-- Animated background gradient -->
+    <div class="background-gradient"></div>
     <div class="background-image"></div>
 
+    <!-- Header -->
     <header class="header">
-        <div class="logo">Truth and Reconciliation</div>
-        <nav>
-        </nav>
-        <div class="auth-buttons">
-            {% if user.is_authenticated %}
-                <a href="{% url 'water_issues_dashboard:home' %}">VIEW OUR DASHBOARD</a>
-                <a href="{% url 'blog-home' %}">SHARE YOUR STORY</a>
-            {% else %}
-                <a href="{% url 'login' %}">VIEW OUR DASHBOARD</a>
-                <a href="{% url 'login' %}">SHARE YOUR STORY</a>
-            {% endif %}
+        <div class="logo">
+            <svg class="logo-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Amani</span>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <main class="hero">
         <div class="hero-content">
-            <h1>Tell your Truth</h1>
-            <p>Let the world know what is going on in your community.</p>
+            <div class="badge">Community-Powered Environmental Action</div>
+            <h1 class="hero-title">
+                Your Voice.<br>
+                <span class="gradient-text">Your Community.</span><br>
+                Our Planet.
+            </h1>
+            <p class="hero-description">
+                Join a global community of environmental advocates sharing real stories about 
+                floods, water contamination, invasive species, and declining ecosystems. 
+                Together, we amplify voices that demand change.
+            </p>
+
+            <!-- Feature Pills -->
+            <div class="feature-pills">
+                <div class="pill">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>Real Stories</span>
+                </div>
+                <div class="pill">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M17 21V19C17 17.9391 16.5786 16.9217 15.8284 16.1716C15.0783 15.4214 14.0609 15 13 15H5C3.93913 15 2.92172 15.4214 2.17157 16.1716C1.42143 16.9217 1 17.9391 1 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M9 11C11.2091 11 13 9.20914 13 7C13 4.79086 11.2091 3 9 3C6.79086 3 5 4.79086 5 7C5 9.20914 6.79086 11 9 11Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M23 21V19C22.9993 18.1137 22.7044 17.2528 22.1614 16.5523C21.6184 15.8519 20.8581 15.3516 20 15.13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M16 3.13C16.8604 3.35031 17.623 3.85071 18.1676 4.55232C18.7122 5.25392 19.0078 6.11683 19.0078 7.005C19.0078 7.89318 18.7122 8.75608 18.1676 9.45769C17.623 10.1593 16.8604 10.6597 16 10.88" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Global Community</span>
+                </div>
+                <div class="pill">
+                    <svg viewBox="0 0 24 24" fill="none">
+                        <path d="M22 11.08V12C21.9988 14.1564 21.3005 16.2547 20.0093 17.9818C18.7182 19.709 16.9033 20.9725 14.8354 21.5839C12.7674 22.1953 10.5573 22.1219 8.53447 21.3746C6.51168 20.6273 4.78465 19.2461 3.61096 17.4371C2.43727 15.628 1.87979 13.4881 2.02168 11.3363C2.16356 9.18455 2.99721 7.13631 4.39828 5.49706C5.79935 3.85781 7.69279 2.71537 9.79619 2.24013C11.8996 1.7649 14.1003 1.98232 16.07 2.85999" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 4L12 14.01L9 11.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Verified Issues</span>
+                </div>
+            </div>
+
+            <!-- CTA Button -->
             {% if user.is_authenticated %}
-                <a href="{% url 'blog-home' %}" class="free-signup">
+                <a href="{% url 'blog-home' %}" class="cta-button">
             {% else %}
-                <a href="{% url 'login' %}" class="free-signup">
+                <a href="{% url 'login' %}" class="cta-button">
             {% endif %}
-                GET STARTED
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z"/></svg>
+                <span>Get Started</span>
+                <svg class="arrow-icon" viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
             </a>
+
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat-item">
+                    <div class="stat-number">1,000+</div>
+                    <div class="stat-label">Stories Shared</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Communities</div>
+                </div>
+                <div class="stat-divider"></div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">Active Support</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Floating Cards -->
+        <div class="floating-cards">
+            <div class="floating-card card-1">
+                <div class="card-icon">💧</div>
+                <div class="card-title">Water Quality</div>
+                <div class="card-desc">Track contamination issues</div>
+            </div>
+            <div class="floating-card card-2">
+                <div class="card-icon">🌊</div>
+                <div class="card-title">Flood Monitoring</div>
+                <div class="card-desc">Report flooding events</div>
+            </div>
+            <div class="floating-card card-3">
+                <div class="card-icon">🐟</div>
+                <div class="card-title">Marine Life</div>
+                <div class="card-desc">Document species decline</div>
+            </div>
         </div>
     </main>
+
+    <!-- Scroll Indicator -->
+    <div class="scroll-indicator">
+        <div class="scroll-line"></div>
+    </div>
 </body>
 </html>
