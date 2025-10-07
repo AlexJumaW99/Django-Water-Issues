@@ -72,28 +72,34 @@ def profile(request, user_id):
     profile_user = get_object_or_404(User, id=user_id)
     posts = Post.objects.filter(author=profile_user).order_by('-date_posted')
     
+    # Initialize forms with default values
+    u_form = UserUpdateForm(instance=request.user)
+    p_form = ProfileUpdateForm(instance=request.user.profile)
+    post_form = PostForm()
+    
     if request.method == 'POST' and request.user == profile_user:
-        u_form = UserUpdateForm(request.POST, instance=request.user)
-        p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
-        post_form = PostForm(request.POST)
+        # Handle profile update
+        if 'update_profile' in request.POST:
+            u_form = UserUpdateForm(request.POST, instance=request.user)
+            p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+            
+            if u_form.is_valid() and p_form.is_valid():
+                u_form.save()
+                p_form.save()
+                messages.success(request, f'Your profile has been updated!')
+                return redirect('blog-profile', user_id=profile_user.id)
         
-        if u_form.is_valid() and p_form.is_valid():
-            u_form.save()
-            p_form.save()
-            messages.success(request, f'Your account has been updated!')
-            return redirect('blog-profile', user_id=profile_user.id)
-
-        if post_form.is_valid():
-            post = post_form.save(commit=False)
-            post.author = request.user
-            post.save()
-            messages.success(request, f'Your post has been created!')
-            return redirect('blog-profile', user_id=profile_user.id)
-
-    else:
-        u_form = UserUpdateForm(instance=request.user)
-        p_form = ProfileUpdateForm(instance=request.user.profile)
-        post_form = PostForm()
+        # Handle post creation
+        else:
+            post_form = PostForm(request.POST)
+            
+            if post_form.is_valid():
+                post = post_form.save(commit=False)
+                post.author = request.user
+                post.save()
+                messages.success(request, f'Your post has been created!')
+                return redirect('blog-profile', user_id=profile_user.id)
+            # If invalid, post_form will contain errors and display them
 
     context = {
         'profile_user': profile_user,
@@ -103,7 +109,6 @@ def profile(request, user_id):
         'post_form': post_form
     }
     return render(request, 'blog/profile.html', context)
-
 
 def landing(request):
     return render(request, 'blog/landing.html', {'title': 'Welcome'})
