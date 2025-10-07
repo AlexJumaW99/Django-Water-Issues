@@ -15,7 +15,7 @@
           
           {% if profile_user == request.user %}
             <button type="button" class="btn btn-outline-info" data-toggle="modal" data-target="#editProfileModal">
-              Edit Profile
+              <i class="fas fa-edit" style="margin-right: 5px;"></i>Edit Profile
             </button>
           {% endif %}
         </div>
@@ -24,36 +24,57 @@
 
     <!-- Create Post Section (if it's the user's own profile) -->
     {% if profile_user == request.user %}
-      <div class="content-section mb-4">
+      <div class="mb-4">
+        <button id="create-post-btn" class="btn btn-success">
+          <i class="fas fa-plus-circle" style="margin-right: 8px;"></i>Create a Post
+        </button>
+      </div>
+
+      <div id="create-post-form" style="display: none;" class="content-section fade-in mb-4">
         <form method="POST">
           {% csrf_token %}
           <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Create a New Post</legend>
+            <legend class="border-bottom mb-4">
+              <i class="fas fa-pen" style="margin-right: 10px;"></i>Create a New Post
+            </legend>
             {{ post_form|crispy }}
           </fieldset>
           <div class="form-group">
-            <button class="btn btn-outline-info" type="submit">Post</button>
+            <button class="btn btn-outline-info" type="submit" name="create_post">
+              <i class="fas fa-paper-plane" style="margin-right: 8px;"></i>Post
+            </button>
+            <button type="button" id="cancel-post-btn" class="btn btn-outline-secondary">
+              <i class="fas fa-times" style="margin-right: 8px;"></i>Cancel
+            </button>
           </div>
         </form>
       </div>
     {% endif %}
 
     <!-- User's Posts Section -->
-    <h3 class="mt-4 mb-3">Posts by {{ profile_user.username }}</h3>
+    <h3 class="mt-4 mb-3">
+      <i class="fas fa-newspaper" style="margin-right: 8px;"></i>Posts by {{ profile_user.username }}
+    </h3>
     {% for post in posts %}
       <article class="media content-section">
-        <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}">
+        <img class="rounded-circle article-img" src="{{ post.author.profile.image.url }}" alt="{{ post.author.username }}">
         <div class="media-body">
           <div class="article-metadata">
-            <a class="mr-2" href="{% url 'blog-profile' post.author.id %}">{{ post.author }}</a>
-            <small class="text-muted">{{ post.date_posted|date:"F d, Y" }}</small>
+            <a class="mr-2" href="{% url 'blog-profile' post.author.id %}">
+              <i class="fas fa-user" style="font-size: 0.85rem; margin-right: 4px;"></i>{{ post.author }}
+            </a>
+            <small class="text-muted">
+              <i class="fas fa-clock" style="margin-right: 4px;"></i>{{ post.date_posted|date:"F d, Y" }}
+            </small>
           </div>
           <h2><a class="article-title" href="{% url 'blog-post' post.id %}">{{ post.title }}</a></h2>
           <p class="article-content">{{ post.content }}</p>
         </div>
       </article>
     {% empty %}
-      <p>No posts yet.</p>
+      <p class="text-muted">
+        <i class="fas fa-inbox" style="margin-right: 8px;"></i>No posts yet.
+      </p>
     {% endfor %}
   </div>
 
@@ -84,7 +105,7 @@
   </div>
   {% endif %}
 
-  <!-- JavaScript to handle form submission errors -->
+  <!-- JavaScript to handle form submission errors and toggle -->
   <script>
     {% if u_form.errors or p_form.errors %}
       // If there are form errors, reopen the modal
@@ -92,6 +113,38 @@
         $('#editProfileModal').modal('show');
       });
     {% endif %}
+
+    // Toggle create post form
+    document.addEventListener('DOMContentLoaded', function() {
+      var createPostBtn = document.getElementById('create-post-btn');
+      var createPostForm = document.getElementById('create-post-form');
+      var cancelPostBtn = document.getElementById('cancel-post-btn');
+
+      if (createPostBtn) {
+        createPostBtn.addEventListener('click', function() {
+          if (createPostForm.style.display === 'none' || createPostForm.style.display === '') {
+            createPostForm.style.display = 'block';
+            this.innerHTML = '<i class="fas fa-minus-circle" style="margin-right: 8px;"></i>Cancel';
+            this.classList.remove('btn-success');
+            this.classList.add('btn-outline-secondary');
+          } else {
+            createPostForm.style.display = 'none';
+            this.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 8px;"></i>Create a Post';
+            this.classList.remove('btn-outline-secondary');
+            this.classList.add('btn-success');
+          }
+        });
+      }
+
+      if (cancelPostBtn) {
+        cancelPostBtn.addEventListener('click', function() {
+          createPostForm.style.display = 'none';
+          createPostBtn.innerHTML = '<i class="fas fa-plus-circle" style="margin-right: 8px;"></i>Create a Post';
+          createPostBtn.classList.remove('btn-outline-secondary');
+          createPostBtn.classList.add('btn-success');
+        });
+      }
+    });
   </script>
 
   <style>

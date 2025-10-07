@@ -90,7 +90,7 @@ def profile(request, user_id):
                 return redirect('blog-profile', user_id=profile_user.id)
         
         # Handle post creation
-        else:
+        elif 'create_post' in request.POST:
             post_form = PostForm(request.POST)
             
             if post_form.is_valid():
