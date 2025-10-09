@@ -1,0 +1,11 @@
+asgiref==3.7.2
+Django==2.1
+django-crispy-forms==1.7.2
+django-jsonfield==1.4.1
+jsonfield
+Pillow==5.4.1
+pytz==2025.2
+six==1.17.0
+sqlparse==0.4.4
+typing_extensions==4.7.1
+wincertstore==0.2

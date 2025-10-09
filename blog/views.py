@@ -181,3 +181,4 @@ def delete_comment(request, comment_id):
         messages.success(request, 'Your comment has been deleted.')
         return redirect('blog-post', post_id=post_id)
     return render(request, 'blog/confirm_delete.html', {'object': comment})
+
