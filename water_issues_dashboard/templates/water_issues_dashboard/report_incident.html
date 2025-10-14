@@ -24,7 +24,7 @@
             All fields marked with * are required
         </div>
 
-        <form method="post" id="incidentForm">
+        <form method="post" id="incidentForm" enctype="multipart/form-data">
             {% csrf_token %}
             
             <div class="form-section">
@@ -71,6 +71,14 @@
                     </div>
                     <div id="map"></div>
                     <button type="button" id="resetButton">Reset Map</button>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h3>Upload Image (Optional)</h3>
+                <div class="form-group">
+                    {{ form.image }}
+                    <div class="help-text">Upload an image that gives more visual detail about the water incident.</div>
                 </div>
             </div>
 

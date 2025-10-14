@@ -27,7 +27,7 @@ class IncidentUploadForm(forms.ModelForm):
 class IncidentReportForm(forms.ModelForm):
     class Meta:
         model = Incident
-        fields = ['name', 'incident_type', 'status', 'started_at', 'description', 'geometry']
+        fields = ['name', 'incident_type', 'status', 'started_at', 'description', 'geometry', 'image']
         widgets = {
             'started_at': forms.DateInput(attrs={'type': 'date'}),
             'geometry': forms.HiddenInput(),

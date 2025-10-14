@@ -153,6 +153,7 @@ def api_geojson_data(request):
                     'status': incident.status,
                     'started_at': incident.started_at.isoformat() if incident.started_at else None,
                     'description': incident.description,
+                    'image_url': incident.image.url if incident.image else None,
                     **incident.properties
                 }
             }
@@ -300,7 +301,7 @@ def api_search(request):
 @login_required
 def report_incident_view(request):
     if request.method == 'POST':
-        form = IncidentReportForm(request.POST)
+        form = IncidentReportForm(request.POST, request.FILES)
         if form.is_valid():
             incident = form.save(commit=False)
             incident.uploaded_by = request.user

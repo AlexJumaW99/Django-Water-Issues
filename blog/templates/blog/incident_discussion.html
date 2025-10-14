@@ -2,6 +2,9 @@
 
 {% block content %}
   <h2 class="border-bottom mb-4">Discussion for {{ incident.name }}</h2>
+  {% if incident.image %}
+    <img src="{{ incident.image.url }}" alt="{{ incident.name }}" class="img-fluid mb-4">
+  {% endif %}
   <h4> Incident Details </h4>
   <article class="media content-section">
     <p class="mb-4">{{ incident.description }}</p>

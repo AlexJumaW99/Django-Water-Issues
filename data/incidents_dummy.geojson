@@ -8,7 +8,8 @@
         "name": "Red River Algae Outbreak",
         "status": "confirmed",
         "started_at": "2025-08-10T14:00:00Z",
-        "description": "Toxic blue-green algae bloom detected along Red River corridor. Water testing shows elevated microcystin levels exceeding safe recreational limits. Public health officials have issued swimming advisories for affected areas. Bloom attributed to nutrient runoff from agricultural operations upstream combined with warm water temperatures."
+        "description": "Toxic blue-green algae bloom detected along Red River corridor. Water testing shows elevated microcystin levels exceeding safe recreational limits. Public health officials have issued swimming advisories for affected areas. Bloom attributed to nutrient runoff from agricultural operations upstream combined with warm water temperatures.",
+        "image_url": "https://images.unsplash.com/photo-1559938973-1eff7e73c38b?q=80&w=2070&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -30,7 +31,8 @@
         "name": "Lake Winnipeg Zebra Mussel Infestation",
         "status": "suspected",
         "started_at": "2025-08-15T09:30:00Z",
-        "description": "Marine invasive species surveillance team reports possible zebra mussel colonization in western Lake Winnipeg. Adult specimens found attached to boat dock infrastructure. DNA sampling underway for confirmation. If verified, this would represent significant northward expansion threatening native fish populations and water infrastructure."
+        "description": "Marine invasive species surveillance team reports possible zebra mussel colonization in western Lake Winnipeg. Adult specimens found attached to boat dock infrastructure. DNA sampling underway for confirmation. If verified, this would represent significant northward expansion threatening native fish populations and water infrastructure.",
+        "image_url": "https://images.unsplash.com/photo-1593310342345-42f0b4a45a1b?q=80&w=2070&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -52,7 +54,8 @@
         "name": "Assiniboine Lowlands Flood",
         "status": "confirmed",
         "started_at": "2025-08-12T06:00:00Z",
-        "description": "River levels above banks; localized overland flooding affecting agricultural lands and low-lying residential areas. Emergency sandbagging operations underway. Provincial flood forecasters predict water levels will remain elevated for 48-72 hours before recession begins."
+        "description": "River levels above banks; localized overland flooding affecting agricultural lands and low-lying residential areas. Emergency sandbagging operations underway. Provincial flood forecasters predict water levels will remain elevated for 48-72 hours before recession begins.",
+        "image_url": "https://images.unsplash.com/photo-1568626231921-12c4033b3b4f?q=80&w=1974&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -74,7 +77,8 @@
         "name": "Interlake Marsh Flooding",
         "status": "suspected",
         "started_at": "2025-08-14T11:15:00Z",
-        "description": "Reports of pooled water and saturated soils across wetland areas. Assessment team dispatched to evaluate extent of flooding and potential impact on wildlife habitat. Local residents report water levels highest in over a decade, possibly due to beaver dam construction upstream."
+        "description": "Reports of pooled water and saturated soils across wetland areas. Assessment team dispatched to evaluate extent of flooding and potential impact on wildlife habitat. Local residents report water levels highest in over a decade, possibly due to beaver dam construction upstream.",
+        "image_url": "https://images.unsplash.com/photo-1568626231921-12c4033b3b4f?q=80&w=1974&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -96,7 +100,8 @@
         "name": "Northern Community Hydroelectric Water Release Crisis",
         "status": "confirmed",
         "started_at": "2025-08-14T11:15:00Z",
-        "description": "Remote First Nation community cut off from critical ferry service after Manitoba Hydro maintained low water levels at upstream dam during regional emergency. Water levels remained insufficient for ferry operations for 12 days, preventing evacuation routes, supply deliveries, and emergency response access. Community leaders report repeated requests to temporarily adjust dam flows were not acted upon, leaving residents isolated during critical period. Incident raises questions about coordination between utility operations and emergency management protocols."
+        "description": "Remote First Nation community cut off from critical ferry service after Manitoba Hydro maintained low water levels at upstream dam during regional emergency. Water levels remained insufficient for ferry operations for 12 days, preventing evacuation routes, supply deliveries, and emergency response access. Community leaders report repeated requests to temporarily adjust dam flows were not acted upon, leaving residents isolated during critical period. Incident raises questions about coordination between utility operations and emergency management protocols.",
+        "image_url": "https://images.unsplash.com/photo-1610484830853-33339683e601?q=80&w=1974&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -133,7 +138,8 @@
         "name": "Red River Walleye Population Collapse",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Provincial fisheries biologists document catastrophic decline in walleye spawning populations along Red River system. Annual fish surveys show 73% reduction in adult walleye compared to five-year average. Traditional fishing grounds report near-zero catch rates. Scientists attribute collapse to combination of habitat degradation, water temperature changes, and downstream barriers affecting migration patterns. Indigenous communities report this represents worst fishing season in living memory, threatening food security and cultural practices."
+        "description": "Provincial fisheries biologists document catastrophic decline in walleye spawning populations along Red River system. Annual fish surveys show 73% reduction in adult walleye compared to five-year average. Traditional fishing grounds report near-zero catch rates. Scientists attribute collapse to combination of habitat degradation, water temperature changes, and downstream barriers affecting migration patterns. Indigenous communities report this represents worst fishing season in living memory, threatening food security and cultural practices.",
+        "image_url": "https://images.unsplash.com/photo-1524704654690-b56c05c78a00?q=80&w=2069&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -155,7 +161,8 @@
         "name": "Fairford Dam Controlled Release Flooding",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Sudden water level increase following dam gate opening inundated shoreline properties and traditional fishing areas. Residents report inadequate advance warning of controlled release operation. Water levels rose 1.2 meters within 8 hours, flooding homes, destroying fishing equipment, and contaminating community water intake. Internal documents suggest release timing prioritized downstream agricultural interests over affected community welfare. Incident highlights ongoing tensions over water management decisions impacting indigenous territories."
+        "description": "Sudden water level increase following dam gate opening inundated shoreline properties and traditional fishing areas. Residents report inadequate advance warning of controlled release operation. Water levels rose 1.2 meters within 8 hours, flooding homes, destroying fishing equipment, and contaminating community water intake. Internal documents suggest release timing prioritized downstream agricultural interests over affected community welfare. Incident highlights ongoing tensions over water management decisions impacting indigenous territories.",
+        "image_url": "https://images.unsplash.com/photo-1610484830853-33339683e601?q=80&w=1974&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -177,7 +184,8 @@
         "name": "Winter Road Water Source Contamination",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Isolated northern community faces water quality crisis as traditional winter ice road water sources show elevated contaminant levels. Testing reveals petroleum hydrocarbons and heavy metals likely from historical mining activity. Community water supply compromised during critical period when ice road was already unstable. Emergency water shipments delayed due to jurisdictional disputes over responsibility. Health officials report increased rates of gastrointestinal illness. Situation exacerbated by lack of alternative safe water sources during winter months."
+        "description": "Isolated northern community faces water quality crisis as traditional winter ice road water sources show elevated contaminant levels. Testing reveals petroleum hydrocarbons and heavy metals likely from historical mining activity. Community water supply compromised during critical period when ice road was already unstable. Emergency water shipments delayed due to jurisdictional disputes over responsibility. Health officials report increased rates of gastrointestinal illness. Situation exacerbated by lack of alternative safe water sources during winter months.",
+        "image_url": "https://images.unsplash.com/photo-1582216124500-b2d93702a822?q=80&w=1932&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -214,7 +222,8 @@
         "name": "Treaty Territory Drought and Water Rights Conflict",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Severe drought conditions in Treaty 5 territory coincide with provincial approval of commercial water extraction permits for industrial agriculture. Traditional water sources including ceremonial lakes and hunting ground wetlands show critically low levels. First Nation community reports domestic wells failing while nearby industrial operations continue large-scale water withdrawals. Provincial water allocation system prioritizes commercial licenses over treaty water rights. Elders report these are driest conditions observed in 50 years, compounded by lack of consultation on water use permits."
+        "description": "Severe drought conditions in Treaty 5 territory coincide with provincial approval of commercial water extraction permits for industrial agriculture. Traditional water sources including ceremonial lakes and hunting ground wetlands show critically low levels. First Nation community reports domestic wells failing while nearby industrial operations continue large-scale water withdrawals. Provincial water allocation system prioritizes commercial licenses over treaty water rights. Elders report these are driest conditions observed in 50 years, compounded by lack of consultation on water use permits.",
+        "image_url": "https://images.unsplash.com/photo-1444858291040-58f756a316de?q=80&w=2069&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -236,7 +245,8 @@
         "name": "Multi-Generational Water Treatment Failure",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "First Nation community continues to endure unsafe drinking water conditions spanning multiple generations. Aging water treatment infrastructure fails to meet modern safety standards. Community members, particularly children and elderly, experience chronic health issues linked to poor water quality. Despite decades of advocacy and funding commitments, promised infrastructure upgrades remain incomplete. Residents continue relying on bottled water for drinking and cooking. Situation represents systemic failure to provide basic service taken for granted in neighboring non-indigenous communities."
+        "description": "First Nation community continues to endure unsafe drinking water conditions spanning multiple generations. Aging water treatment infrastructure fails to meet modern safety standards. Community members, particularly children and elderly, experience chronic health issues linked to poor water quality. Despite decades of advocacy and funding commitments, promised infrastructure upgrades remain incomplete. Residents continue relying on bottled water for drinking and cooking. Situation represents systemic failure to provide basic service taken for granted in neighboring non-indigenous communities.",
+        "image_url": "https://images.unsplash.com/photo-1582216124500-b2d93702a822?q=80&w=1932&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -258,7 +268,8 @@
         "name": "Urban Waterway Toxic Algae Emergency",
         "status": "confirmed",
         "started_at": "2025-10-01T00:00:00Z",
-        "description": "Dense cyanobacteria bloom in urban waterway prompts emergency public health advisories. Water sampling confirms dangerous toxin concentrations exceeding recreational safety thresholds by factor of ten. Popular swimming and fishing areas closed indefinitely. Municipal water intake facilities increase treatment protocols. Several pets reported ill after contact with contaminated water. Bloom attributed to stormwater nutrient loading combined with extended period of high temperatures and low flow conditions. Third major algae event in waterway within 18 months."
+        "description": "Dense cyanobacteria bloom in urban waterway prompts emergency public health advisories. Water sampling confirms dangerous toxin concentrations exceeding recreational safety thresholds by factor of ten. Popular swimming and fishing areas closed indefinitely. Municipal water intake facilities increase treatment protocols. Several pets reported ill after contact with contaminated water. Bloom attributed to stormwater nutrient loading combined with extended period of high temperatures and low flow conditions. Third major algae event in waterway within 18 months.",
+        "image_url": "https://images.unsplash.com/photo-1559938973-1eff7e73c38b?q=80&w=2070&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -280,7 +291,8 @@
         "name": "First Nation Emergency Flooding Response Gap",
         "status": "confirmed",
         "started_at": "2025-09-20T00:00:00Z",
-        "description": "Spring flood event overwhelms community infrastructure due to jurisdictional confusion over emergency response responsibility. Federal and provincial authorities dispute flood mitigation obligations while water levels continue rising. Community volunteers construct makeshift flood barriers without professional support or equipment. Critical 48-hour period passes without official emergency response deployment. Multiple homes sustain major water damage. Incident highlights systematic gaps in emergency services delivery to First Nations communities falling between federal-provincial jurisdictional cracks."
+        "description": "Spring flood event overwhelms community infrastructure due to jurisdictional confusion over emergency response responsibility. Federal and provincial authorities dispute flood mitigation obligations while water levels continue rising. Community volunteers construct makeshift flood barriers without professional support or equipment. Critical 48-hour period passes without official emergency response deployment. Multiple homes sustain major water damage. Incident highlights systematic gaps in emergency services delivery to First Nations communities falling between federal-provincial jurisdictional cracks.",
+        "image_url": "https://images.unsplash.com/photo-1568626231921-12c4033b3b4f?q=80&w=1974&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -317,7 +329,8 @@
         "name": "Little Grand Rapids Water Crisis",
         "status": "confirmed",
         "started_at": "2025-09-25T00:00:00Z",
-        "description": "Decade-long drinking water contamination crisis impacts community health outcomes. Water testing reveals persistent presence of trihalomethanes and other disinfection byproducts at levels exceeding health guidelines. Community members report chronic skin conditions, digestive issues, and other health problems. Freedom of information requests uncover that authorities were aware of treatment plant deficiencies years before public disclosure. Residents lost faith in official assurances of water safety. Situation demonstrates systemic failure to prioritize indigenous community water infrastructure and transparent communication about health risks."
+        "description": "Decade-long drinking water contamination crisis impacts community health outcomes. Water testing reveals persistent presence of trihalomethanes and other disinfection byproducts at levels exceeding health guidelines. Community members report chronic skin conditions, digestive issues, and other health problems. Freedom of information requests uncover that authorities were aware of treatment plant deficiencies years before public disclosure. Residents lost faith in official assurances of water safety. Situation demonstrates systemic failure to prioritize indigenous community water infrastructure and transparent communication about health risks.",
+        "image_url": "https://images.unsplash.com/photo-1582216124500-b2d93702a822?q=80&w=1932&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -339,7 +352,8 @@
         "name": "Hydroelectric Development Shoreline Erosion",
         "status": "confirmed",
         "started_at": "2025-09-28T00:00:00Z",
-        "description": "Regulated water level fluctuations from upstream hydroelectric operations cause accelerated shoreline erosion on unceded traditional territory. Daily water level changes of up to 60 centimeters destabilize banks, destroying sacred sites and burial grounds along waterway. Community traditional land use including fishing camps and ceremonial areas rendered inaccessible or destroyed. Attempts to protect cultural sites through consultation with utility operator unsuccessful. Erosion rates increased tenfold since dam operations began, with no compensation or mitigation measures implemented."
+        "description": "Regulated water level fluctuations from upstream hydroelectric operations cause accelerated shoreline erosion on unceded traditional territory. Daily water level changes of up to 60 centimeters destabilize banks, destroying sacred sites and burial grounds along waterway. Community traditional land use including fishing camps and ceremonial areas rendered inaccessible or destroyed. Attempts to protect cultural sites through consultation with utility operator unsuccessful. Erosion rates increased tenfold since dam operations began, with no compensation or mitigation measures implemented.",
+        "image_url": "https://images.unsplash.com/photo-1610484830853-33339683e601?q=80&w=1974&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -361,7 +375,8 @@
         "name": "Remote Community Water Quality Emergency",
         "status": "confirmed",
         "started_at": "2025-09-30T00:00:00Z",
-        "description": "Northern First Nation faces ongoing drinking water crisis as treatment system proves inadequate for source water quality. Residents boil water for all consumption despite presence of treatment facility. High turbidity and bacterial contamination detected regularly in distribution system. Chronic underfunding prevents necessary equipment upgrades. Medical evacuations for waterborne illness strain community resources. Promised replacement water treatment plant delayed repeatedly over two decades. Situation exemplifies healthcare inequity where basic safe water access remains unavailable."
+        "description": "Northern First Nation faces ongoing drinking water crisis as treatment system proves inadequate for source water quality. Residents boil water for all consumption despite presence of treatment facility. High turbidity and bacterial contamination detected regularly in distribution system. Chronic underfunding prevents necessary equipment upgrades. Medical evacuations for waterborne illness strain community resources. Promised replacement water treatment plant delayed repeatedly over two decades. Situation exemplifies healthcare inequity where basic safe water access remains unavailable.",
+        "image_url": "https://images.unsplash.com/photo-1582216124500-b2d93702a822?q=80&w=1932&auto=format&fit=crop"
       },
       "geometry": {
         "type": "Polygon",
@@ -383,7 +398,8 @@
         "name": "Aquatic Invasive Species Lake System Threat",
         "status": "suspected",
         "started_at": "2025-10-02T00:00:00Z",
-        "description": "Fisheries officers investigate reports of non-native aquatic plants in traditionally productive fishing waters. Visual surveys identify vegetation consistent with Eurasian watermilfoil, an aggressive invasive species. If confirmed, infestation could fundamentally alter lake ecosystem, choking out native plant species and degrading fish habitat. Community relies on lake fishery for food security and cultural practices spanning generations. Early detection offers opportunity for control measures, but response requires resources and coordination currently unavailable. Delay in confirmation and treatment may allow irreversible ecosystem damage."
+        "description": "Fisheries officers investigate reports of non-native aquatic plants in traditionally productive fishing waters. Visual surveys identify vegetation consistent with Eurasian watermilfoil, an aggressive invasive species. If confirmed, infestation could fundamentally alter lake ecosystem, choking out native plant species and degrading fish habitat. Community relies on lake fishery for food security and cultural practices spanning generations. Early detection offers opportunity for control measures, but response requires resources and coordination currently unavailable. Delay in confirmation and treatment may allow irreversible ecosystem damage.",
+        "image_url": "https://images.unsplash.com/photo-1760340769739-653d00200baf?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170"
       },
       "geometry": {
         "type": "Polygon",

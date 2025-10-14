@@ -51,6 +51,7 @@ class Incident(models.Model):
     properties = JSONField(default=dict)
     uploaded_by = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField(upload_to='incident_images', blank=True, null=True)
 
     def __str__(self):
         return f"{self.name} ({self.incident_type})"

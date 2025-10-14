@@ -464,6 +464,7 @@ function addIncidents(filters) {
         const type = props.type;
         const status = props.status || props.confidence;
         const incidentId = props.id;
+        const imageUrl = props.image_url;
 
         if (status === 'confirmed' && !filters.confirmed) return;
         if (status === 'suspected' && !filters.suspected) return;
@@ -480,6 +481,10 @@ function addIncidents(filters) {
         }
 
         const discussionUrl = `/incident/${incidentId}/discussion/`;
+        let imageThumbnail = '';
+        if (imageUrl) {
+            imageThumbnail = `<img src="${imageUrl}" alt="${props.name}" style="width:100%; max-height: 80px; object-fit: cover; border-radius: 4px; margin-top: 5px;">`;
+        }
 
         if (type === 'flood' && filters.floods) {
             const fillColor = status === 'confirmed' ? '#2c7fb8' : '#7fcdbb';
@@ -492,6 +497,7 @@ function addIncidents(filters) {
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
+                        ${imageThumbnail}
                         Type: Flood<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
@@ -517,6 +523,7 @@ function addIncidents(filters) {
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
+                        ${imageThumbnail}
                         Type: Drought<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
@@ -538,6 +545,7 @@ function addIncidents(filters) {
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
+                        ${imageThumbnail}
                         Type: Algal Bloom<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
@@ -559,6 +567,7 @@ function addIncidents(filters) {
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
+                        ${imageThumbnail}
                         Type: Contaminated Water<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
@@ -580,6 +589,7 @@ function addIncidents(filters) {
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
+                        ${imageThumbnail}
                         Type: Hydroelectric Disruption<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
@@ -601,6 +611,7 @@ function addIncidents(filters) {
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
+                        ${imageThumbnail}
                         Type: Invasive Species<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
@@ -622,6 +633,7 @@ function addIncidents(filters) {
                 .bindPopup(`
                     <div style='font-family: Arial, sans-serif;'>
                         <strong>${props.name}</strong><br>
+                        ${imageThumbnail}
                         Type: Declining Fish Population<br>
                         Status: ${status}<br>
                         Started: ${props.started_at || 'Unknown'}<br>
