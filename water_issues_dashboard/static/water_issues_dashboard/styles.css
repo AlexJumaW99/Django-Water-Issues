@@ -58,6 +58,24 @@ body {
     margin-bottom: 15px;
 }
 
+/* Collapsible Header Styles */
+.collapsible-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    user-select: none;
+}
+
+.collapsible-header i {
+    transition: transform 0.3s ease;
+}
+
+.collapsible-header[aria-expanded="true"] i {
+    transform: rotate(180deg);
+}
+
+
 /* Main Content */
 .main-content {
     flex: 1;

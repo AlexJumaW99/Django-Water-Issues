@@ -196,6 +196,16 @@ function setupEventListeners() {
     document.getElementById('toggleSidebarSwitch').addEventListener('change', toggleSidebar);
     document.getElementById('toggleMetricsSwitch').addEventListener('change', toggleMetrics);
 
+    // Collapsible sections
+    document.querySelectorAll('.collapsible-header').forEach(header => {
+        header.addEventListener('click', function() {
+            const content = this.nextElementSibling;
+            const isExpanded = this.getAttribute('aria-expanded') === 'true';
+            this.setAttribute('aria-expanded', !isExpanded);
+            localStorage.setItem(content.id + 'Collapsed', isExpanded);
+        });
+    });
+
     document.getElementById('statusCity').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusTown').addEventListener('change', updateFiltersAndMap);
     document.getElementById('statusRM').addEventListener('change', updateFiltersAndMap);
@@ -267,6 +277,16 @@ function applyCachedSettings() {
     if (!metricsVisible) {
         document.getElementById('metrics-container').classList.add('hidden');
     }
+
+    // Apply collapsible states
+    document.querySelectorAll('.collapse').forEach(content => {
+        const isCollapsed = localStorage.getItem(content.id + 'Collapsed') === 'true';
+        if (isCollapsed) {
+            content.classList.remove('show');
+            const header = document.querySelector(`[data-target="#${content.id}"]`);
+            header.setAttribute('aria-expanded', 'false');
+        }
+    });
 }
 
 function updateFiltersAndMap() {
