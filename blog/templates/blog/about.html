@@ -1,4 +1,228 @@
 {% extends 'blog/base.html'%}
+{% load static %}
+
 {% block content %}
-    <h1>Under construction... coming soon!</h1>
+<div class="about-hero">
+    <div class="about-hero-content">
+        <h1 class="about-title">
+            <i class="fas fa-water about-icon-large"></i>
+            About Amani
+        </h1>
+        <p class="about-subtitle">Empowering Communities Through Environmental Awareness</p>
+    </div>
+</div>
+
+<div class="content-section about-section">
+    <h2 class="section-heading">
+        <i class="fas fa-exclamation-triangle text-warning"></i>
+        The Problem We're Solving
+    </h2>
+    <p class="lead-text">
+        Environmental crises like floods, water contamination, wildfires, and ecosystem decline are affecting communities worldwide, yet individual voices often go unheard. When disasters strike or environmental issues emerge, people lack a centralized platform to share their experiences, track ongoing incidents, and connect with others facing similar challenges.
+    </p>
+    <div class="problem-cards">
+        <div class="problem-card">
+            <div class="problem-icon">
+                <i class="fas fa-volume-mute"></i>
+            </div>
+            <h4>Silenced Voices</h4>
+            <p>Communities affected by environmental issues struggle to make their stories heard beyond local boundaries.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">
+                <i class="fas fa-unlink"></i>
+            </div>
+            <h4>Disconnected Communities</h4>
+            <p>People facing similar environmental challenges remain isolated, unable to share solutions or support each other.</p>
+        </div>
+        <div class="problem-card">
+            <div class="problem-icon">
+                <i class="fas fa-clock"></i>
+            </div>
+            <h4>Delayed Response</h4>
+            <p>Critical environmental data and real-time updates are scattered across multiple sources, delaying community response.</p>
+        </div>
+    </div>
+</div>
+
+<div class="content-section about-section solution-section">
+    <h2 class="section-heading">
+        <i class="fas fa-lightbulb text-warning"></i>
+        Our Solution
+    </h2>
+    <p class="lead-text">
+        <strong>Amani</strong> (meaning "peace" in Swahili) is a community-powered platform that bridges the gap between environmental data and human experience. We provide a space where individuals can share real stories about floods, water contamination, invasive species, and declining ecosystems while accessing comprehensive dashboards tracking environmental incidents across Manitoba.
+    </p>
+    
+    <div class="solution-features">
+        <div class="feature-row">
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-comments feature-icon"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Community Stories</h4>
+                    <p>Share and read firsthand accounts of environmental challenges affecting real people in real communities.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Live Dashboard</h4>
+                    <p>Access real-time data on wildfires, floods, and environmental incidents with interactive maps and analytics.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="feature-row">
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-link feature-icon"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Incident Linking</h4>
+                    <p>Connect your posts directly to tracked incidents, creating a comprehensive narrative of environmental events.</p>
+                </div>
+            </div>
+            <div class="feature-item">
+                <div class="feature-icon-wrapper">
+                    <i class="fas fa-users feature-icon"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Global Network</h4>
+                    <p>Join a worldwide community of environmental advocates working together to amplify voices and demand change.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content-section about-section mission-section">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="section-heading">
+                <i class="fas fa-bullseye text-danger"></i>
+                Our Mission
+            </h2>
+            <p>
+                To empower communities worldwide by providing a platform that combines data-driven environmental monitoring with authentic human stories, fostering awareness, connection, and action in the face of environmental challenges.
+            </p>
+            <p>
+                We believe that every voice matters. By connecting individual experiences with comprehensive environmental data, we create a powerful narrative that can drive policy change, community action, and environmental justice.
+            </p>
+        </div>
+        <div class="col-md-6">
+            <h2 class="section-heading">
+                <i class="fas fa-eye text-info"></i>
+                Our Vision
+            </h2>
+            <p>
+                A world where environmental challenges are met with immediate community awareness, collaborative problem-solving, and swift action. Where no community faces environmental crisis alone, and every story contributes to a larger movement for planetary health.
+            </p>
+            <p>
+                Through Amani, we're building bridges between data and humanity, between isolation and community, between silence and action.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="content-section about-section focus-section">
+    <h2 class="section-heading text-center">
+        <i class="fas fa-crosshairs"></i>
+        What We Track
+    </h2>
+    <p class="text-center lead-text mb-4">
+        Amani focuses on critical environmental issues affecting communities across Manitoba and beyond
+    </p>
+    
+    <div class="focus-grid">
+        <div class="focus-card">
+            <i class="fas fa-fire focus-card-icon"></i>
+            <h4>Wildfires</h4>
+            <p>Monitor active fires, air quality impacts, and community evacuation updates.</p>
+        </div>
+        <div class="focus-card">
+            <i class="fas fa-tint focus-card-icon"></i>
+            <h4>Water Quality</h4>
+            <p>Track contamination incidents, boil water advisories, and water safety concerns.</p>
+        </div>
+        <div class="focus-card">
+            <i class="fas fa-house-flood focus-card-icon"></i>
+            <h4>Flooding</h4>
+            <p>Real-time flood monitoring, water levels, and community impact reports.</p>
+        </div>
+        <div class="focus-card">
+            <i class="fas fa-bug focus-card-icon"></i>
+            <h4>Invasive Species</h4>
+            <p>Document and track the spread of invasive species affecting local ecosystems.</p>
+        </div>
+        <div class="focus-card">
+            <i class="fas fa-fish focus-card-icon"></i>
+            <h4>Marine Life</h4>
+            <p>Report on declining fish populations and aquatic ecosystem health.</p>
+        </div>
+        <div class="focus-card">
+            <i class="fas fa-tree focus-card-icon"></i>
+            <h4>Ecosystem Decline</h4>
+            <p>Share observations of habitat loss, biodiversity reduction, and environmental degradation.</p>
+        </div>
+    </div>
+</div>
+
+<div class="content-section about-section cta-section">
+    <div class="cta-box">
+        <h2>
+            <i class="fas fa-hands-helping"></i>
+            Join Our Community
+        </h2>
+        <p class="lead-text">
+            Your story matters. Your voice can make a difference. Together, we can create lasting change.
+        </p>
+        <div class="cta-buttons">
+            {% if user.is_authenticated %}
+                <a href="{% url 'blog-home' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-home"></i> Go to Community Feed
+                </a>
+                <a href="{% url 'water_issues_dashboard:home' %}" class="btn btn-info btn-lg">
+                    <i class="fas fa-chart-line"></i> View Dashboard
+                </a>
+            {% else %}
+                <a href="{% url 'register' %}" class="btn btn-primary btn-lg">
+                    <i class="fas fa-user-plus"></i> Create Account
+                </a>
+                <a href="{% url 'login' %}" class="btn btn-outline-primary btn-lg">
+                    <i class="fas fa-sign-in-alt"></i> Login
+                </a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<div class="content-section about-section stats-section">
+    <h2 class="section-heading text-center">
+        <i class="fas fa-chart-bar"></i>
+        Our Impact
+    </h2>
+    <div class="stats-grid">
+        <div class="stat-box">
+            <div class="stat-number">1,000+</div>
+            <div class="stat-label">Stories Shared</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">50+</div>
+            <div class="stat-label">Communities Connected</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">24/7</div>
+            <div class="stat-label">Monitoring Active</div>
+        </div>
+        <div class="stat-box">
+            <div class="stat-number">100%</div>
+            <div class="stat-label">Community Driven</div>
+        </div>
+    </div>
+</div>
+
 {% endblock content %}
