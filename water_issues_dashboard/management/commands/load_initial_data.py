@@ -3,6 +3,8 @@ from water_issues_dashboard.models import Municipality, Park, Incident
 import json
 import os
 from datetime import datetime
+from django.core.files.base import ContentFile
+import requests
 
 class Command(BaseCommand):
     help = 'Load initial data from GeoJSON files'
@@ -46,8 +48,12 @@ class Command(BaseCommand):
         for feature in data.get('features', []):
             obj = processor_func(feature)
             if obj:
-                obj.save()
-                count += 1
+                if model_class == Incident:
+                    count += 1
+                else:
+                    obj.save()
+                    count += 1
+
 
         self.stdout.write(self.style.SUCCESS(f"Loaded {count} {model_class.__name__} records from {filepath}"))
 
@@ -77,16 +83,13 @@ class Command(BaseCommand):
     def process_incident(self, feature):
         props = feature.get('properties', {})
         
-        # Map old incident types to new ones if needed
         incident_type = props.get('type', 'flood').lower()
         
-        # Valid incident types for water issues
         valid_types = [
             'flood', 'drought', 'algal bloom', 'contaminated water',
             'hydroelectric disruption', 'invasive species', 'declining fish population'
         ]
         
-        # If the type is not in valid types, default to flood
         if incident_type not in valid_types:
             incident_type = 'flood'
         
@@ -100,10 +103,29 @@ class Command(BaseCommand):
         )
         if props.get('started_at'):
             try:
-                # Extract just the date part (e.g., '2025-08-21') from the timestamp
                 date_string = props['started_at'].split('T')[0]
                 incident.started_at = datetime.strptime(date_string, '%Y-%m-%d').date()
             except (ValueError, TypeError, IndexError):
-                # Silently pass if the date format is invalid or can't be split
                 pass
+        
+        # --- New Image URL Handling Logic ---
+        image_url = props.get('image_url')
+        if image_url:
+            try:
+                response = requests.get(image_url, stream=True)
+                response.raise_for_status()  # Raise an exception for bad status codes
+
+                # Get the filename from the URL
+                filename = image_url.split('/')[-1].split('?')[0]
+
+                # Create a ContentFile from the downloaded content
+                image_content = ContentFile(response.content)
+
+                # Save the image to the Incident model
+                incident.image.save(filename, image_content, save=True)
+
+            except requests.exceptions.RequestException as e:
+                self.stdout.write(self.style.WARNING(f"Could not download image from {image_url}: {e}"))
+        
+        incident.save()
         return incident
