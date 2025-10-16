@@ -12,10 +12,10 @@ def download_all_portraits_alternative():
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
-    print("Starting download of 155 profile pictures using Picsum Photos...")
+    print("Starting download of 163 profile pictures using Picsum Photos...")
 
     # Loop to download images from user9.jpg to user163.jpg
-    for i in range(9, 164):
+    for i in range(1, 164):
         # This URL provides a random 500x500 image from Picsum Photos.
         # We add a unique query parameter to prevent caching and get a new image.
         image_url = f"https://picsum.photos/500/500?random={i}"

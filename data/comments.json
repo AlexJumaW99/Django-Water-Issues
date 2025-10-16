@@ -1,22 +1,402 @@
 [
   {
-    "content": "Yes! I've noticed the same thing. It has a bit of a metallic taste.",
-    "post_title": "Water Quality in the City Center",
-    "author_username": "jane_smith"
+    "content": "I saw the same thing near Lockport! The water has a really strange bright green color. Definitely avoiding it.",
+    "post_title": "Green Water in Red River",
+    "author_username": "FishermanFrank"
   },
   {
-    "content": "I called the city's water department, and they said they are investigating the issue.",
-    "post_title": "Water Quality in the City Center",
-    "author_username": "bob_johnson"
+    "content": "My dog got sick after drinking from the river yesterday. Please everyone keep your pets away!",
+    "post_title": "Green Water in Red River",
+    "author_username": "ConcernedCitizen"
   },
   {
-    "content": "Thanks for the heads-up! I wouldn't have known otherwise.",
-    "post_title": "Boil Water Advisory for North End",
-    "author_username": "john_doe"
+    "content": "Thank you for keeping us updated. How long do these tests usually take?",
+    "post_title": "Testing Underway",
+    "author_username": "LocalResident1"
   },
   {
-    "content": "I'm in the West End and my pressure is fine. Maybe it's a localized issue.",
-    "post_title": "Low Water Pressure in West Suburbs",
-    "author_username": "jane_smith"
+    "content": "Appreciate the transparency. Safety first!",
+    "post_title": "Testing Underway",
+    "author_username": "NatureLover22"
+  },
+  {
+    "content": "This is serious. Has this happened before in our area?",
+    "post_title": "BREAKING: Algae Bloom Confirmed",
+    "author_username": "CamperChris"
+  },
+  {
+    "content": "Sharing this with all my neighbors. Everyone needs to know!",
+    "post_title": "BREAKING: Algae Bloom Confirmed",
+    "author_username": "HomeownerHelp"
+  },
+  {
+    "content": "I'd definitely wait on that fishing trip. Not worth the risk with the kids.",
+    "post_title": "Updates on water quality?",
+    "author_username": "FarmerJohn"
+  },
+  {
+    "content": "Check the City of Selkirk's website for the latest updates. They've been posting regularly.",
+    "post_title": "Updates on water quality?",
+    "author_username": "VolunteerFireDept"
+  },
+  {
+    "content": "Good advice. I'll make sure my livestock stays away from the river too.",
+    "post_title": "Official Update from City of Selkirk",
+    "author_username": "FarmerJane"
+  },
+  {
+    "content": "How long before we get the all-clear? This is affecting a lot of people.",
+    "post_title": "Official Update from City of Selkirk",
+    "author_username": "Pilot_Mike"
+  },
+  {
+    "content": "Grateful for everyone working to keep us safe and informed.",
+    "post_title": "Important Water Safety Issue",
+    "author_username": "LocalPhotographer"
+  },
+  {
+    "content": "Smart thinking. Better safe than sorry with your animals.",
+    "post_title": "Livestock Water Source",
+    "author_username": "WeatherWatcher"
+  },
+  {
+    "content": "What's the hotline number? I have some questions about well water.",
+    "post_title": "Information Hotline",
+    "author_username": "CottageOwner"
+  },
+  {
+    "content": "This is so helpful. Thank you for being there for the community!",
+    "post_title": "Community Support Available",
+    "author_username": "BirdWatcherBill"
+  },
+  {
+    "content": "Would love to see those photos! It's important to document these events.",
+    "post_title": "Educational Opportunity",
+    "author_username": "LocalHiker"
+  },
+  {
+    "content": "Yes! I found similar shells on my dock too. Very concerning if they're zebra mussels.",
+    "post_title": "Unusual Shells on Dock",
+    "author_username": "FishermanFrank"
+  },
+  {
+    "content": "I hope they can confirm quickly. These invasive species spread fast.",
+    "post_title": "Unusual Shells on Dock",
+    "author_username": "NatureLover22"
+  },
+  {
+    "content": "Good to know the team is on it. Keep us posted on what you find!",
+    "post_title": "Investigating Invasive Species",
+    "author_username": "CamperChris"
+  },
+  {
+    "content": "I noticed them on my kayak last week! Small and striped, about the size of a fingernail.",
+    "post_title": "Strange organisms on boats",
+    "author_username": "CanoeLife"
+  },
+  {
+    "content": "Definitely check your dock. If they are zebra mussels, early detection is crucial.",
+    "post_title": "Cottage Dock Concerns",
+    "author_username": "GimliHarbour"
+  },
+  {
+    "content": "This is so important! Clean Drain Dry should be mandatory for all boaters.",
+    "post_title": "Clean Drain Dry Reminder",
+    "author_username": "MBEnvironment"
+  },
+  {
+    "content": "Will you be inspecting boats at other locations too?",
+    "post_title": "Hecla-Grindstone Boat Inspection",
+    "author_username": "Pilot_Mike"
+  },
+  {
+    "content": "Absolutely right. Our lake ecosystem is so fragile already.",
+    "post_title": "Ecosystem Protection",
+    "author_username": "LocalPhotographer"
+  },
+  {
+    "content": "I noticed the same thing this morning! The water is way higher than usual.",
+    "post_title": "Assiniboine River Rising",
+    "author_username": "FarmerJane"
+  },
+  {
+    "content": "Thank you for the heads up. We'll prepare sandbags just in case.",
+    "post_title": "Overland Flooding Possible",
+    "author_username": "HomeownerHelp"
+  },
+  {
+    "content": "So sorry to hear that. Hope the damage isn't too severe. Stay safe!",
+    "post_title": "Fields are Flooding",
+    "author_username": "FarmerJohn"
+  },
+  {
+    "content": "Will be watching your coverage. Thanks for keeping us informed!",
+    "post_title": "Live from the Lowlands",
+    "author_username": "ConcernedCitizen"
+  },
+  {
+    "content": "24 hours? That's not much time to prepare. Everyone please take this seriously!",
+    "post_title": "Flood Warning Issued",
+    "author_username": "VolunteerFireDept"
+  },
+  {
+    "content": "On my way to pick up sandbags now. Thank you for organizing this!",
+    "post_title": "Sandbagging Stations Open",
+    "author_username": "LocalResident1"
+  },
+  {
+    "content": "Thanks for the warning! Taking Highway 1 instead.",
+    "post_title": "Highway 26 Closed",
+    "author_username": "Trucker_Tom"
+  },
+  {
+    "content": "Thank you for all your hard work protecting our communities!",
+    "post_title": "Reinforcing Dikes",
+    "author_username": "WeatherWatcher"
+  },
+  {
+    "content": "I have one you can borrow! DM me your address.",
+    "post_title": "Need a Sump Pump",
+    "author_username": "CamperChris"
+  },
+  {
+    "content": "You all are heroes! Thank you for helping those in need.",
+    "post_title": "Community Relief Efforts",
+    "author_username": "NatureLover22"
+  },
+  {
+    "content": "That's incredible! Nature is resilient. Stay safe out there though!",
+    "post_title": "High Water in the Marsh",
+    "author_username": "LocalPhotographer"
+  },
+  {
+    "content": "Thanks for the update. Will you be reopening the trails soon?",
+    "post_title": "Oak Hammock Marsh Update",
+    "author_username": "LocalHiker"
+  },
+  {
+    "content": "Noticed this too on Road 17. Drive carefully everyone!",
+    "post_title": "Water on Roads in Rockwood",
+    "author_username": "Trucker_Tom"
+  },
+  {
+    "content": "Same here! The trails near the boardwalk were completely underwater.",
+    "post_title": "Trails Closed at Oak Hammock",
+    "author_username": "BirdWatcherBill"
+  },
+  {
+    "content": "Looking forward to the assessment results. This is important data.",
+    "post_title": "Assessment Team Dispatched",
+    "author_username": "WeatherWatcher"
+  },
+  {
+    "content": "That's the spirit! The marsh is beautiful even with high water.",
+    "post_title": "Interlake Open for Business",
+    "author_username": "CanoeLife"
+  },
+  {
+    "content": "Sounds amazing! I love exploring new areas by canoe.",
+    "post_title": "Perfect Day for a Canoe Trip",
+    "author_username": "CamperChris"
+  },
+  {
+    "content": "Will definitely be following your coverage on this.",
+    "post_title": "Stonewall Chronicle Following Story",
+    "author_username": "ConcernedCitizen"
+  },
+  {
+    "content": "True, but we should still monitor to make sure it doesn't get out of control.",
+    "post_title": "Natural Part of Marsh Ecosystem",
+    "author_username": "MBEnvironment"
+  },
+  {
+    "content": "This is absolutely unacceptable. Better coordination could have prevented this.",
+    "post_title": "Ferry Access Challenges",
+    "author_username": "FirstNationsUnited"
+  },
+  {
+    "content": "I have information to share. Will contact you directly.",
+    "post_title": "Investigating Water Management",
+    "author_username": "CommunityVoice"
+  },
+  {
+    "content": "100% agree. Lives depend on proper coordination during emergencies.",
+    "post_title": "Better Emergency Planning Needed",
+    "author_username": "SearchAndRescue"
+  },
+  {
+    "content": "This review is long overdue. Thank you for pushing for accountability.",
+    "post_title": "Reviewing Emergency Protocols",
+    "author_username": "PoliticalOpposition"
+  },
+  {
+    "content": "Count me in! Where can I donate?",
+    "post_title": "Support for Affected Communities",
+    "author_username": "NatureLover22"
+  },
+  {
+    "content": "We need systemic change, not just investigations. Action is needed now.",
+    "post_title": "Emergency Coordination Review",
+    "author_username": "LandDefender"
+  },
+  {
+    "content": "Absolutely. Geographic isolation shouldn't mean inadequate emergency response.",
+    "post_title": "Learning from Challenges",
+    "author_username": "EmergencyServicesMB"
+  },
+  {
+    "content": "Thank you for all you do. Your work makes a real difference.",
+    "post_title": "Providing Relief and Support",
+    "author_username": "RedCrossManitoba"
+  },
+  {
+    "content": "This is so concerning. The walleye population has always been strong here.",
+    "post_title": "Fishing Season Concerns",
+    "author_username": "FishermanFrank"
+  },
+  {
+    "content": "Thank you for documenting this. We need solid data to drive policy changes.",
+    "post_title": "Declining Fish Populations",
+    "author_username": "MBEnvironment"
+  },
+  {
+    "content": "Science and traditional knowledge together will help us solve this.",
+    "post_title": "Scientific Data Important",
+    "author_username": "TheIndigenousVoice"
+  },
+  {
+    "content": "Our elders have been saying this for years. Finally people are listening.",
+    "post_title": "Impact on Traditional Practices",
+    "author_username": "ElderWisdom"
+  },
+  {
+    "content": "Starting with habitat restoration is key. What areas should we prioritize?",
+    "post_title": "Habitat Restoration Needed",
+    "author_username": "ConservationMB"
+  },
+  {
+    "content": "How can community members get involved in the monitoring efforts?",
+    "post_title": "Monitoring Fish Populations",
+    "author_username": "LocalPhotographer"
+  },
+  {
+    "content": "Already contacted my MLA. Everyone should do the same!",
+    "post_title": "Community Action Needed",
+    "author_username": "ConcernedCitizen"
+  },
+  {
+    "content": "Would love to see your photography. Visual documentation is so important.",
+    "post_title": "Documenting Changes",
+    "author_username": "NatureLover22"
+  },
+  {
+    "content": "Well said. This affects all of us, Indigenous and non-Indigenous alike.",
+    "post_title": "Everyone's Concern",
+    "author_username": "WeatherWatcher"
+  },
+  {
+    "content": "Traditional ecological knowledge is invaluable. We need to listen more.",
+    "post_title": "Traditional Knowledge",
+    "author_username": "MBWaterStewardship"
+  },
+  {
+    "content": "This is exactly the kind of situation that better notification could prevent!",
+    "post_title": "Sudden Water Level Rise",
+    "author_username": "FirstNationsUnited"
+  },
+  {
+    "content": "Communities deserve at least 48 hours notice for planned releases.",
+    "post_title": "Improved Communication Needed",
+    "author_username": "EmergencyServicesMB"
+  },
+  {
+    "content": "This needs to be investigated thoroughly. People's safety is at stake.",
+    "post_title": "Water Management Decisions",
+    "author_username": "LawyerUp"
+  },
+  {
+    "content": "The documentation is clear - notification protocols were not followed.",
+    "post_title": "Documentation of Impact",
+    "author_username": "InvestigativeJournalist"
+  },
+  {
+    "content": "Just donated. Hoping for a quick recovery for everyone affected.",
+    "post_title": "Recovery Assistance",
+    "author_username": "LocalResident1"
+  },
+  {
+    "content": "Automated notification systems aren't expensive. There's no excuse for this.",
+    "post_title": "Water Level Management",
+    "author_username": "Engineer4Change"
+  },
+  {
+    "content": "International standards exist for a reason. Manitoba should follow them.",
+    "post_title": "Notification Standards",
+    "author_username": "HumanRightsWatch"
+  },
+  {
+    "content": "CBC North, APTN - please cover this story. It needs more attention.",
+    "post_title": "Media Coverage Needed",
+    "author_username": "MediaAlert"
+  },
+  {
+    "content": "Thank you for sharing your story. Your voice matters.",
+    "post_title": "Community Voices",
+    "author_username": "ArtistForJustice"
+  },
+  {
+    "content": "The community's strength through this has been inspiring to witness.",
+    "post_title": "Moving Forward",
+    "author_username": "Resilience"
+  },
+  {
+    "content": "This is a health emergency. How quickly can emergency water be delivered?",
+    "post_title": "Water Quality Concerns",
+    "author_username": "NorthernHealth"
+  },
+  {
+    "content": "Industrial contamination from decades ago still affecting communities. Unacceptable.",
+    "post_title": "Testing Results Important",
+    "author_username": "CleanWaterForAll"
+  },
+  {
+    "content": "48 hours is too long to wait for emergency water in winter conditions!",
+    "post_title": "Emergency Water Supply",
+    "author_username": "CharterFlightsNow"
+  },
+  {
+    "content": "Ice roads aren't reliable anymore. We need year-round solutions.",
+    "post_title": "Remote Community Challenges",
+    "author_username": "FlyInCommunities"
+  },
+  {
+    "content": "Clean water isn't a luxury - it's a human right. Period.",
+    "post_title": "Clean Water Access",
+    "author_username": "FoodSecurityNorth"
+  },
+  {
+    "content": "Every hour counts when children and elders don't have safe water.",
+    "post_title": "Water is Essential",
+    "author_username": "OjiCreeVoice"
+  },
+  {
+    "content": "Charter flights should be pre-approved for water emergencies. No red tape.",
+    "post_title": "Response Time Matters",
+    "author_username": "EmergencyServicesMB"
+  },
+  {
+    "content": "Thank you CBC North for covering this. National attention is needed.",
+    "post_title": "News Coverage",
+    "author_username": "MediaAlert"
+  },
+  {
+    "content": "Your community's resilience is remarkable. You deserve better support.",
+    "post_title": "Community Strength",
+    "author_username": "SupportWasagamack"
+  },
+  {
+    "content": "Real-time water quality monitoring should be standard everywhere.",
+    "post_title": "Improved Systems",
+    "author_username": "AccountabilityNow"
   }
 ]
